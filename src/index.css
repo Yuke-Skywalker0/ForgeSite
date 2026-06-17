@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-forge-border;
+  }
+
+  body {
+    @apply bg-forge-bg text-forge-text-primary;
+  }
+
+  :focus-visible {
+    outline: 2px solid theme("colors.forge.ember.DEFAULT");
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background-color: theme("colors.forge.ember.dim");
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: theme("colors.forge.border");
+    border-radius: 999px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
