@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /ForgeSite/app/
+
+Sitemap: https://yuke-skywalker0.github.io/ForgeSite/sitemap.xml
