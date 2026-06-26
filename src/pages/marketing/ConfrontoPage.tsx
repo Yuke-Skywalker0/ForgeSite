@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Check, Minus, X } from "lucide-react";
 import { Seo } from "@/components/marketing/Seo";
+import { StarField } from "@/components/marketing/StarField";
 import { Reveal } from "@/components/ui/Reveal";
 
 type CellValue = "yes" | "no" | "partial" | string;
@@ -116,7 +117,8 @@ export default function ConfrontoPage() {
         </div>
       </section>
 
-      <section className="px-6 py-20 text-center">
+      <section className="relative overflow-hidden px-6 py-20 text-center">
+        <StarField count={50} className="absolute inset-0 h-full w-full opacity-40" />
         <h2 className="mx-auto mb-7 max-w-lg font-display text-3xl font-semibold text-forge-text-primary">
           Convinto? Inizia gratis, senza carta di credito.
         </h2>
