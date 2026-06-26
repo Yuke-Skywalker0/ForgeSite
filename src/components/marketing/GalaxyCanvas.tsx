@@ -58,12 +58,9 @@ function buildScene(w: number, h: number, starCount: number) {
 
 export function GalaxyCanvas({ starCount = 180, nebulaOpacity = 0.18, className = "" }: GalaxyCanvasProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const mouseRef  = useRef({ x: 0, y: 0 });
-  const rafRef    = useRef<number>(0);
+  const mouseRef = useRef({ x: 0, y: 0 });
+  const rafRef = useRef<number>(0);
   const visibleRef = useRef(true);
-  const reducedMotion = typeof window !== "undefined"
-    ? window.matchMedia("(prefers-reduced-motion: reduce)").matches
-    : false;
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -71,102 +68,137 @@ export function GalaxyCanvas({ starCount = 180, nebulaOpacity = 0.18, className 
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    let W = canvas.offsetWidth;
-    let H = canvas.offsetHeight;
-    canvas.width  = W;
-    canvas.height = H;
-
-    let { stars, nebulae } = buildScene(W, H, starCount);
+    let width = 0;
+    let height = 0;
+    let stars: Star[] = [];
+    let nebulae: NebulaPatch[] = [];
     let t = 0;
     let scrollY = window.scrollY;
+    let reducedMotion = false;
+    let isMobile = false;
 
-    // IntersectionObserver — pausa quando fuori schermo
-    const io = new IntersectionObserver(([e]) => { visibleRef.current = e?.isIntersecting ?? true; }, { threshold: 0 });
+    const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const mobileQuery = window.matchMedia("(max-width: 768px)");
+
+    const updateReducedMotion = () => {
+      reducedMotion = motionQuery.matches;
+    };
+
+    const updateIsMobile = () => {
+      isMobile = mobileQuery.matches;
+    };
+
+    const resize = () => {
+      const rect = canvas.getBoundingClientRect();
+      width = Math.max(1, Math.round(rect.width));
+      height = Math.max(1, Math.round(rect.height));
+      const dpr = window.devicePixelRatio || 1;
+      canvas.width = Math.round(width * dpr);
+      canvas.height = Math.round(height * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      ({ stars, nebulae } = buildScene(width, height, starCount));
+    };
+
+    const io = new IntersectionObserver(([entry]) => {
+      visibleRef.current = entry?.isIntersecting ?? true;
+    }, { threshold: 0 });
     io.observe(canvas);
 
-    // Mouse tracking — solo desktop
-    const isMobile = window.matchMedia("(max-width: 768px)").matches;
-    function onMouseMove(e: MouseEvent) {
+    const onMouseMove = (event: MouseEvent) => {
       if (isMobile) return;
-      mouseRef.current = { x: e.clientX / W - 0.5, y: e.clientY / H - 0.5 };
-    }
-    window.addEventListener("mousemove", onMouseMove, { passive: true });
+      const rect = canvas.getBoundingClientRect();
+      mouseRef.current = {
+        x: (event.clientX - rect.left) / width - 0.5,
+        y: (event.clientY - rect.top) / height - 0.5,
+      };
+    };
 
-    // Scroll parallax
-    function onScroll() { scrollY = window.scrollY; }
-    window.addEventListener("scroll", onScroll, { passive: true });
+    const onScroll = () => {
+      scrollY = window.scrollY;
+    };
 
-    // Resize
-    function onResize() {
-      W = canvas.offsetWidth;
-      H = canvas.offsetHeight;
-      canvas.width  = W;
-      canvas.height = H;
-      ({ stars, nebulae } = buildScene(W, H, starCount));
-    }
-    window.addEventListener("resize", onResize, { passive: true });
+    const wrap = (value: number, limit: number) => ((value % limit) + limit) % limit;
 
-    function draw() {
-      if (!visibleRef.current) { rafRef.current = requestAnimationFrame(draw); return; }
+    const draw = () => {
+      if (!visibleRef.current) {
+        rafRef.current = requestAnimationFrame(draw);
+        return;
+      }
+
       if (!reducedMotion) t += 1;
-
-      ctx.clearRect(0, 0, W, H);
+      ctx.clearRect(0, 0, width, height);
 
       const mx = reducedMotion ? 0 : mouseRef.current.x * 18;
       const my = reducedMotion ? 0 : mouseRef.current.y * 12;
-      const scrollShift = reducedMotion ? 0 : (scrollY * 0.06);
+      const scrollShift = reducedMotion ? 0 : scrollY * 0.06;
 
-      // Nebula patches
       nebulae.forEach((n) => {
-        const grad = ctx.createRadialGradient(
-          n.x + mx * 0.3, n.y + my * 0.3 - scrollShift * 0.4,
-          0,
-          n.x + mx * 0.3, n.y + my * 0.3 - scrollShift * 0.4,
-          n.radius
-        );
+        const x = n.x + mx * 0.3;
+        const y = n.y + my * 0.3 - scrollShift * 0.4;
+        const grad = ctx.createRadialGradient(x, y, 0, x, y, n.radius);
         grad.addColorStop(0, `rgba(${n.color},${nebulaOpacity})`);
         grad.addColorStop(0.5, `rgba(${n.color},${nebulaOpacity * 0.4})`);
         grad.addColorStop(1, `rgba(${n.color},0)`);
         ctx.fillStyle = grad;
         ctx.beginPath();
-        ctx.arc(n.x + mx * 0.3, n.y + my * 0.3 - scrollShift * 0.4, n.radius, 0, Math.PI * 2);
+        ctx.arc(x, y, n.radius, 0, Math.PI * 2);
         ctx.fill();
       });
 
-      // Stelle
       stars.forEach((star) => {
         const twinkle = reducedMotion
           ? star.opacity
           : star.opacity * (0.65 + 0.35 * Math.sin(t * star.twinkleSpeed + star.twinkleOffset));
 
-        // Parallax: stelle più "lontane" (z alto) si spostano meno
-        const px = star.x + mx * (1 - star.z) * 14 + (scrollShift * (1 - star.z) * 0.5);
-        const py = star.y + my * (1 - star.z) * 10 - (scrollShift * star.z * 0.3);
-
+        const px = star.x + mx * (1 - star.z) * 14 + scrollShift * (1 - star.z) * 0.5;
+        const py = star.y + my * (1 - star.z) * 10 - scrollShift * star.z * 0.3;
+        const x = wrap(px, width);
+        const y = wrap(py, height);
         const colorIdx = Math.floor(star.z * PALETTE.length) % PALETTE.length;
         const color = PALETTE[colorIdx] ?? PALETTE[0]!;
 
         ctx.globalAlpha = twinkle * 0.85;
         ctx.fillStyle = `${color}1)`;
         ctx.beginPath();
-        ctx.arc(px % W, py % H, star.radius, 0, Math.PI * 2);
+        ctx.arc(x, y, star.radius, 0, Math.PI * 2);
         ctx.fill();
 
-        // Alone luminoso sulle stelle più grandi
         if (star.radius > 1.1) {
-          const glow = ctx.createRadialGradient(px % W, py % H, 0, px % W, py % H, star.radius * 3);
+          const glow = ctx.createRadialGradient(x, y, 0, x, y, star.radius * 3);
           glow.addColorStop(0, `${color}${(twinkle * 0.25).toFixed(2)})`);
           glow.addColorStop(1, `${color}0)`);
           ctx.globalAlpha = 1;
           ctx.fillStyle = glow;
           ctx.beginPath();
-          ctx.arc(px % W, py % H, star.radius * 3, 0, Math.PI * 2);
+          ctx.arc(x, y, star.radius * 3, 0, Math.PI * 2);
           ctx.fill();
         }
       });
 
       ctx.globalAlpha = 1;
       rafRef.current = requestAnimationFrame(draw);
+    };
+
+    updateReducedMotion();
+    updateIsMobile();
+    resize();
+
+    const resizeObserver = new ResizeObserver(resize);
+    resizeObserver.observe(canvas);
+
+    window.addEventListener("mousemove", onMouseMove, { passive: true });
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    if (motionQuery.addEventListener) {
+      motionQuery.addEventListener("change", updateReducedMotion);
+    } else {
+      motionQuery.addListener(updateReducedMotion);
+    }
+
+    if (mobileQuery.addEventListener) {
+      mobileQuery.addEventListener("change", updateIsMobile);
+    } else {
+      mobileQuery.addListener(updateIsMobile);
     }
 
     rafRef.current = requestAnimationFrame(draw);
@@ -174,11 +206,21 @@ export function GalaxyCanvas({ starCount = 180, nebulaOpacity = 0.18, className 
     return () => {
       cancelAnimationFrame(rafRef.current);
       io.disconnect();
+      resizeObserver.disconnect();
       window.removeEventListener("mousemove", onMouseMove);
       window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onResize);
+      if (motionQuery.removeEventListener) {
+        motionQuery.removeEventListener("change", updateReducedMotion);
+      } else {
+        motionQuery.removeListener(updateReducedMotion);
+      }
+      if (mobileQuery.removeEventListener) {
+        mobileQuery.removeEventListener("change", updateIsMobile);
+      } else {
+        mobileQuery.removeListener(updateIsMobile);
+      }
     };
-  }, [starCount, nebulaOpacity, reducedMotion]);
+  }, [starCount, nebulaOpacity]);
 
   return (
     <canvas

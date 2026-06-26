@@ -30,26 +30,39 @@ export function StarField({ count = 60, className = "" }: StarFieldProps) {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    const W = canvas.offsetWidth || 800;
-    const H = canvas.offsetHeight || 200;
-    canvas.width = W;
-    canvas.height = H;
-
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-    const particles: Particle[] = Array.from({ length: count }, () => ({
-      x: Math.random() * W,
-      y: Math.random() * H,
-      r: Math.random() * 1.2 + 0.2,
-      o: Math.random() * 0.5 + 0.15,
-      speed: Math.random() * 0.012 + 0.004,
-      phase: Math.random() * Math.PI * 2,
-    }));
-
+    let width = 0;
+    let height = 0;
+    let reduced = false;
+    let particles: Particle[] = [];
     let t = 0;
 
-    function draw() {
-      ctx.clearRect(0, 0, W, H);
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const updateReducedMotion = () => {
+      reduced = mediaQuery.matches;
+    };
+
+    const resize = () => {
+      const rect = canvas.getBoundingClientRect();
+      width = Math.max(1, Math.round(rect.width));
+      height = Math.max(1, Math.round(rect.height));
+      const dpr = window.devicePixelRatio || 1;
+
+      canvas.width = Math.round(width * dpr);
+      canvas.height = Math.round(height * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+      particles = Array.from({ length: count }, () => ({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        r: Math.random() * 1.2 + 0.2,
+        o: Math.random() * 0.5 + 0.15,
+        speed: Math.random() * 0.012 + 0.004,
+        phase: Math.random() * Math.PI * 2,
+      }));
+    };
+
+    const draw = () => {
+      ctx.clearRect(0, 0, width, height);
       if (!reduced) t += 1;
 
       particles.forEach((p) => {
@@ -63,10 +76,29 @@ export function StarField({ count = 60, className = "" }: StarFieldProps) {
 
       ctx.globalAlpha = 1;
       rafRef.current = requestAnimationFrame(draw);
+    };
+
+    updateReducedMotion();
+    resize();
+
+    const resizeObserver = new ResizeObserver(resize);
+    resizeObserver.observe(canvas);
+
+    mediaQuery.addEventListener?.("change", updateReducedMotion);
+    if (!mediaQuery.addEventListener) {
+      mediaQuery.addListener(updateReducedMotion);
     }
 
     rafRef.current = requestAnimationFrame(draw);
-    return () => cancelAnimationFrame(rafRef.current);
+
+    return () => {
+      cancelAnimationFrame(rafRef.current);
+      resizeObserver.disconnect();
+      mediaQuery.removeEventListener?.("change", updateReducedMotion);
+      if (!mediaQuery.removeEventListener) {
+        mediaQuery.removeListener(updateReducedMotion);
+      }
+    };
   }, [count]);
 
   return (
