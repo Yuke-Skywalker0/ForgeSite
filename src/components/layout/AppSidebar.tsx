@@ -1,16 +1,20 @@
 import { NavLink, Link } from "react-router-dom";
-import { LayoutDashboard, FolderGit2, Settings, LogOut } from "lucide-react";
+import { LayoutDashboard, FolderGit2, Settings, LogOut, LayoutTemplate, BarChart3 } from "lucide-react";
 import { cn } from "@/lib/cn";
 import { useAuthStore } from "@/store/authStore";
 
 const navItems = [
   { to: "/app/dashboard", label: "Dashboard", icon: LayoutDashboard },
   { to: "/app/projects", label: "Progetti", icon: FolderGit2 },
+  { to: "/app/templates", label: "Template", icon: LayoutTemplate },
   { to: "/app/settings", label: "Impostazioni", icon: Settings },
 ];
 
+const ADMIN_ROLES = new Set(["owner", "admin"]);
+
 export function AppSidebar() {
   const { user, logout } = useAuthStore();
+  const isAdmin = user?.role ? ADMIN_ROLES.has(user.role) : false;
 
   return (
     <aside className="flex h-screen w-60 flex-none flex-col border-r border-forge-border bg-forge-surface">
@@ -39,6 +43,29 @@ export function AppSidebar() {
             {label}
           </NavLink>
         ))}
+
+        {isAdmin && (
+          <>
+            <div className="my-2 border-t border-forge-border" />
+            <span className="block px-3 pb-1 pt-1 text-[10px] font-medium uppercase tracking-wider text-forge-text-muted">
+              Amministrazione
+            </span>
+            <NavLink
+              to="/app/admin/analytics"
+              className={({ isActive }) =>
+                cn(
+                  "flex items-center gap-2.5 rounded-sm px-3 py-2 text-sm transition-colors",
+                  isActive
+                    ? "bg-forge-surface-raised text-forge-text-primary"
+                    : "text-forge-text-secondary hover:bg-forge-surface-raised hover:text-forge-text-primary"
+                )
+              }
+            >
+              <BarChart3 size={16} strokeWidth={1.75} />
+              Analytics piattaforma
+            </NavLink>
+          </>
+        )}
       </nav>
 
       <div className="border-t border-forge-border px-3 py-4">

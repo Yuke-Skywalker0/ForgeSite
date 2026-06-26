@@ -1,7 +1,5 @@
 # FORGESITE — Frontend
 
-Site: https://yuke-skywalker0.github.io/ForgeSite/
-
 Frontend della piattaforma SaaS FORGESITE: sito marketing pubblico + dashboard
 ed editor visuale per la gestione dei siti generati. Single Page Application
 React + Vite + React Router, pubblicata su GitHub Pages.

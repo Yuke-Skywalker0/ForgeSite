@@ -1,11 +1,46 @@
 import { Seo } from "@/components/marketing/Seo";
 
+const sections = [
+  {
+    title: "1. Titolare del trattamento",
+    body: "ForgeSite è il titolare del trattamento dei dati personali raccolti tramite questo sito e l'applicazione. Per qualsiasi richiesta relativa alla privacy, contattaci tramite la pagina Chi siamo.",
+  },
+  {
+    title: "2. Dati che raccogliamo",
+    body: "Quando crei un account raccogliamo: indirizzo email, password (memorizzata in forma cifrata, mai in chiaro), data di creazione dell'account e data dell'ultimo accesso. Quando crei un progetto, memorizziamo il nome del progetto, la struttura delle pagine e dei blocchi che componi, e i riferimenti al repository GitHub collegato. Se attivi un backend opzionale (Supabase, Render o Cloudflare) per uno dei tuoi siti, le credenziali che ci fornisci vengono cifrate prima di essere salvate e non sono mai visibili in chiaro, nemmeno a noi.",
+  },
+  {
+    title: "3. Finalità del trattamento",
+    body: "Usiamo i tuoi dati esclusivamente per: fornire il servizio (autenticazione, salvataggio progetti, pubblicazione su GitHub Pages), comunicarti informazioni essenziali sul tuo account, e — solo se hai accettato i cookie analitici — capire in forma aggregata come viene usato il sito per migliorarlo.",
+  },
+  {
+    title: "4. Base giuridica",
+    body: "Il trattamento dei dati necessari a fornire il servizio si basa sull'esecuzione del contratto che accetti registrandoti. Il trattamento dei cookie analitici si basa sul tuo consenso esplicito, che puoi revocare in qualsiasi momento dalla Cookie Policy.",
+  },
+  {
+    title: "5. Conservazione dei dati",
+    body: "Conserviamo i dati del tuo account finché mantieni il tuo account attivo. Se richiedi la cancellazione dell'account, i dati personali vengono rimossi entro 30 giorni, salvo obblighi di legge che richiedano una conservazione più lunga. I log delle generazioni AI vengono conservati per un massimo di 90 giorni, dopodiché vengono eliminati automaticamente.",
+  },
+  {
+    title: "6. Servizi terzi coinvolti",
+    body: "Per fornire il servizio ci appoggiamo a: GitHub (per la creazione e gestione dei repository dei tuoi progetti), un provider di database cloud per la memorizzazione dei dati applicativi, e provider di intelligenza artificiale (selezionabili) per le funzionalità di generazione automatica dei contenuti. Se attivi un backend opzionale, anche Supabase, Render o Cloudflare trattano i dati relativi a quel progetto specifico, secondo le loro rispettive informative.",
+  },
+  {
+    title: "7. I tuoi diritti",
+    body: "Hai diritto di accedere ai tuoi dati, richiederne la rettifica o la cancellazione, opporti al trattamento, e richiedere la portabilità dei dati che ci hai fornito. Puoi esercitare questi diritti contattandoci in qualsiasi momento.",
+  },
+  {
+    title: "8. Sicurezza",
+    body: "Le password sono memorizzate con hashing crittografico, mai in chiaro. Le sessioni sono protette tramite cookie HttpOnly non accessibili da JavaScript. Le credenziali di servizi terzi che colleghi sono cifrate prima del salvataggio. Tutte le comunicazioni tra il tuo browser e i nostri server avvengono via HTTPS.",
+  },
+];
+
 export default function PrivacyPage() {
   return (
     <>
       <Seo
         title="Privacy Policy — ForgeSite"
-        description="Informativa sulla privacy di ForgeSite: quali dati raccogliamo e come li trattiamo."
+        description="Informativa sulla privacy di ForgeSite: quali dati raccogliamo, perché, e come li proteggiamo."
         path="/privacy"
         indexable={false}
       />
@@ -15,23 +50,20 @@ export default function PrivacyPage() {
           <h1 className="mb-2 font-display text-3xl font-semibold text-forge-text-primary">
             Privacy Policy
           </h1>
-          <p className="mb-8 text-xs text-forge-text-muted">Ultimo aggiornamento: da definire</p>
+          <p className="mb-8 text-xs text-forge-text-muted">
+            Ultimo aggiornamento: documento di riferimento, da validare con un consulente legale
+            prima della pubblicazione in produzione con utenti reali.
+          </p>
 
-          <div className="flex flex-col gap-5 text-sm leading-relaxed text-forge-text-secondary">
-            <p>
-              <strong className="text-forge-text-primary">Questo è un testo segnaposto.</strong>{" "}
-              Prima della pubblicazione in produzione, sostituisci questo contenuto con una
-              informativa privacy reale e conforme al GDPR, che descriva con precisione: quali
-              dati personali raccogli (email, dati account, eventuali dati dei visitatori dei
-              siti generati), per quali finalità, su quale base giuridica, per quanto tempo li
-              conservi, quali servizi terzi li trattano per tuo conto (MongoDB Atlas, provider
-              AI, GitHub, eventuali Supabase/Render/Cloudflare collegati dai clienti), e come
-              l'utente può esercitare i propri diritti.
-            </p>
-            <p>
-              Redigi questo testo con l'aiuto di un consulente legale prima di rendere il sito
-              pubblico a utenti finali.
-            </p>
+          <div className="flex flex-col gap-8">
+            {sections.map((s) => (
+              <div key={s.title}>
+                <h2 className="mb-2 font-display text-base font-semibold text-forge-text-primary">
+                  {s.title}
+                </h2>
+                <p className="text-sm leading-relaxed text-forge-text-secondary">{s.body}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import { Navbar } from "@/components/marketing/Navbar";
 import { Footer } from "@/components/marketing/Footer";
+import { CookieConsentBanner } from "@/components/marketing/CookieConsentBanner";
 
 export function MarketingLayout() {
   return (
@@ -10,6 +11,7 @@ export function MarketingLayout() {
         <Outlet />
       </main>
       <Footer />
+      <CookieConsentBanner />
     </div>
   );
 }
