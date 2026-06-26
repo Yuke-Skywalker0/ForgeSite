@@ -18,13 +18,6 @@ interface DomainSearchResult {
   price: string;
 }
 
-const mockSearchResults: DomainSearchResult[] = [
-  { domain: "", available: true, price: "€9.99/anno" },
-  { domain: "", available: false, price: "" },
-  { domain: "", available: true, price: "€12.99/anno" },
-  { domain: "", available: true, price: "€34.99/anno" },
-];
-
 const tldExtensions = [".com", ".net", ".it", ".io"];
 
 function generateMockResults(name: string): DomainSearchResult[] {

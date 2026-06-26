@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
-import { Plus, Trash2, Phone, Mail, MessageCircle, Link2, MousePointerClick, Eye } from "lucide-react";
+import { Plus, Trash2, Phone, Mail, MessageCircle, Link2, MousePointerClick } from "lucide-react";
 import { Seo } from "@/components/marketing/Seo";
 import { AppShell } from "@/components/layout/AppShell";
 import { Card } from "@/components/ui/Card";
