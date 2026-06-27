@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Menu, X, Sun, Moon, Rocket } from "lucide-react";
 import { cn } from "@/lib/cn";
-import { useThemeStore } from "../../store";
+import { useThemeStore } from "../../store/themeStore";
 
 const navLinks = [
   { to: "/",          label: "Home" },

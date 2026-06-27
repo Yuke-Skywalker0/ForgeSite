@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { useThemeStore } from "../../store";
+import { useThemeStore } from "../../store/themeStore";
 
 interface Star {
   x: number; y: number; z: number;

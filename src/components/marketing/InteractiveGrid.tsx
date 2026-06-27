@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { useThemeStore } from "../../store";
+import { useThemeStore } from "../../store/themeStore";
 
 /**
  * Griglia di punti interattiva: i punti si illuminano e si avvicinano al
