@@ -1,0 +1,51 @@
+name: Build e Deploy su GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Installa dipendenze
+        run: npm ci
+
+      # VITE_API_BASE_URL deve puntare al backend in produzione.
+      # Settings → Secrets and variables → Actions → New repository secret
+      # Nome: VITE_API_BASE_URL — Valore: https://forgesite-backend.onrender.com/api/v1
+      - name: Crea .env di produzione
+        run: echo "VITE_API_BASE_URL=${{ secrets.VITE_API_BASE_URL }}" > .env
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      # Build SPA + 404.html (fallback routing GitHub Pages)
+      - name: Build
+        run: npm run build
+
+      - name: Deploy su branch gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          commit_message: "Deploy automatico da commit ${{ github.sha }}"

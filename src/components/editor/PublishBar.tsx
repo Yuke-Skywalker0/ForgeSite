@@ -9,9 +9,7 @@ type PublishStage = "idle" | "committing" | "pr_open" | "merging" | "merged";
 export function PublishBar({ projectId, pageId }: { projectId: string; pageId: string }) {
   const { blockTree, isDirty, markSaved } = useEditorStore();
   const [stage, setStage] = useState<PublishStage>("idle");
-  const [prInfo, setPrInfo] = useState<{ id: string; url: string; preview: string | null } | null>(
-    null
-  );
+  const [prInfo, setPrInfo] = useState<{ id: string; url: string } | null>(null);
 
   const publish = usePublishChanges();
   const merge = useMergePullRequest();
@@ -19,16 +17,11 @@ export function PublishBar({ projectId, pageId }: { projectId: string; pageId: s
   function handlePublish() {
     setStage("committing");
     publish.mutate(
-      {
-        projectId,
-        pageId,
-        blockTree,
-        message: "Aggiornamento contenuti da editor visuale",
-      },
+      { projectId, pageId, blockTree, message: "Aggiornamento contenuti da editor visuale" },
       {
         onSuccess: (result) => {
           setStage("pr_open");
-          setPrInfo({ id: result.id, url: result.pullRequestUrl, preview: result.previewUrl });
+          setPrInfo({ id: result.id, url: result.pullRequestUrl });
           markSaved();
         },
         onError: () => setStage("idle"),
@@ -41,39 +34,31 @@ export function PublishBar({ projectId, pageId }: { projectId: string; pageId: s
     setStage("merging");
     merge.mutate(
       { projectId, prId: prInfo.id },
-      {
-        onSuccess: () => setStage("merged"),
-        onError: () => setStage("pr_open"),
-      }
+      { onSuccess: () => setStage("merged"), onError: () => setStage("pr_open") }
     );
   }
 
   return (
-    <div className="flex items-center justify-between border-t border-forge-border bg-forge-surface px-5 py-3">
-      <div className="flex items-center gap-2 text-xs text-forge-text-secondary">
+    <div className="flex items-center justify-between border-t border-[var(--border)] bg-[var(--surface)] px-5 py-3">
+      <div className="flex items-center gap-2 text-xs text-[var(--text-secondary)]">
         {isDirty && stage === "idle" && (
           <>
-            <span className="h-1.5 w-1.5 rounded-full bg-forge-warning" />
+            <span className="h-1.5 w-1.5 rounded-full bg-[#F59E0B]" />
             Modifiche non pubblicate
           </>
         )}
         {stage === "pr_open" && prInfo && (
           <>
-            <GitPullRequest size={14} className="text-forge-ember-soft" />
+            <GitPullRequest size={14} className="text-[var(--accent-soft)]" />
             Pull request aperta —{" "}
-            <a
-              href={prInfo.url}
-              target="_blank"
-              rel="noreferrer"
-              className="text-forge-ember-soft hover:underline"
-            >
+            <a href={prInfo.url} target="_blank" rel="noreferrer" className="text-[var(--accent-soft)] hover:underline">
               revisiona su GitHub
             </a>
           </>
         )}
         {stage === "merged" && (
           <>
-            <CheckCircle2 size={14} className="text-forge-success" />
+            <CheckCircle2 size={14} className="text-[var(--accent)]" />
             Pubblicato — deploy in corso su GitHub Pages
           </>
         )}

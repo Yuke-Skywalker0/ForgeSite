@@ -1,27 +1,11 @@
 import {
-  LayoutTemplate,
-  Type,
-  Image,
-  MousePointerClick,
-  HelpCircle,
-  FileText,
-  GalleryHorizontal,
-  Tag,
-  Star,
-  MessageSquareQuote,
-  PanelTop,
-  PanelBottom,
-  Mail,
-  Video,
-  Map,
+  LayoutTemplate, Type, Image, MousePointerClick, HelpCircle, FileText,
+  GalleryHorizontal, Tag, Star, MessageSquareQuote, PanelTop, PanelBottom,
+  Mail, Video, Map,
 } from "lucide-react";
-import type { BlockType } from "@/types";
+import type { BlockType, Block } from "@/types";
 
-export const blockLibrary: Array<{
-  type: BlockType;
-  label: string;
-  icon: typeof LayoutTemplate;
-}> = [
+export const blockLibrary: Array<{ type: BlockType; label: string; icon: typeof LayoutTemplate }> = [
   { type: "hero", label: "Hero", icon: LayoutTemplate },
   { type: "text", label: "Testo", icon: Type },
   { type: "image", label: "Immagine", icon: Image },
@@ -39,7 +23,7 @@ export const blockLibrary: Array<{
   { type: "map", label: "Mappa", icon: Map },
 ];
 
-export function createEmptyBlock(type: BlockType): import("@/types").Block {
+export function createEmptyBlock(type: BlockType): Block {
   return {
     id: `block_${Math.random().toString(36).slice(2, 10)}`,
     type,

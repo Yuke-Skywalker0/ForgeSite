@@ -1,12 +1,13 @@
+import type { ReactNode } from "react";
 import { Outlet } from "react-router-dom";
-import { Sidebar } from "@/components/layout/Sidebar";
+import { AppSidebar } from "@/components/layout/AppSidebar";
 
-export function AppShell() {
+export function AppShell({ children }: { children?: ReactNode }) {
   return (
     <div className="flex">
-      <Sidebar />
+      <AppSidebar />
       <main className="flex-1 overflow-y-auto p-8">
-        <Outlet />
+        {children ?? <Outlet />}
       </main>
     </div>
   );

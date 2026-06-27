@@ -1,11 +1,5 @@
 import { useState } from "react";
-import {
-  DndContext,
-  DragOverlay,
-  closestCenter,
-  type DragEndEvent,
-  type DragStartEvent,
-} from "@dnd-kit/core";
+import { DndContext, DragOverlay, closestCenter, type DragEndEvent, type DragStartEvent } from "@dnd-kit/core";
 import { SortableContext, verticalListSortingStrategy, arrayMove } from "@dnd-kit/sortable";
 import { useEditorStore } from "@/store/editorStore";
 import { BlockNode } from "@/components/editor/BlockNode";
@@ -25,12 +19,8 @@ export function EditorCanvas() {
   const [activeDragType, setActiveDragType] = useState<BlockType | null>(null);
 
   function handleDragStart(event: DragStartEvent) {
-    const data = event.active.data.current as
-      | { source: "library"; blockType: BlockType }
-      | undefined;
-    if (data?.source === "library") {
-      setActiveDragType(data.blockType);
-    }
+    const data = event.active.data.current as { source: "library"; blockType: BlockType } | undefined;
+    if (data?.source === "library") setActiveDragType(data.blockType);
   }
 
   function handleDragEnd(event: DragEndEvent) {
@@ -38,18 +28,13 @@ export function EditorCanvas() {
     const { active, over } = event;
     if (!over) return;
 
-    const activeData = active.data.current as
-      | { source: "library"; blockType: BlockType }
-      | undefined;
-
-    // Drag da libreria → canvas: aggiunge nuovo blocco in coda.
+    const activeData = active.data.current as { source: "library"; blockType: BlockType } | undefined;
     if (activeData?.source === "library") {
       const newBlock = createEmptyBlock(activeData.blockType);
       setBlockTree((state) => ({ blockTree: [...state.blockTree, newBlock] }));
       return;
     }
 
-    // Reorder tra blocchi esistenti nello stesso livello.
     if (active.id !== over.id) {
       const ids = blockTree.map((b) => b.id);
       const oldIndex = ids.indexOf(active.id as string);
@@ -62,30 +47,15 @@ export function EditorCanvas() {
   const activeMeta = blockLibrary.find((b) => b.type === activeDragType);
 
   return (
-    <div
-      className="flex-1 overflow-y-auto bg-forge-bg p-8"
-      onClick={() => selectBlock(null)}
-    >
-      <div
-        className={cn(
-          "mx-auto rounded-md border border-forge-border bg-forge-surface p-6 transition-all",
-          breakpointWidths[activeBreakpoint]
-        )}
-      >
-        <DndContext
-          collisionDetection={closestCenter}
-          onDragStart={handleDragStart}
-          onDragEnd={handleDragEnd}
-        >
+    <div className="flex-1 overflow-y-auto bg-[var(--bg)] p-8" onClick={() => selectBlock(null)}>
+      <div className={cn("mx-auto rounded-md border border-[var(--border)] bg-[var(--surface)] p-6 transition-all", breakpointWidths[activeBreakpoint])}>
+        <DndContext collisionDetection={closestCenter} onDragStart={handleDragStart} onDragEnd={handleDragEnd}>
           {blockTree.length === 0 ? (
-            <div className="flex min-h-[300px] items-center justify-center rounded-sm border border-dashed border-forge-border text-sm text-forge-text-muted">
+            <div className="flex min-h-[300px] items-center justify-center rounded-sm border border-dashed border-[var(--border)] text-sm text-[var(--text-muted)]">
               Trascina un blocco qui per iniziare
             </div>
           ) : (
-            <SortableContext
-              items={blockTree.map((b) => b.id)}
-              strategy={verticalListSortingStrategy}
-            >
+            <SortableContext items={blockTree.map((b) => b.id)} strategy={verticalListSortingStrategy}>
               <div className="flex flex-col gap-3">
                 {blockTree.map((block) => (
                   <BlockNode key={block.id} block={block} />
@@ -96,7 +66,7 @@ export function EditorCanvas() {
 
           <DragOverlay>
             {activeMeta && (
-              <div className="flex items-center gap-2 rounded-sm bg-forge-ember px-3 py-2 text-sm text-forge-bg shadow-lg">
+              <div className="flex items-center gap-2 rounded-sm bg-[var(--accent)] px-3 py-2 text-sm text-white shadow-lg">
                 <activeMeta.icon size={14} />
                 {activeMeta.label}
               </div>

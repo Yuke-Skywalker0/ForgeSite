@@ -1,6 +1,6 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { api } from "@/lib/apiClient";
-import type { ProjectBackend, BackendProvider, CustomEndpoint } from "@/types";
+import type { CustomEndpoint, CustomEndpointMethod, ProjectBackend, BackendProvider } from "@/types";
 
 export function useProjectBackend(projectId: string | undefined) {
   return useQuery({
@@ -13,54 +13,42 @@ export function useProjectBackend(projectId: string | undefined) {
 interface ProvisionBackendInput {
   provider: BackendProvider;
   isExistingAccount: boolean;
-  /** Credenziali dell'account esistente del cliente, se isExistingAccount=true.
-   *  Non vengono mai salvate in chiaro lato client; il backend le cifra at-rest. */
   existingCredentials?: { apiKey?: string; projectUrl?: string };
-  features: {
-    authEnabled: boolean;
-    databaseEnabled: boolean;
-    customEndpoints: boolean;
-  };
+  features: { authEnabled: boolean; databaseEnabled: boolean; customEndpoints: boolean };
+}
+
+interface CreateCustomEndpointInput {
+  path: string;
+  method: CustomEndpointMethod;
+  description: string;
+  requiresAuth: boolean;
 }
 
 export function useProvisionBackend(projectId: string) {
   const queryClient = useQueryClient();
   return useMutation({
-    mutationFn: (input: ProvisionBackendInput) =>
-      api.post<ProjectBackend>(`/projects/${projectId}/backend`, input),
+    mutationFn: (input: ProvisionBackendInput) => api.post<ProjectBackend>(`/projects/${projectId}/backend`, input),
     onSuccess: () => {
-      void queryClient.invalidateQueries({
-        queryKey: ["projects", projectId, "backend"],
-      });
+      void queryClient.invalidateQueries({ queryKey: ["projects", projectId, "backend"] });
     },
   });
 }
 
-export function useCustomEndpoints(projectBackendId: string | undefined) {
+export function useCustomEndpoints(projectBackendId: string) {
   return useQuery({
-    queryKey: ["backends", projectBackendId, "endpoints"],
-    queryFn: () =>
-      api.get<CustomEndpoint[]>(`/backends/${projectBackendId}/endpoints`),
+    queryKey: ["backend", projectBackendId, "custom-endpoints"],
+    queryFn: () => api.get<CustomEndpoint[]>(`/backends/${projectBackendId}/custom-endpoints`),
     enabled: Boolean(projectBackendId),
   });
-}
-
-interface CreateEndpointInput {
-  path: string;
-  method: CustomEndpoint["method"];
-  description: string;
-  requiresAuth: boolean;
 }
 
 export function useCreateCustomEndpoint(projectBackendId: string) {
   const queryClient = useQueryClient();
   return useMutation({
-    mutationFn: (input: CreateEndpointInput) =>
-      api.post<CustomEndpoint>(`/backends/${projectBackendId}/endpoints`, input),
+    mutationFn: (input: CreateCustomEndpointInput) =>
+      api.post<CustomEndpoint>(`/backends/${projectBackendId}/custom-endpoints`, input),
     onSuccess: () => {
-      void queryClient.invalidateQueries({
-        queryKey: ["backends", projectBackendId, "endpoints"],
-      });
+      void queryClient.invalidateQueries({ queryKey: ["backend", projectBackendId, "custom-endpoints"] });
     },
   });
 }

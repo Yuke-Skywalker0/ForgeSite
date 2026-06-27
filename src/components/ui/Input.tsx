@@ -10,25 +10,23 @@ export function Input({ label, error, id, className, ...props }: InputProps) {
   const inputId = id ?? label.toLowerCase().replace(/\s+/g, "-");
   return (
     <div className="flex flex-col gap-1.5">
-      <label htmlFor={inputId} className="text-sm text-forge-text-secondary">
-        {label}
-      </label>
+      {label && (
+        <label htmlFor={inputId} className="text-sm" style={{ color: "var(--text-secondary)" }}>
+          {label}
+        </label>
+      )}
       <input
         id={inputId}
-        className={cn(
-          "rounded-sm border border-forge-border bg-forge-surface-raised px-3 py-2 text-sm text-forge-text-primary placeholder:text-forge-text-muted focus:border-forge-ember/60",
-          error && "border-forge-danger",
-          className
-        )}
+        className={cn("rounded-lg px-3 py-2 text-sm outline-none transition-all focus:ring-2", className)}
+        style={{
+          backgroundColor: "var(--surface-raised)",
+          border: `1px solid ${error ? "#EF4444" : "var(--border)"}`,
+          color: "var(--text-primary)",
+        }}
         aria-invalid={Boolean(error)}
-        aria-describedby={error ? `${inputId}-error` : undefined}
         {...props}
       />
-      {error && (
-        <span id={`${inputId}-error`} className="text-xs text-forge-danger">
-          {error}
-        </span>
-      )}
+      {error && <span className="text-xs" style={{ color: "#EF4444" }}>{error}</span>}
     </div>
   );
 }

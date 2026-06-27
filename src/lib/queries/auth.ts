@@ -23,7 +23,6 @@ interface RegisterInput {
 
 export function useRegister() {
   return useMutation({
-    mutationFn: (input: RegisterInput) =>
-      api.post<{ message: string }>("/auth/register", input),
+    mutationFn: (input: RegisterInput) => api.post<{ message: string }>("/auth/register", input),
   });
 }

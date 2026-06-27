@@ -3,34 +3,18 @@ import { cn } from "@/lib/cn";
 
 type ButtonVariant = "primary" | "secondary" | "ghost" | "danger";
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: ButtonVariant;
-  children: ReactNode;
-}
+export function Button({ variant = "primary", className, children, ...props }: ButtonHTMLAttributes<HTMLButtonElement> & { variant?: ButtonVariant; children: ReactNode }) {
+  const base = "inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm font-medium transition-all disabled:cursor-not-allowed disabled:opacity-40";
 
-const variantStyles: Record<ButtonVariant, string> = {
-  primary: "bg-forge-ember text-forge-bg hover:bg-forge-ember-soft",
-  secondary:
-    "bg-forge-surface-raised text-forge-text-primary border border-forge-border hover:border-forge-ember/40",
-  ghost: "bg-transparent text-forge-text-secondary hover:text-forge-text-primary",
-  danger: "bg-forge-danger/10 text-forge-danger hover:bg-forge-danger/20",
-};
+  const styles: Record<ButtonVariant, React.CSSProperties> = {
+    primary:   { backgroundColor: "var(--accent)", color: "#fff" },
+    secondary: { backgroundColor: "var(--surface-raised)", color: "var(--text-primary)", border: "1px solid var(--border)" },
+    ghost:     { backgroundColor: "transparent", color: "var(--text-secondary)" },
+    danger:    { backgroundColor: "rgba(239,68,68,0.1)", color: "#EF4444" },
+  };
 
-export function Button({
-  variant = "primary",
-  className,
-  children,
-  ...props
-}: ButtonProps) {
   return (
-    <button
-      className={cn(
-        "inline-flex items-center justify-center gap-2 rounded-sm px-3.5 py-2 text-sm font-medium transition-colors duration-150 disabled:cursor-not-allowed disabled:opacity-40",
-        variantStyles[variant],
-        className
-      )}
-      {...props}
-    >
+    <button className={cn(base, className)} style={styles[variant]} {...props}>
       {children}
     </button>
   );

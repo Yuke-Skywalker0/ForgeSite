@@ -1,57 +1,92 @@
 # FORGESITE — Frontend
 
-Dashboard e editor visuale a blocchi per la piattaforma FORGESITE.
+Frontend della piattaforma SaaS FORGESITE: sito marketing pubblico + dashboard
+ed editor visuale per la gestione dei siti generati. Single Page Application
+React + Vite + React Router, pubblicata su GitHub Pages.
+
+## Cos'è
+
+FORGESITE è una piattaforma che consente la creazione, modifica e gestione di
+siti web statici ospitati su GitHub Pages, tramite editor visuale a blocchi,
+automazione GitHub e generazione AI. Questo repository contiene il frontend:
+il sito che presenta il prodotto (Home, Chi siamo, Servizi, Prezzi) e
+l'applicazione web (login, dashboard, editor) con cui i clienti gestiscono i
+propri progetti.
 
 ## Stack
-React 18 + Vite + TypeScript strict + TailwindCSS + Zustand + React Query + DnD Kit + Monaco Editor.
 
-## Setup
+- **React 18** + **Vite** + **TypeScript** (strict mode)
+- **React Router** — routing, sia per le pagine marketing che per l'app autenticata
+- **TailwindCSS 3** — styling, design token centralizzati
+- **Zustand** — stato locale (sessione utente, editor)
+- **React Query** — stato server (progetti, backend collegati)
+- **DnD Kit** — drag and drop nell'editor a blocchi
+- **Monaco Editor** — modalità di editing JSON avanzata
 
-```bash
-npm install
-cp .env.example .env
-# modifica VITE_API_BASE_URL se il backend non è su localhost:4000
-npm run dev
-```
+Nessuna dipendenza di terze parti per la gestione dei meta tag SEO: titolo e
+meta tag per pagina sono impostati nativamente (componente `Seo`, vedi
+`src/components/marketing/Seo.tsx`), senza librerie esterne — scelta
+deliberata per ridurre la superficie di rischio di pacchetti poco mantenuti.
 
-L'app parte su `http://localhost:5173`.
+## Architettura
+
+Il sito è una SPA: tutte le pagine (marketing e app autenticata) sono
+gestite dallo stesso router React, nello stesso bundle. Le pagine marketing
+(`/`, `/chi-siamo`, `/servizi`, `/prezzi`, `/privacy`, `/termini`) sono
+caricate eagerly (incluse nel bundle principale, niente attesa aggiuntiva).
+Le pagine dell'app autenticata (`/app/login`, `/app/dashboard`,
+`/app/projects/...`, `/app/settings`) sono caricate lazy via `React.lazy`,
+così chi visita solo il sito marketing non scarica il codice dell'editor.
+
+Il base path per il deploy (sottocartella del repository su GitHub Pages) è
+centralizzato in `vite.config.ts`.
 
 ## Struttura
 
 ```
-src/
-  components/
-    ui/          Button, Input, Card, Badge — primitive di design
-    layout/      Sidebar, AppShell
-    dashboard/   ProjectCard, SeoScorePanel, AiUsagePanel, ActivityFeed, DeployHeatBar
-    editor/      BlockLibraryPanel, EditorCanvas, BlockNode, InspectorPanel,
-                 AdvancedModeDrawer, PublishBar, BackendSetupPanel, CustomEndpointsPanel
-  pages/         Una pagina per route
-  store/         Zustand: authStore (sessione), editorStore (blockTree locale)
-  lib/
-    apiClient.ts       fetch wrapper, cookie-based auth
-    queries/           hook React Query per risorsa (projects, auth, backend, publish)
-  types/         Tipi condivisi, mirror del data model backend
-  routes/        Router + guard autenticazione
+frontend/
+├── public/                          asset statici copiati 1:1 nel build
+│   ├── favicon.svg
+│   ├── og-cover.png                 immagine anteprima social
+│   ├── robots.txt
+│   ├── sitemap.xml
+│   └── .nojekyll
+├── scripts/
+│   └── create-404.mjs               genera 404.html per il routing SPA
+├── src/
+│   ├── components/
+│   │   ├── ui/                      Button, Input, Card, Badge
+│   │   ├── layout/                  AppShell, AppSidebar, MarketingLayout
+│   │   ├── marketing/                Navbar, Footer, Seo, FlowDiagram
+│   │   ├── dashboard/                ProjectCard, DeployHeatBar
+│   │   └── editor/                   BlockLibraryPanel, EditorCanvas, BlockNode,
+│   │                                  InspectorPanel, AdvancedModeDrawer, PublishBar,
+│   │                                  BackendSetupPanel, blockLibrary
+│   ├── pages/
+│   │   ├── marketing/                HomePage, ChiSiamoPage, ServiziPage, PrezziPage,
+│   │   │                              PrivacyPage, TerminiPage, NotFoundPage
+│   │   └── app/                      LoginPage, RegisterPage, DashboardPage,
+│   │                                  ProjectsListPage, CreateProjectPage, EditorPage,
+│   │                                  ProjectBackendPage, SettingsPage
+│   ├── store/                        authStore, editorStore (Zustand)
+│   ├── lib/
+│   │   ├── apiClient.ts              fetch wrapper, cookie-based auth
+│   │   ├── useRequireAuth.ts         guard di sessione per le pagine /app/*
+│   │   └── queries/                  hook React Query per risorsa
+│   ├── types/                        tipi condivisi, mirror del data model backend
+│   ├── routes/
+│   │   └── routes.tsx                definizione unica di tutte le route
+│   ├── App.tsx                       providers (React Query) + RouterProvider
+│   └── main.tsx                      entry point
+├── vite.config.ts                    base path GitHub Pages (un solo punto di config)
+├── tailwind.config.js                design token (palette scuro/verde smeraldo)
+└── .github/workflows/deploy.yml      build e deploy automatico
 ```
 
-## Note implementative
+## Stato
 
-- **Autenticazione**: nessun token in localStorage. La sessione vive in cookie HttpOnly
-  impostati dal backend; il frontend manda solo `credentials: "include"`.
-- **Editor**: il blockTree è mantenuto come albero immutabile in `editorStore`. Il
-  salvataggio verso il backend avviene solo al click su "Pubblica modifiche" (PublishBar),
-  non ad ogni keystroke.
-- **Advanced Mode**: l'editing JSON raw via Monaco è limitato a ruoli `owner`/`admin`
-  (vedi `AdvancedModeDrawer`), enforced sia qui che — obbligatoriamente — anche lato
-  backend (mai fidarsi solo del controllo client-side).
-- **Backend dei progetti**: `BackendSetupPanel` e `CustomEndpointsPanel` gestiscono
-  l'attivazione opzionale di un backend reale (Supabase/Render/Cloudflare) per i siti
-  che necessitano di auth utenti finali, database, o API custom oltre alle pagine statiche.
-
-## Cosa manca da collegare
-
-Diversi componenti assumono endpoint backend non ancora implementati nello scaffold
-fornito (vedi sezione "Moduli da generare" nel README del backend). I componenti
-frontend sono già pronti a riceverli: basta che l'endpoint risponda con la shape
-definita in `src/types/index.ts`.
+Il frontend è completo e autonomo: l'interfaccia (sito marketing, login,
+dashboard, editor) è interamente costruita e pubblicabile. Le funzionalità
+che richiedono il backend (autenticazione reale, salvataggio progetti,
+pubblicazione su GitHub) mostrano l'interfaccia ma non eseguono operazioni
+finché il backend FORGESITE non è collegato — è lo sviluppo successivo.

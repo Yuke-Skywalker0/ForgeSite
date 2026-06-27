@@ -1,6 +1,5 @@
-// Tipi condivisi — derivati 1:1 dal Core Data Model della specifica FORGESITE.
-// Questi tipi rappresentano il contratto con l'API; vanno mantenuti sincronizzati
-// con gli schema Zod lato backend quando verranno generati.
+// Tipi condivisi — derivati dal Core Data Model della specifica FORGESITE.
+// Mantenuti sincronizzati con gli schema Zod lato backend.
 
 export type UserRole = "owner" | "admin" | "editor" | "viewer";
 
@@ -95,81 +94,10 @@ export interface Deployment {
   deployedAt: string | null;
 }
 
-export interface Media {
-  id: string;
-  tenantId: string;
-  url: string;
-  optimizedUrl: string | null;
-  webpUrl: string | null;
-  altText: string | null;
-  sizeBytes: number;
-}
-
-export type FormFieldType =
-  | "text"
-  | "email"
-  | "phone"
-  | "select"
-  | "checkbox"
-  | "radio"
-  | "file";
-
-export interface FormField {
-  id: string;
-  name: string;
-  type: FormFieldType;
-  label: string;
-  required: boolean;
-  options?: string[];
-}
-
-export type SubmissionMode = "email" | "db" | "both";
-
-export interface FormDefinition {
-  id: string;
-  projectId: string;
-  fields: FormField[];
-  submissionMode: SubmissionMode;
-}
-
-export type AiLogType = "page" | "section" | "seo" | "copy" | "schema";
-
 export interface AiLog {
   id: string;
-  tenantId: string;
-  type: AiLogType;
-  createdAt: string;
+  type: string;
   cost: number;
-}
-
-// --- Project Backend: estensione per siti con logica server-side ---
-// Un progetto resta statico per default (GitHub Pages). Se il sito richiede
-// auth utenti finali, DB, o API custom, il cliente attiva un ProjectBackend
-// su un provider a sua scelta (o ne crea uno guidato da FORGESITE).
-
-export type BackendProvider = "render" | "cloudflare" | "supabase";
-
-export type BackendStatus =
-  | "not_configured"
-  | "provisioning"
-  | "active"
-  | "error";
-
-export interface ProjectBackend {
-  id: string;
-  projectId: string;
-  provider: BackendProvider;
-  status: BackendStatus;
-  /** True se il cliente ha collegato un account/progetto provider già esistente */
-  isExistingAccount: boolean;
-  /** URL base dell'API (Render/Cloudflare) o URL progetto (Supabase) */
-  apiBaseUrl: string | null;
-  /** Funzionalità attivate su questo backend */
-  features: {
-    authEnabled: boolean;
-    databaseEnabled: boolean;
-    customEndpoints: boolean;
-  };
   createdAt: string;
 }
 
@@ -180,10 +108,25 @@ export interface CustomEndpoint {
   projectBackendId: string;
   path: string;
   method: CustomEndpointMethod;
-  /** Descrizione in linguaggio naturale → usata da ForgeAI per generare il codice handler */
   description: string;
-  /** Codice handler generato/validato, eseguito sandboxed nel backend del progetto */
-  handlerCode: string;
   requiresAuth: boolean;
+  createdAt: string;
+}
+
+export type BackendProvider = "render" | "cloudflare" | "supabase";
+export type BackendStatus = "not_configured" | "provisioning" | "active" | "error";
+
+export interface ProjectBackend {
+  id: string;
+  projectId: string;
+  provider: BackendProvider;
+  status: BackendStatus;
+  isExistingAccount: boolean;
+  apiBaseUrl: string | null;
+  features: {
+    authEnabled: boolean;
+    databaseEnabled: boolean;
+    customEndpoints: boolean;
+  };
   createdAt: string;
 }

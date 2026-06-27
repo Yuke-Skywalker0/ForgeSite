@@ -16,8 +16,7 @@ interface CommitResult extends Commit {
 
 export function usePublishChanges() {
   return useMutation({
-    mutationFn: ({ projectId, ...body }: CommitInput) =>
-      api.post<CommitResult>(`/projects/${projectId}/commit`, body),
+    mutationFn: ({ projectId, ...body }: CommitInput) => api.post<CommitResult>(`/projects/${projectId}/commit`, body),
   });
 }
 

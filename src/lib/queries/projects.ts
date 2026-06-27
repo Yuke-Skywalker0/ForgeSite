@@ -28,8 +28,7 @@ interface CreateProjectInput {
 export function useCreateProject() {
   const queryClient = useQueryClient();
   return useMutation({
-    mutationFn: (input: CreateProjectInput) =>
-      api.post<Project>("/projects", input),
+    mutationFn: (input: CreateProjectInput) => api.post<Project>("/projects", input),
     onSuccess: () => {
       void queryClient.invalidateQueries({ queryKey: PROJECTS_KEY });
     },

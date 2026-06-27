@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Pagine app non indicizzabili
+Disallow: /ForgeSite/app/
+
+# Sitemap
+Sitemap: https://yuke-skywalker0.github.io/ForgeSite/sitemap.xml
+
+# Cache hints per Googlebot
+User-agent: Googlebot
+Allow: /ForgeSite/
+Disallow: /ForgeSite/app/
