@@ -51,7 +51,7 @@ function WidgetPreview({ widget }: { widget: FloatingWidget }) {
       className="flex h-10 w-10 items-center justify-center rounded-full shadow-lg"
       style={{ backgroundColor: widget.color }}
     >
-      <Icon size={18} color="#fff" strokeWidth={2} />
+      <Icon size={18} color="var(--text-on-accent)" strokeWidth={2} />
     </div>
   );
 }
@@ -141,7 +141,7 @@ export default function ProjectWidgetsPage() {
                     className="flex h-9 w-9 flex-none items-center justify-center rounded-full"
                     style={{ backgroundColor: widget.color }}
                   >
-                    <Icon size={16} color="#fff" strokeWidth={2} />
+                    <Icon size={16} color="var(--text-on-accent)" strokeWidth={2} />
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="text-sm font-medium text-forge-text-primary">{widget.label}</p>

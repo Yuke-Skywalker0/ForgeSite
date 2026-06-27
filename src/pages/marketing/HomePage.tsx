@@ -112,7 +112,7 @@ export default function HomePage() {
               <Link
                 to="/app/register"
                 className="flex items-center gap-2 rounded-lg px-8 py-3.5 text-sm font-semibold glow-accent-sm hover:glow-accent transition-all"
-                style={{ backgroundColor: "var(--accent)", color: "#fff" }}
+                style={{ backgroundColor: "var(--accent)", color: "var(--text-on-accent)" }}
               >
                 Crea il tuo sito gratis
                 <ArrowRight size={16} strokeWidth={2} />
@@ -120,7 +120,7 @@ export default function HomePage() {
               <Link
                 to="/app/register?demo=1"
                 className="flex items-center gap-2 rounded-lg border px-7 py-3.5 text-sm backdrop-blur-sm transition-colors"
-                style={{ borderColor: "var(--border)", color: "var(--text-primary)", backgroundColor: "rgba(255,255,255,0.05)" }}
+                style={{ borderColor: "var(--border)", color: "var(--text-primary)", backgroundColor: "var(--surface-raised)" }}
               >
                 <PlayCircle size={16} strokeWidth={1.75} />
                 Guarda come funziona
@@ -315,7 +315,7 @@ export default function HomePage() {
             <Link
               to="/app/register"
               className="inline-flex items-center gap-2 rounded-lg px-8 py-3.5 text-sm font-semibold glow-accent hover:opacity-90 transition-all"
-              style={{ backgroundColor: "var(--accent)", color: "#fff" }}
+              style={{ backgroundColor: "var(--accent)", color: "var(--text-on-accent)" }}
             >
               Inizia gratis ora
               <ArrowRight size={16} strokeWidth={2} />

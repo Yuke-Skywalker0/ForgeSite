@@ -28,12 +28,11 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 border-b transition-all duration-300",
+        "sticky top-0 z-50 border-b transition-all duration-300 backdrop-blur-md",
         scrolled ? "shadow-lg shadow-black/10" : "border-transparent",
-        isDark
-          ? cn("bg-[#101512]/85 backdrop-blur-md", scrolled && "border-[#2A3830]")
-          : cn("bg-white/80 backdrop-blur-md",     scrolled && "border-[#C8E0D4]")
+        scrolled && "border-[var(--border)]"
       )}
+      style={{ backgroundColor: "var(--surface-glass)" }}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 sm:py-4">
 
@@ -45,7 +44,7 @@ export function Navbar() {
         >
           <span
             className="flex h-6 w-6 items-center justify-center rounded-md"
-            style={{ backgroundColor: "var(--accent)", color: "#fff" }}
+            style={{ backgroundColor: "var(--accent)", color: "var(--text-on-accent)" }}
             aria-hidden="true"
           >
             <Rocket size={13} strokeWidth={2.5} />
@@ -111,7 +110,7 @@ export function Navbar() {
             className="rounded-sm px-3.5 py-2 text-sm font-semibold transition-all glow-accent-sm hover:glow-accent"
             style={{
               backgroundColor: "var(--accent)",
-              color: "#fff",
+              color: "var(--text-on-accent)",
             }}
           >
             Prova gratis
@@ -168,7 +167,7 @@ export function Navbar() {
               to="/app/register"
               onClick={() => setOpen(false)}
               className="rounded-sm py-2 text-center text-sm font-semibold"
-              style={{ backgroundColor: "var(--accent)", color: "#fff" }}
+              style={{ backgroundColor: "var(--accent)", color: "var(--text-on-accent)" }}
             >
               Prova gratis
             </Link>

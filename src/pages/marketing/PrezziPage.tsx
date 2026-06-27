@@ -26,8 +26,8 @@ function PlanCard({ plan, yearly }: { plan: Plan; yearly: boolean }) {
     >
       {plan.badgeLabel && (
         <span
-          className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full px-3 py-1 text-xs font-semibold text-white"
-          style={{ backgroundColor: plan.featured ? "var(--accent)" : "var(--info)" }}
+          className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full px-3 py-1 text-xs font-semibold"
+          style={{ backgroundColor: plan.featured ? "var(--accent)" : "var(--info)", color: "var(--text-on-accent)" }}
         >
           {plan.badgeLabel}
         </span>
@@ -95,7 +95,7 @@ function PlanCard({ plan, yearly }: { plan: Plan; yearly: boolean }) {
         )}
         style={{
           backgroundColor: plan.featured ? "var(--accent)" : "var(--surface-raised)",
-          color: plan.featured ? "#fff" : "var(--text-primary)",
+          color: plan.featured ? "var(--text-on-accent)" : "var(--text-primary)",
           border: plan.featured ? "none" : `1px solid var(--border)`,
         }}
       >
@@ -145,7 +145,7 @@ export default function PrezziPage() {
                 className={cn("rounded-full px-4 py-1.5 text-sm font-medium transition-all")}
                 style={{
                   backgroundColor: !yearly ? "var(--accent)" : "transparent",
-                  color: !yearly ? "#fff" : "var(--text-secondary)",
+                  color: !yearly ? "var(--text-on-accent)" : "var(--text-secondary)",
                 }}
               >
                 Mensile
@@ -155,7 +155,7 @@ export default function PrezziPage() {
                 className="rounded-full px-4 py-1.5 text-sm font-medium transition-all flex items-center gap-1.5"
                 style={{
                   backgroundColor: yearly ? "var(--accent)" : "transparent",
-                  color: yearly ? "#fff" : "var(--text-secondary)",
+                  color: yearly ? "var(--text-on-accent)" : "var(--text-secondary)",
                 }}
               >
                 Annuale
@@ -163,7 +163,7 @@ export default function PrezziPage() {
                   className="rounded-full px-1.5 py-0.5 text-[10px] font-bold"
                   style={{
                     backgroundColor: yearly ? "rgba(255,255,255,0.25)" : "var(--accent-dim)",
-                    color: yearly ? "#fff" : "var(--accent)",
+                    color: yearly ? "var(--text-on-accent)" : "var(--accent)",
                   }}
                 >
                   -30%
@@ -237,7 +237,7 @@ export default function PrezziPage() {
             <Link
               to="/app/register"
               className="inline-flex items-center gap-2 rounded-lg px-8 py-3.5 text-sm font-semibold glow-accent-sm hover:glow-accent transition-all"
-              style={{ backgroundColor: "var(--accent)", color: "#fff" }}
+              style={{ backgroundColor: "var(--accent)", color: "var(--text-on-accent)" }}
             >
               Accedi alla demo gratuita
               <ArrowRight size={16} strokeWidth={2} />
