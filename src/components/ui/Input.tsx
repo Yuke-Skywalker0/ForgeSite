@@ -22,7 +22,6 @@ export function Input({ label, error, id, className, ...props }: InputProps) {
           backgroundColor: "var(--surface-raised)",
           border: `1px solid ${error ? "#EF4444" : "var(--border)"}`,
           color: "var(--text-primary)",
-          focusRingColor: "var(--accent)",
         }}
         aria-invalid={Boolean(error)}
         {...props}

@@ -68,6 +68,7 @@ export function GalaxyCanvas({ starCount = 180, nebulaOpacity = 0.16, className 
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
+    const context = ctx;
 
     let W = canvas.offsetWidth || 800;
     let H = canvas.offsetHeight || 400;
@@ -107,7 +108,7 @@ export function GalaxyCanvas({ starCount = 180, nebulaOpacity = 0.16, className 
       if (!visibleRef.current) { rafRef.current = requestAnimationFrame(draw); return; }
       if (!reduced) t += 1;
 
-      ctx.clearRect(0, 0, W, H);
+      context.clearRect(0, 0, W, H);
 
       const mx = reduced ? 0 : mouseRef.current.x * 18;
       const my = reduced ? 0 : mouseRef.current.y * 12;
@@ -117,14 +118,14 @@ export function GalaxyCanvas({ starCount = 180, nebulaOpacity = 0.16, className 
       nebulae.forEach((n) => {
         const nx = n.x + mx * 0.3;
         const ny = n.y + my * 0.3 - sy * 0.4;
-        const g  = ctx.createRadialGradient(nx, ny, 0, nx, ny, n.radius);
+        const g  = context.createRadialGradient(nx, ny, 0, nx, ny, n.radius);
         g.addColorStop(0,   `rgba(${n.color},${nebulaAlpha})`);
         g.addColorStop(0.5, `rgba(${n.color},${nebulaAlpha * 0.4})`);
         g.addColorStop(1,   `rgba(${n.color},0)`);
-        ctx.fillStyle = g;
-        ctx.beginPath();
-        ctx.arc(nx, ny, n.radius, 0, Math.PI * 2);
-        ctx.fill();
+        context.fillStyle = g;
+        context.beginPath();
+        context.arc(nx, ny, n.radius, 0, Math.PI * 2);
+        context.fill();
       });
 
       // Stelle
@@ -135,26 +136,26 @@ export function GalaxyCanvas({ starCount = 180, nebulaOpacity = 0.16, className 
         const ci = Math.floor(s.z * palette.length) % palette.length;
         const col = palette[ci] ?? palette[0]!;
 
-        ctx.globalAlpha = tw * starAlpha;
-        ctx.fillStyle   = `rgba(${col},1)`;
-        ctx.beginPath();
-        ctx.arc(px, py, s.r, 0, Math.PI * 2);
-        ctx.fill();
+        context.globalAlpha = tw * starAlpha;
+        context.fillStyle   = `rgba(${col},1)`;
+        context.beginPath();
+        context.arc(px, py, s.r, 0, Math.PI * 2);
+        context.fill();
 
         // Alone per stelle grandi
         if (s.r > 1.1) {
-          const glow = ctx.createRadialGradient(px, py, 0, px, py, s.r * 4);
+          const glow = context.createRadialGradient(px, py, 0, px, py, s.r * 4);
           glow.addColorStop(0, `rgba(${col},${(tw * 0.3).toFixed(2)})`);
           glow.addColorStop(1, `rgba(${col},0)`);
-          ctx.globalAlpha = 1;
-          ctx.fillStyle   = glow;
-          ctx.beginPath();
-          ctx.arc(px, py, s.r * 4, 0, Math.PI * 2);
-          ctx.fill();
+          context.globalAlpha = 1;
+          context.fillStyle   = glow;
+          context.beginPath();
+          context.arc(px, py, s.r * 4, 0, Math.PI * 2);
+          context.fill();
         }
       });
 
-      ctx.globalAlpha = 1;
+      context.globalAlpha = 1;
       rafRef.current  = requestAnimationFrame(draw);
     }
 

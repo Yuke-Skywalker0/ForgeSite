@@ -25,10 +25,6 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const navBg = isDark
-    ? "bg-forge-bg/85 dark:border-forge-border"
-    : "bg-white/80";
-
   return (
     <header
       className={cn(

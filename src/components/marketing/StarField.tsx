@@ -14,6 +14,7 @@ export function StarField({ count = 60, className = "" }: StarFieldProps) {
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
+    const context = ctx;
 
     const W = canvas.offsetWidth || 800;
     const H = canvas.offsetHeight || 200;
@@ -35,17 +36,17 @@ export function StarField({ count = 60, className = "" }: StarFieldProps) {
 
     let t = 0;
     function draw() {
-      ctx.clearRect(0, 0, W, H);
+      context.clearRect(0, 0, W, H);
       if (!reduced) t += 1;
       pts.forEach((p) => {
         const a = reduced ? p.o : p.o * (0.6 + 0.4 * Math.sin(t * p.sp + p.ph));
-        ctx.globalAlpha = a;
-        ctx.fillStyle   = `rgb(${col})`;
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fill();
+        context.globalAlpha = a;
+        context.fillStyle   = `rgb(${col})`;
+        context.beginPath();
+        context.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        context.fill();
       });
-      ctx.globalAlpha = 1;
+      context.globalAlpha = 1;
       rafRef.current  = requestAnimationFrame(draw);
     }
 

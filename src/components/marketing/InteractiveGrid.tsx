@@ -19,6 +19,7 @@ export function InteractiveGrid({ className = "" }: { className?: string }) {
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
+    const context = ctx;
 
     let W = canvas.offsetWidth || 800;
     let H = canvas.offsetHeight || 400;
@@ -54,7 +55,7 @@ export function InteractiveGrid({ className = "" }: { className?: string }) {
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     function draw() {
-      ctx.clearRect(0, 0, W, H);
+      context.clearRect(0, 0, W, H);
 
       const { x: mx, y: my } = mouseRef.current;
 
@@ -78,15 +79,15 @@ export function InteractiveGrid({ className = "" }: { className?: string }) {
           const col   = influence > 0.1 ? activeColor : baseColor;
           const r     = RADIUS + influence * 2;
 
-          ctx.globalAlpha = alpha;
-          ctx.fillStyle   = `rgb(${col})`;
-          ctx.beginPath();
-          ctx.arc(px, py, r, 0, Math.PI * 2);
-          ctx.fill();
+          context.globalAlpha = alpha;
+          context.fillStyle   = `rgb(${col})`;
+          context.beginPath();
+          context.arc(px, py, r, 0, Math.PI * 2);
+          context.fill();
         }
       }
 
-      ctx.globalAlpha = 1;
+      context.globalAlpha = 1;
       rafRef.current  = requestAnimationFrame(draw);
     }
 
