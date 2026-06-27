@@ -22,27 +22,12 @@ export function TemplateDetailModal({ template, onClose, onUse }: TemplateDetail
       onClick={onClose}
     >
       <div
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-        className="flex max-h-[85vh] w-full max-w-2xl flex-col overflow-hidden rounded-lg border border-forge-border bg-forge-surface"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <div className="flex items-center justify-between border-b border-forge-border px-5 py-3.5">
-          <h2 className="font-display text-sm font-medium text-forge-text-primary">{template.name}</h2>
-          <button onClick={onClose} aria-label="Chiudi" className="text-forge-text-secondary hover:text-forge-text-primary">
-=======
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
         className="flex max-h-[85vh] w-full max-w-2xl flex-col overflow-hidden rounded-lg border border-[var(--border)] bg-[var(--surface)]"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-center justify-between border-b border-[var(--border)] px-5 py-3.5">
           <h2 className="font-display text-sm font-medium text-[var(--text-primary)]">{template.name}</h2>
           <button onClick={onClose} aria-label="Chiudi" className="text-[var(--text-secondary)] hover:text-[var(--text-primary)]">
-<<<<<<< HEAD
-=======
->>>>>>> 06d1697 (versione 4 frontend quasi finale)
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
             <X size={18} strokeWidth={1.75} />
           </button>
         </div>
@@ -61,21 +46,6 @@ export function TemplateDetailModal({ template, onClose, onUse }: TemplateDetail
             </svg>
           </div>
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-          <span className="mb-2 inline-block font-mono text-xs uppercase tracking-wide text-forge-accent-soft">
-            {categoryLabel}
-          </span>
-          <p className="mb-5 text-sm text-forge-text-secondary">{template.description}</p>
-
-          <h3 className="mb-2 text-xs font-medium uppercase tracking-wide text-forge-text-muted">Pagine incluse</h3>
-          <ul className="mb-2 flex flex-col gap-1.5">
-            {template.pages.map((page) => (
-              <li key={page} className="flex items-center gap-2 text-sm text-forge-text-secondary">
-                <Check size={13} className="text-forge-accent" strokeWidth={2.5} />
-=======
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
           <span className="mb-2 inline-block font-mono text-xs uppercase tracking-wide text-[var(--accent-soft)]">
             {categoryLabel}
           </span>
@@ -86,25 +56,13 @@ export function TemplateDetailModal({ template, onClose, onUse }: TemplateDetail
             {template.pages.map((page) => (
               <li key={page} className="flex items-center gap-2 text-sm text-[var(--text-secondary)]">
                 <Check size={13} className="text-[var(--accent)]" strokeWidth={2.5} />
-<<<<<<< HEAD
-=======
->>>>>>> 06d1697 (versione 4 frontend quasi finale)
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
                 {page}
               </li>
             ))}
           </ul>
         </div>
 
-<<<<<<< HEAD
         <div className="flex justify-end gap-2.5 border-t border-[var(--border)] px-5 py-4">
-=======
-<<<<<<< HEAD
-        <div className="flex justify-end gap-2.5 border-t border-forge-border px-5 py-4">
-=======
-        <div className="flex justify-end gap-2.5 border-t border-[var(--border)] px-5 py-4">
->>>>>>> 06d1697 (versione 4 frontend quasi finale)
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
           <Button variant="ghost" onClick={onClose}>
             Annulla
           </Button>

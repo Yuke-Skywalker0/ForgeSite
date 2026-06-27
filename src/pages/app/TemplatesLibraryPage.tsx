@@ -33,15 +33,7 @@ export default function TemplatesLibraryPage() {
   }, [search, activeCategory]);
 
   if (isChecking) {
-<<<<<<< HEAD
     return <div className="flex min-h-screen items-center justify-center text-sm text-[var(--text-muted)]">Verifica sessione…</div>;
-=======
-<<<<<<< HEAD
-    return <div className="flex min-h-screen items-center justify-center text-sm text-forge-text-muted">Verifica sessione…</div>;
-=======
-    return <div className="flex min-h-screen items-center justify-center text-sm text-[var(--text-muted)]">Verifica sessione…</div>;
->>>>>>> 06d1697 (versione 4 frontend quasi finale)
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
   }
 
   function handleUseTemplate(template: Template) {
@@ -58,18 +50,8 @@ export default function TemplatesLibraryPage() {
         <div className="mx-auto max-w-6xl">
           <div className="mb-6 flex flex-wrap items-start justify-between gap-4">
             <div>
-<<<<<<< HEAD
               <h1 className="mb-1 font-display text-2xl font-semibold text-[var(--text-primary)]">Libreria template</h1>
               <p className="text-sm text-[var(--text-secondary)]">
-=======
-<<<<<<< HEAD
-              <h1 className="mb-1 font-display text-2xl font-semibold text-forge-text-primary">Libreria template</h1>
-              <p className="text-sm text-forge-text-secondary">
-=======
-              <h1 className="mb-1 font-display text-2xl font-semibold text-[var(--text-primary)]">Libreria template</h1>
-              <p className="text-sm text-[var(--text-secondary)]">
->>>>>>> 06d1697 (versione 4 frontend quasi finale)
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
                 {templates.length} template pronti per ogni tipo di attività. Scegline uno o importa un tuo tema.
               </p>
             </div>
@@ -95,18 +77,8 @@ export default function TemplatesLibraryPage() {
               className={cn(
                 "rounded-full border px-3 py-1.5 text-xs font-medium transition-colors",
                 activeCategory === "all"
-<<<<<<< HEAD
                   ? "border-[var(--accent)] bg-[var(--accent-dim)] text-[var(--accent-soft)]"
                   : "border-[var(--border)] text-[var(--text-secondary)] hover:border-[var(--accent)]/40"
-=======
-<<<<<<< HEAD
-                  ? "border-forge-accent bg-forge-accent-dim text-forge-accent-soft"
-                  : "border-forge-border text-forge-text-secondary hover:border-forge-accent/40"
-=======
-                  ? "border-[var(--accent)] bg-[var(--accent-dim)] text-[var(--accent-soft)]"
-                  : "border-[var(--border)] text-[var(--text-secondary)] hover:border-[var(--accent)]/40"
->>>>>>> 06d1697 (versione 4 frontend quasi finale)
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
               )}
             >
               Tutti
@@ -118,18 +90,8 @@ export default function TemplatesLibraryPage() {
                 className={cn(
                   "rounded-full border px-3 py-1.5 text-xs font-medium transition-colors",
                   activeCategory === cat.id
-<<<<<<< HEAD
                     ? "border-[var(--accent)] bg-[var(--accent-dim)] text-[var(--accent-soft)]"
                     : "border-[var(--border)] text-[var(--text-secondary)] hover:border-[var(--accent)]/40"
-=======
-<<<<<<< HEAD
-                    ? "border-forge-accent bg-forge-accent-dim text-forge-accent-soft"
-                    : "border-forge-border text-forge-text-secondary hover:border-forge-accent/40"
-=======
-                    ? "border-[var(--accent)] bg-[var(--accent-dim)] text-[var(--accent-soft)]"
-                    : "border-[var(--border)] text-[var(--text-secondary)] hover:border-[var(--accent)]/40"
->>>>>>> 06d1697 (versione 4 frontend quasi finale)
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
                 )}
               >
                 {cat.label}
@@ -138,21 +100,9 @@ export default function TemplatesLibraryPage() {
           </div>
 
           {filtered.length === 0 ? (
-<<<<<<< HEAD
             <div className="flex flex-col items-center gap-2 rounded-md border border-dashed border-[var(--border)] py-16 text-center">
               <Search size={20} className="text-[var(--text-muted)]" strokeWidth={1.5} />
               <p className="text-sm text-[var(--text-secondary)]">Nessun template trovato per questa ricerca.</p>
-=======
-<<<<<<< HEAD
-            <div className="flex flex-col items-center gap-2 rounded-md border border-dashed border-forge-border py-16 text-center">
-              <Search size={20} className="text-forge-text-muted" strokeWidth={1.5} />
-              <p className="text-sm text-forge-text-secondary">Nessun template trovato per questa ricerca.</p>
-=======
-            <div className="flex flex-col items-center gap-2 rounded-md border border-dashed border-[var(--border)] py-16 text-center">
-              <Search size={20} className="text-[var(--text-muted)]" strokeWidth={1.5} />
-              <p className="text-sm text-[var(--text-secondary)]">Nessun template trovato per questa ricerca.</p>
->>>>>>> 06d1697 (versione 4 frontend quasi finale)
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
             </div>
           ) : (
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">

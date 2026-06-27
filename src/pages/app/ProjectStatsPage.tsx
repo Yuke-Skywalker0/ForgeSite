@@ -57,15 +57,7 @@ export default function ProjectStatsPage() {
   const [newValue, setNewValue] = useState("");
   const [saving, setSaving] = useState(false);
 
-<<<<<<< HEAD
   if (isChecking) return <div className="flex min-h-screen items-center justify-center text-sm text-[var(--text-muted)]">Verifica sessione…</div>;
-=======
-<<<<<<< HEAD
-  if (isChecking) return <div className="flex min-h-screen items-center justify-center text-sm text-forge-text-muted">Verifica sessione…</div>;
-=======
-  if (isChecking) return <div className="flex min-h-screen items-center justify-center text-sm text-[var(--text-muted)]">Verifica sessione…</div>;
->>>>>>> 06d1697 (versione 4 frontend quasi finale)
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
   if (!projectId) return null;
 
   function handleAdd() {
@@ -96,18 +88,8 @@ export default function ProjectStatsPage() {
       <AppShell>
         <div className="mx-auto max-w-4xl">
           <div className="mb-6">
-<<<<<<< HEAD
             <h1 className="mb-1 font-display text-2xl font-semibold text-[var(--text-primary)]">Statistiche e clic</h1>
             <p className="text-sm text-[var(--text-secondary)]">
-=======
-<<<<<<< HEAD
-            <h1 className="mb-1 font-display text-2xl font-semibold text-forge-text-primary">Statistiche e clic</h1>
-            <p className="text-sm text-forge-text-secondary">
-=======
-            <h1 className="mb-1 font-display text-2xl font-semibold text-[var(--text-primary)]">Statistiche e clic</h1>
-            <p className="text-sm text-[var(--text-secondary)]">
->>>>>>> 06d1697 (versione 4 frontend quasi finale)
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
               Configura quali azioni del sito vuoi tracciare. Le preferenze vengono salvate nel backend del tuo progetto.
             </p>
           </div>
@@ -120,35 +102,15 @@ export default function ProjectStatsPage() {
 
           <div className="mb-8 flex flex-col gap-4">
             <div className="flex items-center justify-between">
-<<<<<<< HEAD
               <h2 className="font-display text-sm font-medium text-[var(--text-primary)]">Clic per azione</h2>
-=======
-<<<<<<< HEAD
-              <h2 className="font-display text-sm font-medium text-forge-text-primary">Clic per azione</h2>
-=======
-              <h2 className="font-display text-sm font-medium text-[var(--text-primary)]">Clic per azione</h2>
->>>>>>> 06d1697 (versione 4 frontend quasi finale)
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
               <MockDataBadge />
             </div>
             {mockClickStats.map((stat) => (
               <Card key={stat.id} className="flex items-center gap-4">
                 <div className="flex-1">
-<<<<<<< HEAD
                   <p className="mb-1 text-sm text-[var(--text-primary)]">{stat.label}</p>
                   <p className="font-display text-xl font-semibold text-[var(--accent-soft)]">{stat.clicks}</p>
                   <p className="text-xs text-[var(--text-muted)]">clic nelle ultime 2 settimane</p>
-=======
-<<<<<<< HEAD
-                  <p className="mb-1 text-sm text-forge-text-primary">{stat.label}</p>
-                  <p className="font-display text-xl font-semibold text-forge-accent-soft">{stat.clicks}</p>
-                  <p className="text-xs text-forge-text-muted">clic nelle ultime 2 settimane</p>
-=======
-                  <p className="mb-1 text-sm text-[var(--text-primary)]">{stat.label}</p>
-                  <p className="font-display text-xl font-semibold text-[var(--accent-soft)]">{stat.clicks}</p>
-                  <p className="text-xs text-[var(--text-muted)]">clic nelle ultime 2 settimane</p>
->>>>>>> 06d1697 (versione 4 frontend quasi finale)
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
                 </div>
                 <div className="w-40">
                   <MiniLineChart data={stat.trend} height={48} />
@@ -159,15 +121,7 @@ export default function ProjectStatsPage() {
 
           <div className="flex flex-col gap-4">
             <div className="flex items-center justify-between">
-<<<<<<< HEAD
               <h2 className="font-display text-sm font-medium text-[var(--text-primary)]">Azioni tracciate</h2>
-=======
-<<<<<<< HEAD
-              <h2 className="font-display text-sm font-medium text-forge-text-primary">Azioni tracciate</h2>
-=======
-              <h2 className="font-display text-sm font-medium text-[var(--text-primary)]">Azioni tracciate</h2>
->>>>>>> 06d1697 (versione 4 frontend quasi finale)
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
               <Button variant="secondary" onClick={() => setShowAddForm(true)}>
                 <Plus size={14} strokeWidth={2} />
                 Aggiungi
@@ -178,56 +132,25 @@ export default function ProjectStatsPage() {
               const Icon = clickTypeIcons[tracker.type];
               return (
                 <Card key={tracker.id} className="flex items-center gap-3">
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-                  <div className="flex h-9 w-9 flex-none items-center justify-center rounded-md bg-forge-surface-raised">
-                    <Icon size={16} className="text-forge-text-secondary" strokeWidth={1.75} />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <p className="text-sm font-medium text-forge-text-primary">{tracker.label}</p>
-                    <p className="truncate text-xs text-forge-text-muted">{tracker.value}</p>
-=======
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
                   <div className="flex h-9 w-9 flex-none items-center justify-center rounded-md bg-[var(--surface-raised)]">
                     <Icon size={16} className="text-[var(--text-secondary)]" strokeWidth={1.75} />
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="text-sm font-medium text-[var(--text-primary)]">{tracker.label}</p>
                     <p className="truncate text-xs text-[var(--text-muted)]">{tracker.value}</p>
-<<<<<<< HEAD
-=======
->>>>>>> 06d1697 (versione 4 frontend quasi finale)
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
                   </div>
                   <Badge variant={tracker.enabled ? "success" : "neutral"}>
                     {tracker.enabled ? "Attivo" : "Disabilitato"}
                   </Badge>
                   <button
                     onClick={() => setTrackers((t) => t.map((x) => x.id === tracker.id ? { ...x, enabled: !x.enabled } : x))}
-<<<<<<< HEAD
                     className="text-xs text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
-=======
-<<<<<<< HEAD
-                    className="text-xs text-forge-text-secondary hover:text-forge-text-primary"
-=======
-                    className="text-xs text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
->>>>>>> 06d1697 (versione 4 frontend quasi finale)
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
                   >
                     {tracker.enabled ? "Disabilita" : "Abilita"}
                   </button>
                   <button
                     onClick={() => setTrackers((t) => t.filter((x) => x.id !== tracker.id))}
-<<<<<<< HEAD
                     className="text-[var(--text-muted)] hover:text-[#EF4444]"
-=======
-<<<<<<< HEAD
-                    className="text-forge-text-muted hover:text-forge-danger"
-=======
-                    className="text-[var(--text-muted)] hover:text-[#EF4444]"
->>>>>>> 06d1697 (versione 4 frontend quasi finale)
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
                     aria-label="Rimuovi"
                   >
                     <Trash2 size={14} strokeWidth={1.75} />
@@ -238,18 +161,6 @@ export default function ProjectStatsPage() {
 
             {showAddForm && (
               <Card className="flex flex-col gap-3">
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-                <h3 className="font-display text-sm font-medium text-forge-text-primary">Nuova azione da tracciare</h3>
-                <div className="flex flex-col gap-1.5">
-                  <label className="text-sm text-forge-text-secondary">Tipo di azione</label>
-                  <select
-                    value={newType}
-                    onChange={(e) => setNewType(e.target.value as ClickType)}
-                    className="rounded-sm border border-forge-border bg-forge-surface-raised px-3 py-2 text-sm text-forge-text-primary"
-=======
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
                 <h3 className="font-display text-sm font-medium text-[var(--text-primary)]">Nuova azione da tracciare</h3>
                 <div className="flex flex-col gap-1.5">
                   <label className="text-sm text-[var(--text-secondary)]">Tipo di azione</label>
@@ -257,10 +168,6 @@ export default function ProjectStatsPage() {
                     value={newType}
                     onChange={(e) => setNewType(e.target.value as ClickType)}
                     className="rounded-sm border border-[var(--border)] bg-[var(--surface-raised)] px-3 py-2 text-sm text-[var(--text-primary)]"
-<<<<<<< HEAD
-=======
->>>>>>> 06d1697 (versione 4 frontend quasi finale)
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
                   >
                     {(Object.keys(clickTypeLabels) as ClickType[]).map((type) => (
                       <option key={type} value={type}>{clickTypeLabels[type]}</option>

@@ -35,46 +35,19 @@ export default function LoginPage() {
         path="/app/login"
         indexable={false}
       />
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-      <div className="flex min-h-screen items-center justify-center bg-forge-bg px-4">
-        <div className="w-full max-w-sm">
-          <Link to="/" className="mb-8 flex items-center gap-2">
-            <span className="h-2 w-2 rounded-full bg-forge-accent" aria-hidden="true" />
-            <span className="font-display text-lg font-semibold text-forge-text-primary">
-=======
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
       <div className="flex min-h-screen items-center justify-center bg-[var(--bg)] px-4">
         <div className="w-full max-w-sm">
           <Link to="/" className="mb-8 flex items-center gap-2">
             <span className="h-2 w-2 rounded-full bg-[var(--accent)]" aria-hidden="true" />
             <span className="font-display text-lg font-semibold text-[var(--text-primary)]">
-<<<<<<< HEAD
-=======
->>>>>>> 06d1697 (versione 4 frontend quasi finale)
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
               ForgeSite
             </span>
           </Link>
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-          <h1 className="mb-1 font-display text-2xl font-semibold text-forge-text-primary">
-            Accedi
-          </h1>
-          <p className="mb-6 text-sm text-forge-text-secondary">
-=======
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
           <h1 className="mb-1 font-display text-2xl font-semibold text-[var(--text-primary)]">
             Accedi
           </h1>
           <p className="mb-6 text-sm text-[var(--text-secondary)]">
-<<<<<<< HEAD
-=======
->>>>>>> 06d1697 (versione 4 frontend quasi finale)
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
             Gestisci i tuoi siti senza scrivere codice.
           </p>
 
@@ -97,15 +70,7 @@ export default function LoginPage() {
             />
 
             {formError && (
-<<<<<<< HEAD
               <p role="alert" className="text-sm text-[#EF4444]">
-=======
-<<<<<<< HEAD
-              <p role="alert" className="text-sm text-forge-danger">
-=======
-              <p role="alert" className="text-sm text-[#EF4444]">
->>>>>>> 06d1697 (versione 4 frontend quasi finale)
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
                 {formError}
               </p>
             )}
@@ -115,21 +80,9 @@ export default function LoginPage() {
             </Button>
           </form>
 
-<<<<<<< HEAD
           <p className="mt-6 text-center text-sm text-[var(--text-secondary)]">
             Non hai un account?{" "}
             <Link to="/app/register" className="text-[var(--accent-soft)] hover:underline">
-=======
-<<<<<<< HEAD
-          <p className="mt-6 text-center text-sm text-forge-text-secondary">
-            Non hai un account?{" "}
-            <Link to="/app/register" className="text-forge-accent-soft hover:underline">
-=======
-          <p className="mt-6 text-center text-sm text-[var(--text-secondary)]">
-            Non hai un account?{" "}
-            <Link to="/app/register" className="text-[var(--accent-soft)] hover:underline">
->>>>>>> 06d1697 (versione 4 frontend quasi finale)
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
               Registrati
             </Link>
           </p>

@@ -19,23 +19,10 @@ const comparisonRows: Array<{ feature: string; forgesite: CellValue; wix: CellVa
 ];
 
 function Cell({ value }: { value: CellValue }) {
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-  if (value === "yes") return <Check size={16} className="text-forge-accent" strokeWidth={2.5} />;
-  if (value === "no") return <X size={16} className="text-forge-text-muted" strokeWidth={2} />;
-  if (value === "partial") return <Minus size={16} className="text-forge-warning" strokeWidth={2.5} />;
-  return <span className="text-xs text-forge-text-secondary">{value}</span>;
-=======
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
   if (value === "yes") return <Check size={16} className="text-[var(--accent)]" strokeWidth={2.5} />;
   if (value === "no") return <X size={16} className="text-[var(--text-muted)]" strokeWidth={2} />;
   if (value === "partial") return <Minus size={16} className="text-[#F59E0B]" strokeWidth={2.5} />;
   return <span className="text-xs text-[var(--text-secondary)]">{value}</span>;
-<<<<<<< HEAD
-=======
->>>>>>> 06d1697 (versione 4 frontend quasi finale)
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
 }
 
 export default function ConfrontoPage() {
@@ -48,18 +35,6 @@ export default function ConfrontoPage() {
       />
 
       <section className="px-6 pb-16 pt-24 text-center">
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-        <span className="mb-5 inline-block font-mono text-xs uppercase tracking-wider text-forge-accent-soft">
-          Confronto
-        </span>
-        <h1 className="mx-auto mb-5 max-w-2xl font-display text-4xl font-semibold leading-tight text-forge-text-primary">
-          Perché scegliere ForgeSite — <span className="text-forge-accent-soft">e quando invece no</span>
-        </h1>
-        <p className="mx-auto max-w-xl text-forge-text-secondary">
-=======
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
         <span className="mb-5 inline-block font-mono text-xs uppercase tracking-wider text-[var(--accent-soft)]">
           Confronto
         </span>
@@ -67,10 +42,6 @@ export default function ConfrontoPage() {
           Perché scegliere ForgeSite — <span className="text-[var(--accent-soft)]">e quando invece no</span>
         </h1>
         <p className="mx-auto max-w-xl text-[var(--text-secondary)]">
-<<<<<<< HEAD
-=======
->>>>>>> 06d1697 (versione 4 frontend quasi finale)
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
           Un confronto onesto. ForgeSite non è la scelta giusta per tutti: ecco dove vince
           davvero, e dove altre strade possono avere più senso per te.
         </p>
@@ -78,45 +49,20 @@ export default function ConfrontoPage() {
 
       <section className="px-6 pb-20">
         <Reveal>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-          <div className="mx-auto max-w-4xl overflow-x-auto rounded-md border border-forge-border">
-            <table className="w-full min-w-[640px] text-left text-sm">
-              <thead>
-                <tr className="border-b border-forge-border bg-forge-surface text-xs uppercase tracking-wide text-forge-text-muted">
-                  <th className="px-4 py-3 font-medium">Caratteristica</th>
-                  <th className="px-4 py-3 text-center font-medium text-forge-accent-soft">ForgeSite</th>
-=======
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
           <div className="mx-auto max-w-4xl overflow-x-auto rounded-md border border-[var(--border)]">
             <table className="w-full min-w-[640px] text-left text-sm">
               <thead>
                 <tr className="border-b border-[var(--border)] bg-[var(--surface)] text-xs uppercase tracking-wide text-[var(--text-muted)]">
                   <th className="px-4 py-3 font-medium">Caratteristica</th>
                   <th className="px-4 py-3 text-center font-medium text-[var(--accent-soft)]">ForgeSite</th>
-<<<<<<< HEAD
-=======
->>>>>>> 06d1697 (versione 4 frontend quasi finale)
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
                   <th className="px-4 py-3 text-center font-medium">Page builder tradizionali</th>
                   <th className="px-4 py-3 text-center font-medium">Sviluppo da zero</th>
                 </tr>
               </thead>
               <tbody>
                 {comparisonRows.map((row) => (
-<<<<<<< HEAD
                   <tr key={row.feature} className="border-b border-[var(--border)] last:border-0">
                     <td className="px-4 py-3 ">{row.feature}</td>
-=======
-<<<<<<< HEAD
-                  <tr key={row.feature} className="border-b border-forge-border last:border-0">
-                    <td className="px-4 py-3 text-forge-text-primary">{row.feature}</td>
-=======
-                  <tr key={row.feature} className="border-b border-[var(--border)] last:border-0">
-                    <td className="px-4 py-3 ">{row.feature}</td>
->>>>>>> 06d1697 (versione 4 frontend quasi finale)
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
                     <td className="px-4 py-3 text-center">
                       <div className="flex justify-center">
                         <Cell value={row.forgesite} />
@@ -140,19 +86,6 @@ export default function ConfrontoPage() {
         </Reveal>
       </section>
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-      <section className="bg-forge-surface px-6 py-20">
-        <div className="mx-auto grid max-w-4xl grid-cols-1 gap-5 sm:grid-cols-2">
-          <Reveal>
-            <div className="rounded-md border border-forge-border bg-forge-bg p-6">
-              <h2 className="mb-2 font-display text-base font-semibold text-forge-text-primary">
-                Scegli ForgeSite se...
-              </h2>
-              <p className="text-sm text-forge-text-secondary">
-=======
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
       <section className="bg-[var(--surface)] px-6 py-20">
         <div className="mx-auto grid max-w-4xl grid-cols-1 gap-5 sm:grid-cols-2">
           <Reveal>
@@ -161,10 +94,6 @@ export default function ConfrontoPage() {
                 Scegli ForgeSite se...
               </h2>
               <p className="text-sm text-[var(--text-secondary)]">
-<<<<<<< HEAD
-=======
->>>>>>> 06d1697 (versione 4 frontend quasi finale)
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
                 Vuoi un sito veloce da pubblicare ma non vuoi essere bloccato dentro una
                 piattaforma proprietaria, ti interessa avere il controllo reale del codice
                 sorgente, e i tuoi bisogni vanno oltre il semplice sito vetrina (magari in
@@ -173,25 +102,11 @@ export default function ConfrontoPage() {
             </div>
           </Reveal>
           <Reveal delay={120}>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-            <div className="rounded-md border border-forge-border bg-forge-bg p-6">
-              <h2 className="mb-2 font-display text-base font-semibold text-forge-text-primary">
-                Valuta altre strade se...
-              </h2>
-              <p className="text-sm text-forge-text-secondary">
-=======
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
             <div className="rounded-md border border-[var(--border)] bg-[var(--bg)] p-6">
               <h2 className="mb-2 font-display text-base font-semibold ">
                 Valuta altre strade se...
               </h2>
               <p className="text-sm text-[var(--text-secondary)]">
-<<<<<<< HEAD
-=======
->>>>>>> 06d1697 (versione 4 frontend quasi finale)
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
                 Hai bisogno di funzionalità e-commerce molto specifiche già pronte da un
                 marketplace di plugin maturo, oppure il tuo progetto richiede un'infrastruttura
                 server complessa fin dal primo giorno che va oltre quello che un sito
@@ -204,28 +119,12 @@ export default function ConfrontoPage() {
 
       <section className="relative overflow-hidden px-6 py-20 text-center">
         <StarField count={50} className="absolute inset-0 h-full w-full opacity-40" />
-<<<<<<< HEAD
         <h2 className="mx-auto mb-7 max-w-lg font-display text-3xl font-semibold ">
-=======
-<<<<<<< HEAD
-        <h2 className="mx-auto mb-7 max-w-lg font-display text-3xl font-semibold text-forge-text-primary">
-=======
-        <h2 className="mx-auto mb-7 max-w-lg font-display text-3xl font-semibold ">
->>>>>>> 06d1697 (versione 4 frontend quasi finale)
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
           Convinto? Inizia gratis, senza carta di credito.
         </h2>
         <Link
           to="/app/register"
-<<<<<<< HEAD
           className="inline-block rounded-sm bg-[var(--accent)] px-8 py-3.5 text-sm font-medium text-white hover:bg-[var(--accent-soft)]"
-=======
-<<<<<<< HEAD
-          className="inline-block rounded-sm bg-forge-accent px-8 py-3.5 text-sm font-medium text-forge-bg hover:bg-forge-accent-soft"
-=======
-          className="inline-block rounded-sm bg-[var(--accent)] px-8 py-3.5 text-sm font-medium text-white hover:bg-[var(--accent-soft)]"
->>>>>>> 06d1697 (versione 4 frontend quasi finale)
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
         >
           Crea il tuo account
         </Link>

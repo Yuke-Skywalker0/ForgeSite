@@ -1,13 +1,5 @@
 import { useEffect, useRef } from "react";
-<<<<<<< HEAD
 import { useThemeStore } from "@/store/themeStore";
-=======
-<<<<<<< HEAD
-import { useThemeStore } from "../../store/themeStore";
-=======
-import { useThemeStore } from "@/store/themeStore";
->>>>>>> 06d1697 (versione 4 frontend quasi finale)
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
 
 interface StarFieldProps { count?: number; className?: string; }
 

@@ -37,15 +37,7 @@ export function TrafficSourcesWidget({ isConnected = false }: { isConnected?: bo
   return (
     <Card className="flex flex-col gap-3">
       <div className="flex items-center justify-between">
-<<<<<<< HEAD
         <h3 className="font-display text-sm font-medium text-[var(--text-primary)]">Sorgenti di traffico</h3>
-=======
-<<<<<<< HEAD
-        <h3 className="font-display text-sm font-medium text-forge-text-primary">Sorgenti di traffico</h3>
-=======
-        <h3 className="font-display text-sm font-medium text-[var(--text-primary)]">Sorgenti di traffico</h3>
->>>>>>> 06d1697 (versione 4 frontend quasi finale)
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
         {!isConnected && <MockDataBadge />}
       </div>
       <div className="flex items-center gap-5">
@@ -54,18 +46,8 @@ export function TrafficSourcesWidget({ isConnected = false }: { isConnected?: bo
           {mockTrafficSources.map((s) => (
             <div key={s.source} className="flex items-center gap-2 text-xs">
               <span className="h-2 w-2 flex-none rounded-full" style={{ backgroundColor: s.color }} />
-<<<<<<< HEAD
               <span className="flex-1 text-[var(--text-secondary)]">{s.source}</span>
               <span className="font-mono text-[var(--text-muted)]">{s.percentage}%</span>
-=======
-<<<<<<< HEAD
-              <span className="flex-1 text-forge-text-secondary">{s.source}</span>
-              <span className="font-mono text-forge-text-muted">{s.percentage}%</span>
-=======
-              <span className="flex-1 text-[var(--text-secondary)]">{s.source}</span>
-              <span className="font-mono text-[var(--text-muted)]">{s.percentage}%</span>
->>>>>>> 06d1697 (versione 4 frontend quasi finale)
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
             </div>
           ))}
         </div>

@@ -1,15 +1,7 @@
 import type { ReactNode } from "react";
 import { cn } from "@/lib/cn";
 
-<<<<<<< HEAD
-type BadgeVariant = "neutral" | "success" | "warning" | "danger" | "accent" | "info" | "ember";
-=======
-<<<<<<< HEAD
 type BadgeVariant = "neutral" | "success" | "warning" | "danger" | "accent" | "info";
-=======
-type BadgeVariant = "neutral" | "success" | "warning" | "danger" | "accent" | "info" | "ember";
->>>>>>> 06d1697 (versione 4 frontend quasi finale)
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
 
 const variantStyles: Record<BadgeVariant, { bg: string; color: string }> = {
   neutral: { bg: "var(--surface-raised)", color: "var(--text-secondary)" },
@@ -18,14 +10,6 @@ const variantStyles: Record<BadgeVariant, { bg: string; color: string }> = {
   danger:  { bg: "rgba(239,68,68,0.12)",  color: "#EF4444" },
   accent:  { bg: "var(--accent-dim)",     color: "var(--accent)" },
   info:    { bg: "var(--info-dim)",        color: "var(--info-soft)" },
-<<<<<<< HEAD
-  ember:   { bg: "rgba(251,191,36,0.16)",  color: "var(--accent)" },
-=======
-<<<<<<< HEAD
-=======
-  ember:   { bg: "rgba(251,191,36,0.16)",  color: "var(--accent)" },
->>>>>>> 06d1697 (versione 4 frontend quasi finale)
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
 };
 
 export function Badge({ variant = "neutral", children, className }: { variant?: BadgeVariant; children: ReactNode; className?: string }) {

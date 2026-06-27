@@ -26,18 +26,8 @@ function PlanCard({ plan, yearly }: { plan: Plan; yearly: boolean }) {
     >
       {plan.badgeLabel && (
         <span
-<<<<<<< HEAD
           className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full px-3 py-1 text-xs font-semibold text-white"
           style={{ backgroundColor: plan.featured ? "var(--accent)" : "var(--info)" }}
-=======
-<<<<<<< HEAD
-          className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full px-3 py-1 text-xs font-semibold"
-          style={{ backgroundColor: plan.featured ? "var(--accent)" : "var(--info)", color: "var(--text-on-accent)" }}
-=======
-          className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full px-3 py-1 text-xs font-semibold text-white"
-          style={{ backgroundColor: plan.featured ? "var(--accent)" : "var(--info)" }}
->>>>>>> 06d1697 (versione 4 frontend quasi finale)
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
         >
           {plan.badgeLabel}
         </span>
@@ -105,15 +95,7 @@ function PlanCard({ plan, yearly }: { plan: Plan; yearly: boolean }) {
         )}
         style={{
           backgroundColor: plan.featured ? "var(--accent)" : "var(--surface-raised)",
-<<<<<<< HEAD
           color: plan.featured ? "#fff" : "var(--text-primary)",
-=======
-<<<<<<< HEAD
-          color: plan.featured ? "var(--text-on-accent)" : "var(--text-primary)",
-=======
-          color: plan.featured ? "#fff" : "var(--text-primary)",
->>>>>>> 06d1697 (versione 4 frontend quasi finale)
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
           border: plan.featured ? "none" : `1px solid var(--border)`,
         }}
       >
@@ -163,15 +145,7 @@ export default function PrezziPage() {
                 className={cn("rounded-full px-4 py-1.5 text-sm font-medium transition-all")}
                 style={{
                   backgroundColor: !yearly ? "var(--accent)" : "transparent",
-<<<<<<< HEAD
                   color: !yearly ? "#fff" : "var(--text-secondary)",
-=======
-<<<<<<< HEAD
-                  color: !yearly ? "var(--text-on-accent)" : "var(--text-secondary)",
-=======
-                  color: !yearly ? "#fff" : "var(--text-secondary)",
->>>>>>> 06d1697 (versione 4 frontend quasi finale)
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
                 }}
               >
                 Mensile
@@ -181,15 +155,7 @@ export default function PrezziPage() {
                 className="rounded-full px-4 py-1.5 text-sm font-medium transition-all flex items-center gap-1.5"
                 style={{
                   backgroundColor: yearly ? "var(--accent)" : "transparent",
-<<<<<<< HEAD
                   color: yearly ? "#fff" : "var(--text-secondary)",
-=======
-<<<<<<< HEAD
-                  color: yearly ? "var(--text-on-accent)" : "var(--text-secondary)",
-=======
-                  color: yearly ? "#fff" : "var(--text-secondary)",
->>>>>>> 06d1697 (versione 4 frontend quasi finale)
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
                 }}
               >
                 Annuale
@@ -197,15 +163,7 @@ export default function PrezziPage() {
                   className="rounded-full px-1.5 py-0.5 text-[10px] font-bold"
                   style={{
                     backgroundColor: yearly ? "rgba(255,255,255,0.25)" : "var(--accent-dim)",
-<<<<<<< HEAD
                     color: yearly ? "#fff" : "var(--accent)",
-=======
-<<<<<<< HEAD
-                    color: yearly ? "var(--text-on-accent)" : "var(--accent)",
-=======
-                    color: yearly ? "#fff" : "var(--accent)",
->>>>>>> 06d1697 (versione 4 frontend quasi finale)
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
                   }}
                 >
                   -30%
@@ -279,15 +237,7 @@ export default function PrezziPage() {
             <Link
               to="/app/register"
               className="inline-flex items-center gap-2 rounded-lg px-8 py-3.5 text-sm font-semibold glow-accent-sm hover:glow-accent transition-all"
-<<<<<<< HEAD
               style={{ backgroundColor: "var(--accent)", color: "#fff" }}
-=======
-<<<<<<< HEAD
-              style={{ backgroundColor: "var(--accent)", color: "var(--text-on-accent)" }}
-=======
-              style={{ backgroundColor: "var(--accent)", color: "#fff" }}
->>>>>>> 06d1697 (versione 4 frontend quasi finale)
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
             >
               Accedi alla demo gratuita
               <ArrowRight size={16} strokeWidth={2} />

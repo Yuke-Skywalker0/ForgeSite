@@ -38,15 +38,7 @@ export function Footer() {
             <div className="mb-3 flex items-center gap-2 font-display text-lg font-semibold" style={{ color: "var(--text-primary)" }}>
               <span
                 className="flex h-6 w-6 items-center justify-center rounded-md"
-<<<<<<< HEAD
                 style={{ backgroundColor: "var(--accent)", color: "#fff" }}
-=======
-<<<<<<< HEAD
-                style={{ backgroundColor: "var(--accent)", color: "var(--text-on-accent)" }}
-=======
-                style={{ backgroundColor: "var(--accent)", color: "#fff" }}
->>>>>>> 06d1697 (versione 4 frontend quasi finale)
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
               >
                 <Rocket size={13} strokeWidth={2.5} />
               </span>

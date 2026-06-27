@@ -29,19 +29,6 @@ export function GoogleToolCard({ tool, connectedValue, onConnect, onDisconnect }
           <div
             className={cn(
               "flex h-9 w-9 items-center justify-center rounded-md",
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-              isConnected ? "bg-forge-accent-dim" : "bg-forge-surface-raised"
-            )}
-          >
-            <Link2 size={16} className={isConnected ? "text-forge-accent-soft" : "text-forge-text-muted"} strokeWidth={1.75} />
-          </div>
-          <div>
-            <h3 className="font-display text-sm font-medium text-forge-text-primary">{tool.name}</h3>
-            <p className="text-xs text-forge-text-secondary">{tool.description}</p>
-=======
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
               isConnected ? "bg-[var(--accent-dim)]" : "bg-[var(--surface-raised)]"
             )}
           >
@@ -50,10 +37,6 @@ export function GoogleToolCard({ tool, connectedValue, onConnect, onDisconnect }
           <div>
             <h3 className="font-display text-sm font-medium text-[var(--text-primary)]">{tool.name}</h3>
             <p className="text-xs text-[var(--text-secondary)]">{tool.description}</p>
-<<<<<<< HEAD
-=======
->>>>>>> 06d1697 (versione 4 frontend quasi finale)
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
           </div>
         </div>
         <div className="flex flex-none items-center gap-3">
@@ -65,38 +48,16 @@ export function GoogleToolCard({ tool, connectedValue, onConnect, onDisconnect }
           ) : (
             <Badge variant="neutral">Non collegato</Badge>
           )}
-<<<<<<< HEAD
           <ChevronDown size={16} className={cn("text-[var(--text-muted)] transition-transform", expanded && "rotate-180")} />
-=======
-<<<<<<< HEAD
-          <ChevronDown size={16} className={cn("text-forge-text-muted transition-transform", expanded && "rotate-180")} />
-=======
-          <ChevronDown size={16} className={cn("text-[var(--text-muted)] transition-transform", expanded && "rotate-180")} />
->>>>>>> 06d1697 (versione 4 frontend quasi finale)
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
         </div>
       </button>
 
       {expanded && (
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-        <div className="border-t border-forge-border px-5 py-5">
-          {isConnected ? (
-            <div className="flex flex-col gap-3">
-              <p className="text-sm text-forge-text-secondary">
-                {tool.fieldLabel}: <span className="font-mono text-forge-text-primary">{connectedValue}</span>
-=======
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
         <div className="border-t border-[var(--border)] px-5 py-5">
           {isConnected ? (
             <div className="flex flex-col gap-3">
               <p className="text-sm text-[var(--text-secondary)]">
                 {tool.fieldLabel}: <span className="font-mono text-[var(--text-primary)]">{connectedValue}</span>
-<<<<<<< HEAD
-=======
->>>>>>> 06d1697 (versione 4 frontend quasi finale)
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
               </p>
               <Button variant="danger" onClick={onDisconnect} className="self-start">
                 Scollega
@@ -105,31 +66,13 @@ export function GoogleToolCard({ tool, connectedValue, onConnect, onDisconnect }
           ) : (
             <div className="flex flex-col gap-5">
               <div>
-<<<<<<< HEAD
                 <h4 className="mb-2 text-xs font-medium uppercase tracking-wide text-[var(--text-muted)]">
-=======
-<<<<<<< HEAD
-                <h4 className="mb-2 text-xs font-medium uppercase tracking-wide text-forge-text-muted">
-=======
-                <h4 className="mb-2 text-xs font-medium uppercase tracking-wide text-[var(--text-muted)]">
->>>>>>> 06d1697 (versione 4 frontend quasi finale)
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
                   Come ottenere {tool.fieldLabel.toLowerCase()}
                 </h4>
                 <ol className="flex flex-col gap-1.5">
                   {tool.steps.map((step, i) => (
-<<<<<<< HEAD
                     <li key={i} className="flex gap-2.5 text-sm text-[var(--text-secondary)]">
                       <span className="flex-none font-mono text-xs text-[var(--accent-soft)]">{i + 1}.</span>
-=======
-<<<<<<< HEAD
-                    <li key={i} className="flex gap-2.5 text-sm text-forge-text-secondary">
-                      <span className="flex-none font-mono text-xs text-forge-accent-soft">{i + 1}.</span>
-=======
-                    <li key={i} className="flex gap-2.5 text-sm text-[var(--text-secondary)]">
-                      <span className="flex-none font-mono text-xs text-[var(--accent-soft)]">{i + 1}.</span>
->>>>>>> 06d1697 (versione 4 frontend quasi finale)
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
                       {step}
                     </li>
                   ))}
@@ -138,30 +81,14 @@ export function GoogleToolCard({ tool, connectedValue, onConnect, onDisconnect }
                   href={tool.officialUrl}
                   target="_blank"
                   rel="noreferrer"
-<<<<<<< HEAD
                   className="mt-3 inline-flex items-center gap-1.5 text-xs text-[var(--accent-soft)] hover:underline"
-=======
-<<<<<<< HEAD
-                  className="mt-3 inline-flex items-center gap-1.5 text-xs text-forge-accent-soft hover:underline"
-=======
-                  className="mt-3 inline-flex items-center gap-1.5 text-xs text-[var(--accent-soft)] hover:underline"
->>>>>>> 06d1697 (versione 4 frontend quasi finale)
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
                 >
                   Apri {tool.officialUrlLabel}
                   <ExternalLink size={11} strokeWidth={1.75} />
                 </a>
               </div>
 
-<<<<<<< HEAD
               <div className="flex flex-col gap-2 border-t border-[var(--border)] pt-4 sm:flex-row sm:items-end">
-=======
-<<<<<<< HEAD
-              <div className="flex flex-col gap-2 border-t border-forge-border pt-4 sm:flex-row sm:items-end">
-=======
-              <div className="flex flex-col gap-2 border-t border-[var(--border)] pt-4 sm:flex-row sm:items-end">
->>>>>>> 06d1697 (versione 4 frontend quasi finale)
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
                 <div className="flex-1">
                   <Input
                     label={tool.fieldLabel}

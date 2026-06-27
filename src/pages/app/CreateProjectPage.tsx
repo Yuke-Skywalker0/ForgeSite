@@ -28,15 +28,7 @@ export default function CreateProjectPage() {
   const createProject = useCreateProject();
 
   if (isChecking) {
-<<<<<<< HEAD
     return <div className="flex min-h-screen items-center justify-center text-sm text-[var(--text-muted)]">Verifica sessione…</div>;
-=======
-<<<<<<< HEAD
-    return <div className="flex min-h-screen items-center justify-center text-sm text-forge-text-muted">Verifica sessione…</div>;
-=======
-    return <div className="flex min-h-screen items-center justify-center text-sm text-[var(--text-muted)]">Verifica sessione…</div>;
->>>>>>> 06d1697 (versione 4 frontend quasi finale)
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
   }
 
   function handleStepOneSubmit(e: FormEvent) {
@@ -61,18 +53,8 @@ export default function CreateProjectPage() {
       <Seo title="Nuovo progetto — ForgeSite" description="" path="/app/projects/new" indexable={false} />
       <AppShell>
         <div className="mx-auto max-w-2xl">
-<<<<<<< HEAD
           <h1 className="mb-1 font-display text-2xl font-semibold text-[var(--text-primary)]">Nuovo progetto</h1>
           <p className="mb-8 text-sm text-[var(--text-secondary)]">Passo {step} di 3</p>
-=======
-<<<<<<< HEAD
-          <h1 className="mb-1 font-display text-2xl font-semibold text-forge-text-primary">Nuovo progetto</h1>
-          <p className="mb-8 text-sm text-forge-text-secondary">Passo {step} di 3</p>
-=======
-          <h1 className="mb-1 font-display text-2xl font-semibold text-[var(--text-primary)]">Nuovo progetto</h1>
-          <p className="mb-8 text-sm text-[var(--text-secondary)]">Passo {step} di 3</p>
->>>>>>> 06d1697 (versione 4 frontend quasi finale)
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
 
           {step === 1 && (
             <form onSubmit={handleStepOneSubmit} className="flex flex-col gap-4">
@@ -94,49 +76,21 @@ export default function CreateProjectPage() {
                 <button
                   type="button"
                   onClick={() => { setPath("template"); setStep(3); }}
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-                  className="flex flex-col items-start gap-2 rounded-md border border-forge-border bg-forge-surface p-5 text-left hover:border-forge-accent/40"
-                >
-                  <LayoutTemplate size={20} className="text-forge-accent-soft" strokeWidth={1.75} />
-                  <span className="font-display text-sm font-medium text-forge-text-primary">Scegli un template</span>
-                  <span className="text-xs text-forge-text-secondary">Parti da una struttura pronta e personalizzala.</span>
-=======
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
                   className="flex flex-col items-start gap-2 rounded-md border border-[var(--border)] bg-[var(--surface)] p-5 text-left hover:border-[var(--accent)]/40"
                 >
                   <LayoutTemplate size={20} className="text-[var(--accent-soft)]" strokeWidth={1.75} />
                   <span className="font-display text-sm font-medium text-[var(--text-primary)]">Scegli un template</span>
                   <span className="text-xs text-[var(--text-secondary)]">Parti da una struttura pronta e personalizzala.</span>
-<<<<<<< HEAD
-=======
->>>>>>> 06d1697 (versione 4 frontend quasi finale)
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
                 </button>
 
                 <button
                   type="button"
                   onClick={() => { setPath("ai"); setStep(3); }}
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-                  className="flex flex-col items-start gap-2 rounded-md border border-forge-border bg-forge-surface p-5 text-left hover:border-forge-accent/40"
-                >
-                  <Sparkles size={20} className="text-forge-accent-soft" strokeWidth={1.75} />
-                  <span className="font-display text-sm font-medium text-forge-text-primary">Genera con AI</span>
-                  <span className="text-xs text-forge-text-secondary">Descrivi la tua attività, l'AI genera il sito.</span>
-=======
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
                   className="flex flex-col items-start gap-2 rounded-md border border-[var(--border)] bg-[var(--surface)] p-5 text-left hover:border-[var(--accent)]/40"
                 >
                   <Sparkles size={20} className="text-[var(--accent-soft)]" strokeWidth={1.75} />
                   <span className="font-display text-sm font-medium text-[var(--text-primary)]">Genera con AI</span>
                   <span className="text-xs text-[var(--text-secondary)]">Descrivi la tua attività, l'AI genera il sito.</span>
-<<<<<<< HEAD
-=======
->>>>>>> 06d1697 (versione 4 frontend quasi finale)
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
                 </button>
               </div>
               <Button variant="ghost" onClick={() => setStep(1)} className="self-start">Torna indietro</Button>
@@ -154,18 +108,8 @@ export default function CreateProjectPage() {
                     className={cn(
                       "rounded-sm border px-3 py-3 text-center text-sm capitalize transition-colors",
                       templateId === cat
-<<<<<<< HEAD
                         ? "border-[var(--accent)] bg-[var(--accent-dim)] text-[var(--accent-soft)]"
                         : "border-[var(--border)] bg-[var(--surface)] text-[var(--text-secondary)] hover:border-[var(--accent)]/40"
-=======
-<<<<<<< HEAD
-                        ? "border-forge-accent bg-forge-accent-dim text-forge-accent-soft"
-                        : "border-forge-border bg-forge-surface text-forge-text-secondary hover:border-forge-accent/40"
-=======
-                        ? "border-[var(--accent)] bg-[var(--accent-dim)] text-[var(--accent-soft)]"
-                        : "border-[var(--border)] bg-[var(--surface)] text-[var(--text-secondary)] hover:border-[var(--accent)]/40"
->>>>>>> 06d1697 (versione 4 frontend quasi finale)
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
                     )}
                   >
                     {cat}

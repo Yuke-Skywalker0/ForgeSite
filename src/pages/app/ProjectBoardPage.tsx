@@ -21,15 +21,7 @@ export default function ProjectBoardPage() {
   const [activeCard, setActiveCard] = useState<BoardCard | null>(null);
 
   if (isChecking) {
-<<<<<<< HEAD
     return <div className="flex min-h-screen items-center justify-center text-sm text-[var(--text-muted)]">Verifica sessione…</div>;
-=======
-<<<<<<< HEAD
-    return <div className="flex min-h-screen items-center justify-center text-sm text-forge-text-muted">Verifica sessione…</div>;
-=======
-    return <div className="flex min-h-screen items-center justify-center text-sm text-[var(--text-muted)]">Verifica sessione…</div>;
->>>>>>> 06d1697 (versione 4 frontend quasi finale)
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
   }
   if (!projectId) return null;
 
@@ -75,18 +67,8 @@ export default function ProjectBoardPage() {
       <AppShell>
         <div className="flex h-full flex-col">
           <div className="mb-6">
-<<<<<<< HEAD
             <h1 className="mb-1 font-display text-2xl font-semibold text-[var(--text-primary)]">Board attività</h1>
             <p className="text-sm text-[var(--text-secondary)]">
-=======
-<<<<<<< HEAD
-            <h1 className="mb-1 font-display text-2xl font-semibold text-forge-text-primary">Board attività</h1>
-            <p className="text-sm text-forge-text-secondary">
-=======
-            <h1 className="mb-1 font-display text-2xl font-semibold text-[var(--text-primary)]">Board attività</h1>
-            <p className="text-sm text-[var(--text-secondary)]">
->>>>>>> 06d1697 (versione 4 frontend quasi finale)
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
               Trascina le card tra le colonne. Il salvataggio su database sarà attivo dopo il collegamento al backend.
             </p>
           </div>
@@ -105,18 +87,8 @@ export default function ProjectBoardPage() {
 
             <DragOverlay>
               {activeCard && (
-<<<<<<< HEAD
                 <div className="rotate-2 cursor-grabbing rounded-md border border-[var(--accent)]/30 bg-[var(--surface)] p-3 shadow-xl shadow-black/30">
                   <p className="text-sm text-[var(--text-primary)]">{activeCard.title}</p>
-=======
-<<<<<<< HEAD
-                <div className="rotate-2 cursor-grabbing rounded-md border border-forge-accent/30 bg-forge-surface p-3 shadow-xl shadow-black/30">
-                  <p className="text-sm text-forge-text-primary">{activeCard.title}</p>
-=======
-                <div className="rotate-2 cursor-grabbing rounded-md border border-[var(--accent)]/30 bg-[var(--surface)] p-3 shadow-xl shadow-black/30">
-                  <p className="text-sm text-[var(--text-primary)]">{activeCard.title}</p>
->>>>>>> 06d1697 (versione 4 frontend quasi finale)
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
                 </div>
               )}
             </DragOverlay>

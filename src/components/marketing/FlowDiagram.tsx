@@ -22,39 +22,17 @@ export function FlowDiagram() {
         <div key={step.label} className="flex flex-1 items-center">
           <div className="flex flex-col items-center gap-2">
             <div
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-              className="h-2.5 w-2.5 rounded-full bg-forge-accent animate-node-pulse"
-              style={{ animationDelay: `${i * 0.5}s` }}
-              aria-hidden="true"
-            />
-            <span className="whitespace-nowrap font-mono text-[11px] text-forge-text-secondary">
-=======
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
               className="h-2.5 w-2.5 rounded-full bg-[var(--accent)] animate-node-pulse"
               style={{ animationDelay: `${i * 0.5}s` }}
               aria-hidden="true"
             />
             <span className="whitespace-nowrap font-mono text-[11px] text-[var(--text-secondary)]">
-<<<<<<< HEAD
-=======
->>>>>>> 06d1697 (versione 4 frontend quasi finale)
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
               {step.label}
             </span>
           </div>
           {i < steps.length - 1 && (
             <svg
-<<<<<<< HEAD
               className="mx-1 h-3 flex-1 text-[var(--border)]"
-=======
-<<<<<<< HEAD
-              className="mx-1 h-3 flex-1 text-forge-border"
-=======
-              className="mx-1 h-3 flex-1 text-[var(--border)]"
->>>>>>> 06d1697 (versione 4 frontend quasi finale)
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
               viewBox="0 0 100 2"
               preserveAspectRatio="none"
               aria-hidden="true"

@@ -28,21 +28,9 @@ function DraggableBlockItem({ type, label, icon: Icon }: (typeof blockLibrary)[n
 
 export function BlockLibraryPanel() {
   return (
-<<<<<<< HEAD
     <div className="flex h-full w-56 flex-none flex-col border-r border-[var(--border)] bg-[var(--surface)]">
       <div className="border-b border-[var(--border)] px-4 py-3">
         <h2 className="font-display text-xs font-medium uppercase tracking-wide text-[var(--text-muted)]">Blocchi</h2>
-=======
-<<<<<<< HEAD
-    <div className="flex h-full w-56 flex-none flex-col border-r border-forge-border bg-forge-surface">
-      <div className="border-b border-forge-border px-4 py-3">
-        <h2 className="font-display text-xs font-medium uppercase tracking-wide text-forge-text-muted">Blocchi</h2>
-=======
-    <div className="flex h-full w-56 flex-none flex-col border-r border-[var(--border)] bg-[var(--surface)]">
-      <div className="border-b border-[var(--border)] px-4 py-3">
-        <h2 className="font-display text-xs font-medium uppercase tracking-wide text-[var(--text-muted)]">Blocchi</h2>
->>>>>>> 06d1697 (versione 4 frontend quasi finale)
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
       </div>
       <div className="flex-1 overflow-y-auto p-2 scrollbar-thin">
         {blockLibrary.map((item) => (

@@ -30,15 +30,7 @@ export default function EditorPage() {
   }, [mode]);
 
   if (isChecking) {
-<<<<<<< HEAD
     return <div className="flex min-h-screen items-center justify-center text-sm text-[var(--text-muted)]">Verifica sessione…</div>;
-=======
-<<<<<<< HEAD
-    return <div className="flex min-h-screen items-center justify-center text-sm text-forge-text-muted">Verifica sessione…</div>;
-=======
-    return <div className="flex min-h-screen items-center justify-center text-sm text-[var(--text-muted)]">Verifica sessione…</div>;
->>>>>>> 06d1697 (versione 4 frontend quasi finale)
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
   }
   if (!projectId) return null;
 

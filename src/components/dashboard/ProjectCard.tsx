@@ -19,15 +19,7 @@ export function ProjectCard({
           <FolderGit2 size={16} className="text-[var(--text-secondary)]" strokeWidth={1.75} />
           <Link
             to={`/app/projects/${project.id}/editor`}
-<<<<<<< HEAD
             className="font-display text-sm font-medium text-[var(--text-primary)] hover:text-[var(--accent-soft)]"
-=======
-<<<<<<< HEAD
-            className="font-display text-sm font-medium text-forge-text-primary hover:text-forge-accent-soft"
-=======
-            className="font-display text-sm font-medium text-[var(--text-primary)] hover:text-[var(--accent-soft)]"
->>>>>>> 06d1697 (versione 4 frontend quasi finale)
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
           >
             {project.name}
           </Link>
@@ -51,15 +43,7 @@ export function ProjectCard({
 
       <div className="mt-1 flex items-center justify-between">
         <DeployHeatBar status={deployStatus} />
-<<<<<<< HEAD
         <span className="font-mono text-xs text-[var(--text-muted)]">{project.defaultBranch}</span>
-=======
-<<<<<<< HEAD
-        <span className="font-mono text-xs text-forge-text-muted">{project.defaultBranch}</span>
-=======
-        <span className="font-mono text-xs text-[var(--text-muted)]">{project.defaultBranch}</span>
->>>>>>> 06d1697 (versione 4 frontend quasi finale)
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
       </div>
     </Card>
   );
