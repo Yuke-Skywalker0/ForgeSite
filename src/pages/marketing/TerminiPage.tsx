@@ -47,23 +47,10 @@ export default function TerminiPage() {
 
       <section className="px-6 pb-10 pt-20">
         <div className="mx-auto max-w-2xl">
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-          <h1 className="mb-2 font-display text-3xl font-semibold text-forge-text-primary">
-            Termini di servizio
-          </h1>
-          <p className="mb-8 text-xs text-forge-text-muted">
-=======
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
           <h1 className="mb-2 font-display text-3xl font-semibold ">
             Termini di servizio
           </h1>
           <p className="mb-8 text-xs text-[var(--text-muted)]">
-<<<<<<< HEAD
-=======
->>>>>>> 06d1697 (versione 4 frontend quasi finale)
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
             Ultimo aggiornamento: documento di riferimento, da validare con un consulente legale
             prima della pubblicazione in produzione con utenti reali.
           </p>
@@ -71,23 +58,10 @@ export default function TerminiPage() {
           <div className="flex flex-col gap-8">
             {sections.map((s) => (
               <div key={s.title}>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-                <h2 className="mb-2 font-display text-base font-semibold text-forge-text-primary">
-                  {s.title}
-                </h2>
-                <p className="text-sm leading-relaxed text-forge-text-secondary">{s.body}</p>
-=======
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
                 <h2 className="mb-2 font-display text-base font-semibold ">
                   {s.title}
                 </h2>
                 <p className="text-sm leading-relaxed text-[var(--text-secondary)]">{s.body}</p>
-<<<<<<< HEAD
-=======
->>>>>>> 06d1697 (versione 4 frontend quasi finale)
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
               </div>
             ))}
           </div>

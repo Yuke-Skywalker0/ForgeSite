@@ -39,15 +39,7 @@ function LazyBoundary() {
   return (
     <Suspense
       fallback={
-<<<<<<< HEAD
         <div className="flex min-h-screen items-center justify-center bg-[var(--bg)] text-sm text-[var(--text-muted)]">
-=======
-<<<<<<< HEAD
-        <div className="flex min-h-screen items-center justify-center bg-forge-bg text-sm text-forge-text-muted">
-=======
-        <div className="flex min-h-screen items-center justify-center bg-[var(--bg)] text-sm text-[var(--text-muted)]">
->>>>>>> 06d1697 (versione 4 frontend quasi finale)
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
           Caricamento…
         </div>
       }
