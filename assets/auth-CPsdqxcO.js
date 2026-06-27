@@ -1,0 +1,1 @@
+import{r as e}from"./cn-CdoRC9xZ.js";import{t}from"./useMutation-CzOnipuD.js";import{n}from"./apiClient-Crp3aQn_.js";function r(){let r=e(e=>e.setUser);return t({mutationFn:e=>n.post(`/auth/login`,e),onSuccess:e=>r(e)})}function i(){return t({mutationFn:e=>n.post(`/auth/register`,e)})}export{i as n,r as t};
