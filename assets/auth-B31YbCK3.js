@@ -1,0 +1,1 @@
+import{t as e}from"./useMutation-lNMWaLLh.js";import{n as t,r as n}from"./apiClient-CB-XFFe8.js";function r(){let r=n(e=>e.setUser);return e({mutationFn:e=>t.post(`/auth/login`,e),onSuccess:e=>r(e)})}function i(){return e({mutationFn:e=>t.post(`/auth/register`,e)})}export{i as n,r as t};
