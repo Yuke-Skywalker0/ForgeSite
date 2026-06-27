@@ -13,9 +13,23 @@
     --text-primary:  #0E1A13;
     --text-secondary:#2D5040;
     --text-muted:    #6B9680;
+<<<<<<< HEAD
     --accent:        #10B981;
     --accent-soft:   #34D399;
     --accent-dim:    #D1FAE5;
+=======
+<<<<<<< HEAD
+    --text-on-accent:#FFFFFF;
+    --accent:        #10B981;
+    --accent-soft:   #34D399;
+    --accent-dim:    #D1FAE5;
+    --surface-glass: rgba(255,255,255,0.8);
+=======
+    --accent:        #10B981;
+    --accent-soft:   #34D399;
+    --accent-dim:    #D1FAE5;
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
+>>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
     --info:          #3B82F6;
     --info-soft:     #60A5FA;
     --info-dim:      #DBEAFE;
@@ -29,9 +43,23 @@
     --text-primary:  #F3F6F4;
     --text-secondary:#9CA8A1;
     --text-muted:    #5E6E66;
+<<<<<<< HEAD
     --accent:        #10B981;
     --accent-soft:   #34D399;
     --accent-dim:    #1C3329;
+=======
+<<<<<<< HEAD
+    --text-on-accent:#FFFFFF;
+    --accent:        #10B981;
+    --accent-soft:   #34D399;
+    --accent-dim:    #1C3329;
+    --surface-glass: rgba(16,21,18,0.85);
+=======
+    --accent:        #10B981;
+    --accent-soft:   #34D399;
+    --accent-dim:    #1C3329;
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
+>>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
     --info:          #3B82F6;
     --info-soft:     #60A5FA;
     --info-dim:      #1E2A3D;

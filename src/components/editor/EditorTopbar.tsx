@@ -39,19 +39,43 @@ function ProjectToolsMenu({ projectId }: { projectId: string }) {
     <div ref={ref} className="relative">
       <button
         onClick={() => setOpen((v) => !v)}
+<<<<<<< HEAD
         className="flex items-center gap-1.5 rounded-sm border border-[var(--border)] px-2.5 py-1 text-xs text-[var(--text-secondary)] hover:border-[var(--accent)]/40 hover:text-[var(--text-primary)]"
+=======
+<<<<<<< HEAD
+        className="flex items-center gap-1.5 rounded-sm border border-forge-border px-2.5 py-1 text-xs text-forge-text-secondary hover:border-forge-accent/40 hover:text-forge-text-primary"
+=======
+        className="flex items-center gap-1.5 rounded-sm border border-[var(--border)] px-2.5 py-1 text-xs text-[var(--text-secondary)] hover:border-[var(--accent)]/40 hover:text-[var(--text-primary)]"
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
+>>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
       >
         <MoreHorizontal size={14} strokeWidth={1.75} />
         Strumenti
       </button>
       {open && (
+<<<<<<< HEAD
         <div className="absolute right-0 top-full z-20 mt-1.5 w-52 rounded-md border border-[var(--border)] bg-[var(--surface)] py-1.5 shadow-xl shadow-black/30">
+=======
+<<<<<<< HEAD
+        <div className="absolute right-0 top-full z-20 mt-1.5 w-52 rounded-md border border-forge-border bg-forge-surface py-1.5 shadow-xl shadow-black/30">
+=======
+        <div className="absolute right-0 top-full z-20 mt-1.5 w-52 rounded-md border border-[var(--border)] bg-[var(--surface)] py-1.5 shadow-xl shadow-black/30">
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
+>>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
           {tools.map(({ to, label, icon: Icon }) => (
             <Link
               key={to}
               to={to}
               onClick={() => setOpen(false)}
+<<<<<<< HEAD
               className="flex items-center gap-2.5 px-3.5 py-2 text-sm text-[var(--text-secondary)] hover:bg-[var(--surface-raised)] hover:text-[var(--text-primary)]"
+=======
+<<<<<<< HEAD
+              className="flex items-center gap-2.5 px-3.5 py-2 text-sm text-forge-text-secondary hover:bg-forge-surface-raised hover:text-forge-text-primary"
+=======
+              className="flex items-center gap-2.5 px-3.5 py-2 text-sm text-[var(--text-secondary)] hover:bg-[var(--surface-raised)] hover:text-[var(--text-primary)]"
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
+>>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
             >
               <Icon size={14} strokeWidth={1.75} />
               {label}
@@ -69,10 +93,23 @@ export function EditorTopbar({ projectId, projectName }: { projectId: string; pr
   return (
     <div className="flex items-center justify-between border-b border-[var(--border)] bg-[var(--surface)] px-5 py-2.5">
       <div className="flex items-center gap-3">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        <Link to="/app/dashboard" className="text-forge-text-secondary hover:text-forge-text-primary" aria-label="Torna alla dashboard">
+          <ArrowLeft size={16} strokeWidth={1.75} />
+        </Link>
+        <span className="font-display text-sm font-medium text-forge-text-primary">{projectName}</span>
+=======
+>>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
         <Link to="/app/dashboard" className="text-[var(--text-secondary)] hover:text-[var(--text-primary)]" aria-label="Torna alla dashboard">
           <ArrowLeft size={16} strokeWidth={1.75} />
         </Link>
         <span className="font-display text-sm font-medium text-[var(--text-primary)]">{projectName}</span>
+<<<<<<< HEAD
+=======
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
+>>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
       </div>
 
       <div className="flex items-center gap-3">
@@ -83,7 +120,15 @@ export function EditorTopbar({ projectId, projectName }: { projectId: string; pr
               onClick={() => setMode(key)}
               className={cn(
                 "flex items-center gap-1.5 rounded-sm px-2.5 py-1 text-xs transition-colors",
+<<<<<<< HEAD
                 mode === key ? "bg-[var(--accent)] text-white" : "text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
+=======
+<<<<<<< HEAD
+                mode === key ? "bg-forge-accent text-forge-bg" : "text-forge-text-secondary hover:text-forge-text-primary"
+=======
+                mode === key ? "bg-[var(--accent)] text-white" : "text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
+>>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
               )}
             >
               <Icon size={13} strokeWidth={1.75} />

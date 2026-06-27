@@ -49,16 +49,36 @@ export function PublishBar({ projectId, pageId }: { projectId: string; pageId: s
         )}
         {stage === "pr_open" && prInfo && (
           <>
+<<<<<<< HEAD
             <GitPullRequest size={14} className="text-[var(--accent-soft)]" />
             Pull request aperta —{" "}
             <a href={prInfo.url} target="_blank" rel="noreferrer" className="text-[var(--accent-soft)] hover:underline">
+=======
+<<<<<<< HEAD
+            <GitPullRequest size={14} className="text-forge-accent-soft" />
+            Pull request aperta —{" "}
+            <a href={prInfo.url} target="_blank" rel="noreferrer" className="text-forge-accent-soft hover:underline">
+=======
+            <GitPullRequest size={14} className="text-[var(--accent-soft)]" />
+            Pull request aperta —{" "}
+            <a href={prInfo.url} target="_blank" rel="noreferrer" className="text-[var(--accent-soft)] hover:underline">
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
+>>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
               revisiona su GitHub
             </a>
           </>
         )}
         {stage === "merged" && (
           <>
+<<<<<<< HEAD
             <CheckCircle2 size={14} className="text-[var(--accent)]" />
+=======
+<<<<<<< HEAD
+            <CheckCircle2 size={14} className="text-forge-accent" />
+=======
+            <CheckCircle2 size={14} className="text-[var(--accent)]" />
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
+>>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
             Pubblicato — deploy in corso su GitHub Pages
           </>
         )}

@@ -13,8 +13,18 @@ interface GoogleToolsPanelProps {
 export function GoogleToolsPanel({ connections, onChange }: GoogleToolsPanelProps) {
   return (
     <div className="flex flex-col gap-4">
+<<<<<<< HEAD
       <div className="flex items-start gap-2.5 rounded-md border border-[var(--border)] bg-[var(--surface)] p-4 text-sm text-[var(--text-secondary)]">
         <Info size={16} className="mt-0.5 flex-none text-[var(--info)]" strokeWidth={1.75} />
+=======
+<<<<<<< HEAD
+      <div className="flex items-start gap-2.5 rounded-md border border-forge-border bg-forge-surface p-4 text-sm text-forge-text-secondary">
+        <Info size={16} className="mt-0.5 flex-none text-forge-info" strokeWidth={1.75} />
+=======
+      <div className="flex items-start gap-2.5 rounded-md border border-[var(--border)] bg-[var(--surface)] p-4 text-sm text-[var(--text-secondary)]">
+        <Info size={16} className="mt-0.5 flex-none text-[var(--info)]" strokeWidth={1.75} />
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
+>>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
         <p>
           Finché uno strumento non è collegato, i widget Analytics della tua dashboard mostrano
           dati di esempio per farti capire come appariranno. Non appena colleghi le tue chiavi

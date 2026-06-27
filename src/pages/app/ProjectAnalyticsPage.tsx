@@ -37,7 +37,15 @@ export default function ProjectAnalyticsPage() {
   const analyticsConnected = Boolean(connections.analytics);
 
   if (isChecking) {
+<<<<<<< HEAD
     return <div className="flex min-h-screen items-center justify-center text-sm text-[var(--text-muted)]">Verifica sessione…</div>;
+=======
+<<<<<<< HEAD
+    return <div className="flex min-h-screen items-center justify-center text-sm text-forge-text-muted">Verifica sessione…</div>;
+=======
+    return <div className="flex min-h-screen items-center justify-center text-sm text-[var(--text-muted)]">Verifica sessione…</div>;
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
+>>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
   }
   if (!projectId) return null;
 
@@ -71,18 +79,44 @@ export default function ProjectAnalyticsPage() {
       <AppShell>
         <div className="mx-auto max-w-6xl">
           <div className="mb-6">
+<<<<<<< HEAD
             <h1 className="mb-1 font-display text-2xl font-semibold text-[var(--text-primary)]">Analytics</h1>
             <p className="text-sm text-[var(--text-secondary)]">
+=======
+<<<<<<< HEAD
+            <h1 className="mb-1 font-display text-2xl font-semibold text-forge-text-primary">Analytics</h1>
+            <p className="text-sm text-forge-text-secondary">
+=======
+            <h1 className="mb-1 font-display text-2xl font-semibold text-[var(--text-primary)]">Analytics</h1>
+            <p className="text-sm text-[var(--text-secondary)]">
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
+>>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
               Trascina i widget per riorganizzare la dashboard come preferisci.
             </p>
           </div>
 
+<<<<<<< HEAD
           <div className="mb-6 flex w-fit gap-1 rounded-sm bg-[var(--surface-raised)] p-1">
+=======
+<<<<<<< HEAD
+          <div className="mb-6 flex w-fit gap-1 rounded-sm bg-forge-surface-raised p-1">
+=======
+          <div className="mb-6 flex w-fit gap-1 rounded-sm bg-[var(--surface-raised)] p-1">
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
+>>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
             <button
               onClick={() => setTab("overview")}
               className={cn(
                 "flex items-center gap-1.5 rounded-sm px-3 py-1.5 text-xs font-medium transition-colors",
+<<<<<<< HEAD
                 tab === "overview" ? "bg-[var(--accent)] text-white" : "text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
+=======
+<<<<<<< HEAD
+                tab === "overview" ? "bg-forge-accent text-forge-bg" : "text-forge-text-secondary hover:text-forge-text-primary"
+=======
+                tab === "overview" ? "bg-[var(--accent)] text-white" : "text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
+>>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
               )}
             >
               <BarChart3 size={13} strokeWidth={1.75} />
@@ -92,7 +126,15 @@ export default function ProjectAnalyticsPage() {
               onClick={() => setTab("google-tools")}
               className={cn(
                 "flex items-center gap-1.5 rounded-sm px-3 py-1.5 text-xs font-medium transition-colors",
+<<<<<<< HEAD
                 tab === "google-tools" ? "bg-[var(--accent)] text-white" : "text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
+=======
+<<<<<<< HEAD
+                tab === "google-tools" ? "bg-forge-accent text-forge-bg" : "text-forge-text-secondary hover:text-forge-text-primary"
+=======
+                tab === "google-tools" ? "bg-[var(--accent)] text-white" : "text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
+>>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
               )}
             >
               <Link2 size={13} strokeWidth={1.75} />

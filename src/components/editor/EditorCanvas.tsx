@@ -47,8 +47,18 @@ export function EditorCanvas() {
   const activeMeta = blockLibrary.find((b) => b.type === activeDragType);
 
   return (
+<<<<<<< HEAD
     <div className="flex-1 overflow-y-auto bg-[var(--bg)] p-8" onClick={() => selectBlock(null)}>
       <div className={cn("mx-auto rounded-md border border-[var(--border)] bg-[var(--surface)] p-6 transition-all", breakpointWidths[activeBreakpoint])}>
+=======
+<<<<<<< HEAD
+    <div className="flex-1 overflow-y-auto bg-forge-bg p-8" onClick={() => selectBlock(null)}>
+      <div className={cn("mx-auto rounded-md border border-forge-border bg-forge-surface p-6 transition-all", breakpointWidths[activeBreakpoint])}>
+=======
+    <div className="flex-1 overflow-y-auto bg-[var(--bg)] p-8" onClick={() => selectBlock(null)}>
+      <div className={cn("mx-auto rounded-md border border-[var(--border)] bg-[var(--surface)] p-6 transition-all", breakpointWidths[activeBreakpoint])}>
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
+>>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
         <DndContext collisionDetection={closestCenter} onDragStart={handleDragStart} onDragEnd={handleDragEnd}>
           {blockTree.length === 0 ? (
             <div className="flex min-h-[300px] items-center justify-center rounded-sm border border-dashed border-[var(--border)] text-sm text-[var(--text-muted)]">
@@ -66,7 +76,15 @@ export function EditorCanvas() {
 
           <DragOverlay>
             {activeMeta && (
+<<<<<<< HEAD
               <div className="flex items-center gap-2 rounded-sm bg-[var(--accent)] px-3 py-2 text-sm text-white shadow-lg">
+=======
+<<<<<<< HEAD
+              <div className="flex items-center gap-2 rounded-sm bg-forge-accent px-3 py-2 text-sm text-forge-bg shadow-lg">
+=======
+              <div className="flex items-center gap-2 rounded-sm bg-[var(--accent)] px-3 py-2 text-sm text-white shadow-lg">
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
+>>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
                 <activeMeta.icon size={14} />
                 {activeMeta.label}
               </div>

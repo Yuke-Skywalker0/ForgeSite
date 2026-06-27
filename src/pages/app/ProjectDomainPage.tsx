@@ -51,7 +51,15 @@ export default function ProjectDomainPage() {
   const [newAction, setNewAction] = useState<"ALLOW" | "DENY">("DENY");
   const [accessList, setAccessList] = useState(accessListItems);
 
+<<<<<<< HEAD
   if (isChecking) return <div className="flex min-h-screen items-center justify-center text-sm text-[var(--text-muted)]">Verifica sessione…</div>;
+=======
+<<<<<<< HEAD
+  if (isChecking) return <div className="flex min-h-screen items-center justify-center text-sm text-forge-text-muted">Verifica sessione…</div>;
+=======
+  if (isChecking) return <div className="flex min-h-screen items-center justify-center text-sm text-[var(--text-muted)]">Verifica sessione…</div>;
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
+>>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
   if (!projectId) return null;
 
   async function handleSearch() {
@@ -75,20 +83,46 @@ export default function ProjectDomainPage() {
       <AppShell>
         <div className="mx-auto max-w-4xl">
           <div className="mb-6">
+<<<<<<< HEAD
             <h1 className="mb-1 font-display text-2xl font-semibold text-[var(--text-primary)]">Dominio e DNS</h1>
             <p className="text-sm text-[var(--text-secondary)]">
+=======
+<<<<<<< HEAD
+            <h1 className="mb-1 font-display text-2xl font-semibold text-forge-text-primary">Dominio e DNS</h1>
+            <p className="text-sm text-forge-text-secondary">
+=======
+            <h1 className="mb-1 font-display text-2xl font-semibold text-[var(--text-primary)]">Dominio e DNS</h1>
+            <p className="text-sm text-[var(--text-secondary)]">
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
+>>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
               Acquista un dominio via Cloudflare, collegalo al tuo sito GitHub Pages e gestisci DNS e access list.
             </p>
           </div>
 
+<<<<<<< HEAD
           <div className="mb-6 flex flex-wrap gap-1 rounded-sm bg-[var(--surface-raised)] p-1">
+=======
+<<<<<<< HEAD
+          <div className="mb-6 flex flex-wrap gap-1 rounded-sm bg-forge-surface-raised p-1">
+=======
+          <div className="mb-6 flex flex-wrap gap-1 rounded-sm bg-[var(--surface-raised)] p-1">
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
+>>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
             {tabs.map(({ id, label, icon: Icon }) => (
               <button
                 key={id}
                 onClick={() => setTab(id)}
                 className={cn(
                   "flex items-center gap-1.5 rounded-sm px-3 py-1.5 text-xs font-medium transition-colors",
+<<<<<<< HEAD
                   tab === id ? "bg-[var(--accent)] text-white" : "text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
+=======
+<<<<<<< HEAD
+                  tab === id ? "bg-forge-accent text-forge-bg" : "text-forge-text-secondary hover:text-forge-text-primary"
+=======
+                  tab === id ? "bg-[var(--accent)] text-white" : "text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
+>>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
                 )}
               >
                 <Icon size={13} strokeWidth={1.75} />
@@ -102,6 +136,18 @@ export default function ProjectDomainPage() {
               {purchasedDomain ? (
                 <Card className="flex flex-col gap-3">
                   <div className="flex items-center gap-2">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+                    <CheckCircle2 size={18} className="text-forge-accent" strokeWidth={2} />
+                    <h2 className="font-display text-base font-semibold text-forge-text-primary">
+                      Dominio acquistato e configurato
+                    </h2>
+                  </div>
+                  <p className="text-sm text-forge-text-secondary">
+                    <span className="font-mono text-forge-accent-soft">{purchasedDomain}</span> è ora collegato
+=======
+>>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
                     <CheckCircle2 size={18} className="text-[var(--accent)]" strokeWidth={2} />
                     <h2 className="font-display text-base font-semibold text-[var(--text-primary)]">
                       Dominio acquistato e configurato
@@ -109,6 +155,10 @@ export default function ProjectDomainPage() {
                   </div>
                   <p className="text-sm text-[var(--text-secondary)]">
                     <span className="font-mono text-[var(--accent-soft)]">{purchasedDomain}</span> è ora collegato
+<<<<<<< HEAD
+=======
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
+>>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
                     automaticamente al tuo repository GitHub Pages. Il propagamento DNS può richiedere fino a 48 ore.
                   </p>
                   <div className="flex gap-2">
@@ -116,20 +166,46 @@ export default function ProjectDomainPage() {
                       href={`https://${purchasedDomain}`}
                       target="_blank"
                       rel="noreferrer"
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+                      className="inline-flex items-center gap-1.5 text-xs text-forge-accent-soft hover:underline"
+                    >
+                      Apri sito <ExternalLink size={11} />
+                    </a>
+                    <button className="text-xs text-forge-text-muted hover:text-forge-text-secondary" onClick={() => setPurchasedDomain(null)}>
+=======
+>>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
                       className="inline-flex items-center gap-1.5 text-xs text-[var(--accent-soft)] hover:underline"
                     >
                       Apri sito <ExternalLink size={11} />
                     </a>
                     <button className="text-xs text-[var(--text-muted)] hover:text-[var(--text-secondary)]" onClick={() => setPurchasedDomain(null)}>
+<<<<<<< HEAD
+=======
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
+>>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
                       Cambia dominio
                     </button>
                   </div>
                 </Card>
               ) : (
                 <>
+<<<<<<< HEAD
                   <Card className="flex flex-col gap-2 border-[var(--info)]/30 bg-[var(--info-dim)]/20">
                     <h3 className="font-display text-sm font-medium text-[var(--text-primary)]">Come funziona</h3>
                     <ol className="flex flex-col gap-1.5 text-xs text-[var(--text-secondary)]">
+=======
+<<<<<<< HEAD
+                  <Card className="flex flex-col gap-2 border-forge-info/30 bg-forge-info-dim/20">
+                    <h3 className="font-display text-sm font-medium text-forge-text-primary">Come funziona</h3>
+                    <ol className="flex flex-col gap-1.5 text-xs text-forge-text-secondary">
+=======
+                  <Card className="flex flex-col gap-2 border-[var(--info)]/30 bg-[var(--info-dim)]/20">
+                    <h3 className="font-display text-sm font-medium text-[var(--text-primary)]">Come funziona</h3>
+                    <ol className="flex flex-col gap-1.5 text-xs text-[var(--text-secondary)]">
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
+>>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
                       <li>1. Cerca il dominio che vuoi</li>
                       <li>2. Acquistalo — il pagamento avviene direttamente su Cloudflare, mai attraverso ForgeSite</li>
                       <li>3. ForgeSite configura automaticamente DNS e CNAME per puntare al tuo repository GitHub Pages</li>
@@ -139,7 +215,15 @@ export default function ProjectDomainPage() {
                       href="https://www.cloudflare.com/products/registrar/"
                       target="_blank"
                       rel="noreferrer"
+<<<<<<< HEAD
                       className="inline-flex items-center gap-1 text-xs text-[var(--info)] hover:underline"
+=======
+<<<<<<< HEAD
+                      className="inline-flex items-center gap-1 text-xs text-forge-info hover:underline"
+=======
+                      className="inline-flex items-center gap-1 text-xs text-[var(--info)] hover:underline"
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
+>>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
                     >
                       Scopri Cloudflare Registrar <ExternalLink size={11} />
                     </a>
@@ -166,12 +250,33 @@ export default function ProjectDomainPage() {
                       {searchResults.map((result) => (
                         <div
                           key={result.domain}
+<<<<<<< HEAD
                           className="flex items-center justify-between rounded-md border border-[var(--border)] bg-[var(--surface)] px-4 py-3"
+=======
+<<<<<<< HEAD
+                          className="flex items-center justify-between rounded-md border border-forge-border bg-forge-surface px-4 py-3"
+=======
+                          className="flex items-center justify-between rounded-md border border-[var(--border)] bg-[var(--surface)] px-4 py-3"
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
+>>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
                         >
                           <div className="flex items-center gap-3">
                             <span
                               className={cn(
                                 "h-2 w-2 flex-none rounded-full",
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+                                result.available ? "bg-forge-accent" : "bg-forge-danger"
+                              )}
+                            />
+                            <span className="font-mono text-sm text-forge-text-primary">{result.domain}</span>
+                          </div>
+                          {result.available ? (
+                            <div className="flex items-center gap-3">
+                              <span className="text-sm text-forge-accent-soft">{result.price}</span>
+=======
+>>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
                                 result.available ? "bg-[var(--accent)]" : "bg-[#EF4444]"
                               )}
                             />
@@ -180,6 +285,10 @@ export default function ProjectDomainPage() {
                           {result.available ? (
                             <div className="flex items-center gap-3">
                               <span className="text-sm text-[var(--accent-soft)]">{result.price}</span>
+<<<<<<< HEAD
+=======
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
+>>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
                               <Button
                                 onClick={() => setPurchasedDomain(result.domain)}
                                 className="py-1.5 text-xs"
@@ -202,10 +311,23 @@ export default function ProjectDomainPage() {
           {tab === "existing" && (
             <Card className="flex flex-col gap-5">
               <div>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+                <h2 className="mb-1 font-display text-base font-semibold text-forge-text-primary">
+                  Collega un dominio che hai già
+                </h2>
+                <p className="text-sm text-forge-text-secondary">
+=======
+>>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
                 <h2 className="mb-1 font-display text-base font-semibold text-[var(--text-primary)]">
                   Collega un dominio che hai già
                 </h2>
                 <p className="text-sm text-[var(--text-secondary)]">
+<<<<<<< HEAD
+=======
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
+>>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
                   Inserisci il dominio, poi aggiungi i record DNS mostrati di seguito nel tuo registrar attuale.
                 </p>
               </div>
@@ -226,6 +348,22 @@ export default function ProjectDomainPage() {
 
               {existingDomain.trim() && (
                 <div>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+                  <h3 className="mb-2 text-xs font-medium uppercase tracking-wide text-forge-text-muted">
+                    Aggiungi questi record nel tuo registrar
+                  </h3>
+                  <div className="overflow-x-auto rounded-md border border-forge-border">
+                    <table className="w-full text-left text-xs">
+                      <thead>
+                        <tr className="border-b border-forge-border bg-forge-surface-raised">
+                          <th className="px-3 py-2 text-forge-text-muted">Tipo</th>
+                          <th className="px-3 py-2 text-forge-text-muted">Nome</th>
+                          <th className="px-3 py-2 text-forge-text-muted">Valore</th>
+                          <th className="px-3 py-2 text-forge-text-muted">TTL</th>
+=======
+>>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
                   <h3 className="mb-2 text-xs font-medium uppercase tracking-wide text-[var(--text-muted)]">
                     Aggiungi questi record nel tuo registrar
                   </h3>
@@ -237,15 +375,33 @@ export default function ProjectDomainPage() {
                           <th className="px-3 py-2 text-[var(--text-muted)]">Nome</th>
                           <th className="px-3 py-2 text-[var(--text-muted)]">Valore</th>
                           <th className="px-3 py-2 text-[var(--text-muted)]">TTL</th>
+<<<<<<< HEAD
+=======
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
+>>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
                         </tr>
                       </thead>
                       <tbody>
                         {dnsRecords.map((r, i) => (
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+                          <tr key={i} className="border-b border-forge-border last:border-0">
+                            <td className="px-3 py-2"><Badge variant="accent">{r.type}</Badge></td>
+                            <td className="px-3 py-2 font-mono text-forge-text-primary">{r.name}</td>
+                            <td className="px-3 py-2 font-mono text-forge-text-secondary">{r.value}</td>
+                            <td className="px-3 py-2 text-forge-text-muted">{r.ttl}</td>
+=======
+>>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
                           <tr key={i} className="border-b border-[var(--border)] last:border-0">
                             <td className="px-3 py-2"><Badge variant="accent">{r.type}</Badge></td>
                             <td className="px-3 py-2 font-mono text-[var(--text-primary)]">{r.name}</td>
                             <td className="px-3 py-2 font-mono text-[var(--text-secondary)]">{r.value}</td>
                             <td className="px-3 py-2 text-[var(--text-muted)]">{r.ttl}</td>
+<<<<<<< HEAD
+=======
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
+>>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
                           </tr>
                         ))}
                       </tbody>
@@ -258,6 +414,20 @@ export default function ProjectDomainPage() {
 
           {tab === "dns" && (
             <Card className="flex flex-col gap-4">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+              <h2 className="font-display text-base font-semibold text-forge-text-primary">Gestione DNS</h2>
+              <div className="overflow-x-auto rounded-md border border-forge-border">
+                <table className="w-full text-left text-xs">
+                  <thead>
+                    <tr className="border-b border-forge-border bg-forge-surface-raised">
+                      <th className="px-3 py-2 text-forge-text-muted">Tipo</th>
+                      <th className="px-3 py-2 text-forge-text-muted">Nome</th>
+                      <th className="px-3 py-2 text-forge-text-muted">Valore</th>
+                      <th className="px-3 py-2 text-forge-text-muted">TTL</th>
+=======
+>>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
               <h2 className="font-display text-base font-semibold text-[var(--text-primary)]">Gestione DNS</h2>
               <div className="overflow-x-auto rounded-md border border-[var(--border)]">
                 <table className="w-full text-left text-xs">
@@ -267,21 +437,47 @@ export default function ProjectDomainPage() {
                       <th className="px-3 py-2 text-[var(--text-muted)]">Nome</th>
                       <th className="px-3 py-2 text-[var(--text-muted)]">Valore</th>
                       <th className="px-3 py-2 text-[var(--text-muted)]">TTL</th>
+<<<<<<< HEAD
+=======
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
+>>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
                     </tr>
                   </thead>
                   <tbody>
                     {dnsRecords.map((r, i) => (
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+                      <tr key={i} className="border-b border-forge-border last:border-0">
+                        <td className="px-3 py-2"><Badge variant="accent">{r.type}</Badge></td>
+                        <td className="px-3 py-2 font-mono text-forge-text-primary">{r.name}</td>
+                        <td className="px-3 py-2 font-mono text-forge-text-secondary">{r.value}</td>
+                        <td className="px-3 py-2 text-forge-text-muted">{r.ttl}</td>
+=======
+>>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
                       <tr key={i} className="border-b border-[var(--border)] last:border-0">
                         <td className="px-3 py-2"><Badge variant="accent">{r.type}</Badge></td>
                         <td className="px-3 py-2 font-mono text-[var(--text-primary)]">{r.name}</td>
                         <td className="px-3 py-2 font-mono text-[var(--text-secondary)]">{r.value}</td>
                         <td className="px-3 py-2 text-[var(--text-muted)]">{r.ttl}</td>
+<<<<<<< HEAD
+=======
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
+>>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
                       </tr>
                     ))}
                   </tbody>
                 </table>
               </div>
+<<<<<<< HEAD
               <p className="text-xs text-[var(--text-muted)]">
+=======
+<<<<<<< HEAD
+              <p className="text-xs text-forge-text-muted">
+=======
+              <p className="text-xs text-[var(--text-muted)]">
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
+>>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
                 La modifica diretta dei record DNS è disponibile dopo aver collegato un dominio e un account Cloudflare.
               </p>
             </Card>
@@ -290,12 +486,35 @@ export default function ProjectDomainPage() {
           {tab === "access" && (
             <Card className="flex flex-col gap-4">
               <div>
+<<<<<<< HEAD
                 <h2 className="font-display text-base font-semibold text-[var(--text-primary)]">Access List</h2>
                 <p className="text-sm text-[var(--text-secondary)]">
+=======
+<<<<<<< HEAD
+                <h2 className="font-display text-base font-semibold text-forge-text-primary">Access List</h2>
+                <p className="text-sm text-forge-text-secondary">
+=======
+                <h2 className="font-display text-base font-semibold text-[var(--text-primary)]">Access List</h2>
+                <p className="text-sm text-[var(--text-secondary)]">
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
+>>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
                   Controlla quali indirizzi IP possono accedere al tuo sito (richiede Cloudflare attivo).
                 </p>
               </div>
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+              <div className="overflow-x-auto rounded-md border border-forge-border">
+                <table className="w-full text-left text-xs">
+                  <thead>
+                    <tr className="border-b border-forge-border bg-forge-surface-raised">
+                      <th className="px-3 py-2 text-forge-text-muted">IP / CIDR</th>
+                      <th className="px-3 py-2 text-forge-text-muted">Azione</th>
+                      <th className="px-3 py-2 text-forge-text-muted">Nota</th>
+                      <th className="px-3 py-2 text-forge-text-muted"></th>
+=======
+>>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
               <div className="overflow-x-auto rounded-md border border-[var(--border)]">
                 <table className="w-full text-left text-xs">
                   <thead>
@@ -304,10 +523,29 @@ export default function ProjectDomainPage() {
                       <th className="px-3 py-2 text-[var(--text-muted)]">Azione</th>
                       <th className="px-3 py-2 text-[var(--text-muted)]">Nota</th>
                       <th className="px-3 py-2 text-[var(--text-muted)]"></th>
+<<<<<<< HEAD
+=======
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
+>>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
                     </tr>
                   </thead>
                   <tbody>
                     {accessList.map((item, i) => (
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+                      <tr key={i} className="border-b border-forge-border last:border-0">
+                        <td className="px-3 py-2 font-mono text-forge-text-primary">{item.ip}</td>
+                        <td className="px-3 py-2">
+                          <Badge variant={item.action === "ALLOW" ? "success" : "danger"}>{item.action}</Badge>
+                        </td>
+                        <td className="px-3 py-2 text-forge-text-secondary">{item.note}</td>
+                        <td className="px-3 py-2">
+                          <button
+                            onClick={() => setAccessList((l) => l.filter((_, j) => j !== i))}
+                            className="text-forge-text-muted hover:text-forge-danger"
+=======
+>>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
                       <tr key={i} className="border-b border-[var(--border)] last:border-0">
                         <td className="px-3 py-2 font-mono text-[var(--text-primary)]">{item.ip}</td>
                         <td className="px-3 py-2">
@@ -318,6 +556,10 @@ export default function ProjectDomainPage() {
                           <button
                             onClick={() => setAccessList((l) => l.filter((_, j) => j !== i))}
                             className="text-[var(--text-muted)] hover:text-[#EF4444]"
+<<<<<<< HEAD
+=======
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
+>>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
                           >
                             ✕
                           </button>
@@ -328,6 +570,19 @@ export default function ProjectDomainPage() {
                 </table>
               </div>
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+              <div className="flex flex-wrap gap-2 border-t border-forge-border pt-4">
+                <Input label="IP o CIDR" value={newIp} onChange={(e) => setNewIp(e.target.value)} placeholder="es. 192.168.1.0/24" />
+                <div className="flex flex-col gap-1.5">
+                  <label className="text-sm text-forge-text-secondary">Azione</label>
+                  <select
+                    value={newAction}
+                    onChange={(e) => setNewAction(e.target.value as "ALLOW" | "DENY")}
+                    className="rounded-sm border border-forge-border bg-forge-surface-raised px-3 py-2 text-sm text-forge-text-primary"
+=======
+>>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
               <div className="flex flex-wrap gap-2 border-t border-[var(--border)] pt-4">
                 <Input label="IP o CIDR" value={newIp} onChange={(e) => setNewIp(e.target.value)} placeholder="es. 192.168.1.0/24" />
                 <div className="flex flex-col gap-1.5">
@@ -336,6 +591,10 @@ export default function ProjectDomainPage() {
                     value={newAction}
                     onChange={(e) => setNewAction(e.target.value as "ALLOW" | "DENY")}
                     className="rounded-sm border border-[var(--border)] bg-[var(--surface-raised)] px-3 py-2 text-sm text-[var(--text-primary)]"
+<<<<<<< HEAD
+=======
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
+>>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
                   >
                     <option value="ALLOW">ALLOW</option>
                     <option value="DENY">DENY</option>

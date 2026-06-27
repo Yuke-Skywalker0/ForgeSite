@@ -20,8 +20,18 @@ export function InspectorPanel() {
 
   if (!selectedBlock) {
     return (
+<<<<<<< HEAD
       <div className="flex w-72 flex-none flex-col border-l border-[var(--border)] bg-[var(--surface)] p-4">
         <p className="text-sm text-[var(--text-muted)]">Seleziona un blocco per modificarne contenuto e stile.</p>
+=======
+<<<<<<< HEAD
+      <div className="flex w-72 flex-none flex-col border-l border-forge-border bg-forge-surface p-4">
+        <p className="text-sm text-forge-text-muted">Seleziona un blocco per modificarne contenuto e stile.</p>
+=======
+      <div className="flex w-72 flex-none flex-col border-l border-[var(--border)] bg-[var(--surface)] p-4">
+        <p className="text-sm text-[var(--text-muted)]">Seleziona un blocco per modificarne contenuto e stile.</p>
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
+>>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
       </div>
     );
   }
@@ -29,9 +39,21 @@ export function InspectorPanel() {
   const currentStyles = selectedBlock.styles[activeBreakpoint];
 
   return (
+<<<<<<< HEAD
     <div className="flex w-72 flex-none flex-col border-l border-[var(--border)] bg-[var(--surface)]">
       <div className="border-b border-[var(--border)] px-4 py-3">
         <h2 className="font-display text-xs font-medium uppercase tracking-wide text-[var(--text-muted)]">{selectedBlock.type}</h2>
+=======
+<<<<<<< HEAD
+    <div className="flex w-72 flex-none flex-col border-l border-forge-border bg-forge-surface">
+      <div className="border-b border-forge-border px-4 py-3">
+        <h2 className="font-display text-xs font-medium uppercase tracking-wide text-forge-text-muted">{selectedBlock.type}</h2>
+=======
+    <div className="flex w-72 flex-none flex-col border-l border-[var(--border)] bg-[var(--surface)]">
+      <div className="border-b border-[var(--border)] px-4 py-3">
+        <h2 className="font-display text-xs font-medium uppercase tracking-wide text-[var(--text-muted)]">{selectedBlock.type}</h2>
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
+>>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
       </div>
 
       <div className="flex-1 overflow-y-auto p-4 scrollbar-thin">
@@ -61,7 +83,15 @@ export function InspectorPanel() {
                   onClick={() => setBreakpoint(bp)}
                   className={cn(
                     "rounded-sm px-2 py-0.5 text-xs capitalize transition-colors",
+<<<<<<< HEAD
                     activeBreakpoint === bp ? "bg-[var(--accent)] text-white" : "text-[var(--text-muted)] hover:text-[var(--text-primary)]"
+=======
+<<<<<<< HEAD
+                    activeBreakpoint === bp ? "bg-forge-accent text-forge-bg" : "text-forge-text-muted hover:text-forge-text-primary"
+=======
+                    activeBreakpoint === bp ? "bg-[var(--accent)] text-white" : "text-[var(--text-muted)] hover:text-[var(--text-primary)]"
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
+>>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
                   )}
                 >
                   {bp === "desktop" ? "Desktop" : bp === "tablet" ? "Tablet" : "Mobile"}

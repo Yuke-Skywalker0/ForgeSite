@@ -36,6 +36,19 @@ export default function RegisterPage() {
         path="/app/register"
         indexable={false}
       />
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+      <div className="flex min-h-screen items-center justify-center bg-forge-bg px-4">
+        <div className="w-full max-w-sm">
+          {done ? (
+            <div className="text-center">
+              <h1 className="mb-2 font-display text-2xl font-semibold text-forge-text-primary">
+                Controlla la tua email
+              </h1>
+              <p className="mb-6 text-sm text-forge-text-secondary">
+=======
+>>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
       <div className="flex min-h-screen items-center justify-center bg-[var(--bg)] px-4">
         <div className="w-full max-w-sm">
           {done ? (
@@ -44,6 +57,10 @@ export default function RegisterPage() {
                 Controlla la tua email
               </h1>
               <p className="mb-6 text-sm text-[var(--text-secondary)]">
+<<<<<<< HEAD
+=======
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
+>>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
                 Ti abbiamo inviato un link per verificare l'account.
               </p>
               <Button variant="secondary" onClick={() => navigate("/app/login")}>
@@ -53,16 +70,39 @@ export default function RegisterPage() {
           ) : (
             <>
               <Link to="/" className="mb-8 flex items-center gap-2">
+<<<<<<< HEAD
                 <span className="h-2 w-2 rounded-full bg-[var(--accent)]" aria-hidden="true" />
                 <span className="font-display text-lg font-semibold text-[var(--text-primary)]">
+=======
+<<<<<<< HEAD
+                <span className="h-2 w-2 rounded-full bg-forge-accent" aria-hidden="true" />
+                <span className="font-display text-lg font-semibold text-forge-text-primary">
+=======
+                <span className="h-2 w-2 rounded-full bg-[var(--accent)]" aria-hidden="true" />
+                <span className="font-display text-lg font-semibold text-[var(--text-primary)]">
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
+>>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
                   ForgeSite
                 </span>
               </Link>
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+              <h1 className="mb-1 font-display text-2xl font-semibold text-forge-text-primary">
+                Crea account
+              </h1>
+              <p className="mb-6 text-sm text-forge-text-secondary">
+=======
+>>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
               <h1 className="mb-1 font-display text-2xl font-semibold text-[var(--text-primary)]">
                 Crea account
               </h1>
               <p className="mb-6 text-sm text-[var(--text-secondary)]">
+<<<<<<< HEAD
+=======
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
+>>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
                 Inizia a costruire il tuo sito in pochi minuti.
               </p>
 
@@ -86,7 +126,15 @@ export default function RegisterPage() {
                 />
 
                 {formError && (
+<<<<<<< HEAD
                   <p role="alert" className="text-sm text-[#EF4444]">
+=======
+<<<<<<< HEAD
+                  <p role="alert" className="text-sm text-forge-danger">
+=======
+                  <p role="alert" className="text-sm text-[#EF4444]">
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
+>>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
                     {formError}
                   </p>
                 )}
@@ -96,9 +144,21 @@ export default function RegisterPage() {
                 </Button>
               </form>
 
+<<<<<<< HEAD
               <p className="mt-6 text-center text-sm text-[var(--text-secondary)]">
                 Hai già un account?{" "}
                 <Link to="/app/login" className="text-[var(--accent-soft)] hover:underline">
+=======
+<<<<<<< HEAD
+              <p className="mt-6 text-center text-sm text-forge-text-secondary">
+                Hai già un account?{" "}
+                <Link to="/app/login" className="text-forge-accent-soft hover:underline">
+=======
+              <p className="mt-6 text-center text-sm text-[var(--text-secondary)]">
+                Hai già un account?{" "}
+                <Link to="/app/login" className="text-[var(--accent-soft)] hover:underline">
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
+>>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
                   Accedi
                 </Link>
               </p>

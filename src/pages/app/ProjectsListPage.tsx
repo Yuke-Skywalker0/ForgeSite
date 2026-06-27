@@ -12,7 +12,15 @@ export default function ProjectsListPage() {
   const { data: projects, isLoading } = useProjects();
 
   if (isChecking) {
+<<<<<<< HEAD
     return <div className="flex min-h-screen items-center justify-center text-sm text-[var(--text-muted)]">Verifica sessione…</div>;
+=======
+<<<<<<< HEAD
+    return <div className="flex min-h-screen items-center justify-center text-sm text-forge-text-muted">Verifica sessione…</div>;
+=======
+    return <div className="flex min-h-screen items-center justify-center text-sm text-[var(--text-muted)]">Verifica sessione…</div>;
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
+>>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
   }
 
   return (
@@ -21,7 +29,15 @@ export default function ProjectsListPage() {
       <AppShell>
         <div className="mx-auto max-w-6xl">
           <div className="mb-6 flex items-center justify-between">
+<<<<<<< HEAD
             <h1 className="font-display text-2xl font-semibold text-[var(--text-primary)]">Progetti</h1>
+=======
+<<<<<<< HEAD
+            <h1 className="font-display text-2xl font-semibold text-forge-text-primary">Progetti</h1>
+=======
+            <h1 className="font-display text-2xl font-semibold text-[var(--text-primary)]">Progetti</h1>
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
+>>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
             <Link to="/app/projects/new">
               <Button>
                 <Plus size={16} strokeWidth={2} />
@@ -30,7 +46,15 @@ export default function ProjectsListPage() {
             </Link>
           </div>
 
+<<<<<<< HEAD
           {isLoading && <p className="text-sm text-[var(--text-muted)]">Caricamento…</p>}
+=======
+<<<<<<< HEAD
+          {isLoading && <p className="text-sm text-forge-text-muted">Caricamento…</p>}
+=======
+          {isLoading && <p className="text-sm text-[var(--text-muted)]">Caricamento…</p>}
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
+>>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
 
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {projects?.map((project) => (

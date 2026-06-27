@@ -24,9 +24,21 @@ export function AdvancedModeDrawer({ onClose }: { onClose: () => void }) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+<<<<<<< HEAD
       <div className="flex h-[80vh] w-[90vw] max-w-3xl flex-col rounded-md border border-[var(--border)] bg-[var(--surface)]">
         <div className="flex items-center justify-between border-b border-[var(--border)] px-4 py-3">
           <h2 className="font-display text-sm font-medium text-[var(--text-primary)]">Modalità avanzata — JSON</h2>
+=======
+<<<<<<< HEAD
+      <div className="flex h-[80vh] w-[90vw] max-w-3xl flex-col rounded-md border border-forge-border bg-forge-surface">
+        <div className="flex items-center justify-between border-b border-forge-border px-4 py-3">
+          <h2 className="font-display text-sm font-medium text-forge-text-primary">Modalità avanzata — JSON</h2>
+=======
+      <div className="flex h-[80vh] w-[90vw] max-w-3xl flex-col rounded-md border border-[var(--border)] bg-[var(--surface)]">
+        <div className="flex items-center justify-between border-b border-[var(--border)] px-4 py-3">
+          <h2 className="font-display text-sm font-medium text-[var(--text-primary)]">Modalità avanzata — JSON</h2>
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
+>>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
           <Button variant="ghost" onClick={onClose} aria-label="Chiudi">
             <X size={16} strokeWidth={1.75} />
           </Button>
