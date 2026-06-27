@@ -1,0 +1,1 @@
+import{u}from"./useMutation-H389goSW.js";import{u as o,a as e}from"./authStore-BlAbhxTy.js";function a(){const s=o(t=>t.setUser);return u({mutationFn:t=>e.post("/auth/login",t),onSuccess:t=>s(t)})}function i(){return u({mutationFn:s=>e.post("/auth/register",s)})}export{i as a,a as u};
