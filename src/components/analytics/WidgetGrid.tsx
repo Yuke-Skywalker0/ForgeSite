@@ -27,7 +27,11 @@ function SortableWidget({ id, span, children }: { id: string; span: WidgetLayout
         {...attributes}
         {...listeners}
         aria-label="Sposta widget"
+<<<<<<< HEAD
         className="absolute right-3 top-3 z-10 cursor-grab rounded-sm p-1 text-forge-text-muted opacity-0 transition-opacity hover:bg-forge-surface-raised hover:text-forge-text-primary group-hover:opacity-100"
+=======
+        className="absolute right-3 top-3 z-10 cursor-grab rounded-sm p-1 text-[var(--text-muted)] opacity-0 transition-opacity hover:bg-[var(--surface-raised)] hover:text-[var(--text-primary)] group-hover:opacity-100"
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
       >
         <GripVertical size={14} strokeWidth={1.75} />
       </button>

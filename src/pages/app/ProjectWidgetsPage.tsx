@@ -51,7 +51,11 @@ function WidgetPreview({ widget }: { widget: FloatingWidget }) {
       className="flex h-10 w-10 items-center justify-center rounded-full shadow-lg"
       style={{ backgroundColor: widget.color }}
     >
+<<<<<<< HEAD
       <Icon size={18} color="var(--text-on-accent)" strokeWidth={2} />
+=======
+      <Icon size={18} color="#fff" strokeWidth={2} />
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
     </div>
   );
 }
@@ -67,7 +71,11 @@ export default function ProjectWidgetsPage() {
   const [newColor, setNewColor] = useState("#34D399");
   const [saving, setSaving] = useState(false);
 
+<<<<<<< HEAD
   if (isChecking) return <div className="flex min-h-screen items-center justify-center text-sm text-forge-text-muted">Verifica sessione…</div>;
+=======
+  if (isChecking) return <div className="flex min-h-screen items-center justify-center text-sm text-[var(--text-muted)]">Verifica sessione…</div>;
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
   if (!projectId) return null;
 
   function handleAdd() {
@@ -102,15 +110,25 @@ export default function ProjectWidgetsPage() {
       <AppShell>
         <div className="mx-auto max-w-3xl">
           <div className="mb-6">
+<<<<<<< HEAD
             <h1 className="mb-1 font-display text-2xl font-semibold text-forge-text-primary">Widget galleggianti</h1>
             <p className="text-sm text-forge-text-secondary">
+=======
+            <h1 className="mb-1 font-display text-2xl font-semibold text-[var(--text-primary)]">Widget galleggianti</h1>
+            <p className="text-sm text-[var(--text-secondary)]">
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
               Aggiungi bottoni e widget che appaiono sopra il sito: WhatsApp, chiamata, email, chat bubble, banner e popup promo.
             </p>
           </div>
 
           {/* Anteprima posizionale */}
+<<<<<<< HEAD
           <Card className="relative mb-6 h-48 overflow-hidden bg-forge-bg">
             <p className="absolute left-3 top-3 text-xs text-forge-text-muted">Anteprima posizioni</p>
+=======
+          <Card className="relative mb-6 h-48 overflow-hidden bg-[var(--bg)]">
+            <p className="absolute left-3 top-3 text-xs text-[var(--text-muted)]">Anteprima posizioni</p>
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
             {widgets.filter((w) => w.enabled).map((widget) => (
               <div
                 key={widget.id}
@@ -125,7 +143,11 @@ export default function ProjectWidgetsPage() {
               </div>
             ))}
             {widgets.filter((w) => w.enabled).length === 0 && (
+<<<<<<< HEAD
               <p className="absolute inset-0 flex items-center justify-center text-sm text-forge-text-muted">
+=======
+              <p className="absolute inset-0 flex items-center justify-center text-sm text-[var(--text-muted)]">
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
                 Nessun widget abilitato
               </p>
             )}
@@ -141,24 +163,40 @@ export default function ProjectWidgetsPage() {
                     className="flex h-9 w-9 flex-none items-center justify-center rounded-full"
                     style={{ backgroundColor: widget.color }}
                   >
+<<<<<<< HEAD
                     <Icon size={16} color="var(--text-on-accent)" strokeWidth={2} />
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="text-sm font-medium text-forge-text-primary">{widget.label}</p>
                     <p className="truncate text-xs text-forge-text-muted">{posLabel}{widget.value ? ` • ${widget.value}` : ""}</p>
+=======
+                    <Icon size={16} color="#fff" strokeWidth={2} />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-sm font-medium text-[var(--text-primary)]">{widget.label}</p>
+                    <p className="truncate text-xs text-[var(--text-muted)]">{posLabel}{widget.value ? ` • ${widget.value}` : ""}</p>
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
                   </div>
                   <Badge variant={widget.enabled ? "success" : "neutral"}>
                     {widget.enabled ? "Attivo" : "Off"}
                   </Badge>
                   <button
                     onClick={() => setWidgets((w) => w.map((x) => x.id === widget.id ? { ...x, enabled: !x.enabled } : x))}
+<<<<<<< HEAD
                     className="text-xs text-forge-text-secondary hover:text-forge-text-primary"
+=======
+                    className="text-xs text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
                   >
                     {widget.enabled ? "Disabilita" : "Abilita"}
                   </button>
                   <button
                     onClick={() => setWidgets((w) => w.filter((x) => x.id !== widget.id))}
+<<<<<<< HEAD
                     className="text-forge-text-muted hover:text-forge-danger"
+=======
+                    className="text-[var(--text-muted)] hover:text-[#EF4444]"
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
                     aria-label="Rimuovi widget"
                   >
                     <Trash2 size={14} strokeWidth={1.75} />
@@ -169,6 +207,7 @@ export default function ProjectWidgetsPage() {
 
             {showForm && (
               <Card className="flex flex-col gap-4">
+<<<<<<< HEAD
                 <h3 className="font-display text-sm font-medium text-forge-text-primary">Nuovo widget</h3>
 
                 <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
@@ -178,11 +217,23 @@ export default function ProjectWidgetsPage() {
                       value={newType}
                       onChange={(e) => { setNewType(e.target.value as WidgetType); setNewValue(""); }}
                       className="rounded-sm border border-forge-border bg-forge-surface-raised px-3 py-2 text-sm text-forge-text-primary"
+=======
+                <h3 className="font-display text-sm font-medium text-[var(--text-primary)]">Nuovo widget</h3>
+
+                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                  <div className="flex flex-col gap-1.5">
+                    <label className="text-sm text-[var(--text-secondary)]">Tipo di widget</label>
+                    <select
+                      value={newType}
+                      onChange={(e) => { setNewType(e.target.value as WidgetType); setNewValue(""); }}
+                      className="rounded-sm border border-[var(--border)] bg-[var(--surface-raised)] px-3 py-2 text-sm text-[var(--text-primary)]"
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
                     >
                       {(Object.keys(widgetMeta) as WidgetType[]).map((type) => (
                         <option key={type} value={type}>{widgetMeta[type].label}</option>
                       ))}
                     </select>
+<<<<<<< HEAD
                     <p className="text-xs text-forge-text-muted">{selectedMeta.description}</p>
                   </div>
 
@@ -192,6 +243,17 @@ export default function ProjectWidgetsPage() {
                       value={newPosition}
                       onChange={(e) => setNewPosition(e.target.value as Position)}
                       className="rounded-sm border border-forge-border bg-forge-surface-raised px-3 py-2 text-sm text-forge-text-primary"
+=======
+                    <p className="text-xs text-[var(--text-muted)]">{selectedMeta.description}</p>
+                  </div>
+
+                  <div className="flex flex-col gap-1.5">
+                    <label className="text-sm text-[var(--text-secondary)]">Posizione</label>
+                    <select
+                      value={newPosition}
+                      onChange={(e) => setNewPosition(e.target.value as Position)}
+                      className="rounded-sm border border-[var(--border)] bg-[var(--surface-raised)] px-3 py-2 text-sm text-[var(--text-primary)]"
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
                     >
                       {positions.map((p) => (
                         <option key={p.id} value={p.id}>{p.label}</option>
@@ -210,14 +272,24 @@ export default function ProjectWidgetsPage() {
                 )}
 
                 <div className="flex items-center gap-3">
+<<<<<<< HEAD
                   <label className="text-sm text-forge-text-secondary">Colore</label>
+=======
+                  <label className="text-sm text-[var(--text-secondary)]">Colore</label>
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
                   <input
                     type="color"
                     value={newColor}
                     onChange={(e) => setNewColor(e.target.value)}
+<<<<<<< HEAD
                     className="h-8 w-14 cursor-pointer rounded-sm border border-forge-border bg-transparent"
                   />
                   <span className="font-mono text-xs text-forge-text-muted">{newColor}</span>
+=======
+                    className="h-8 w-14 cursor-pointer rounded-sm border border-[var(--border)] bg-transparent"
+                  />
+                  <span className="font-mono text-xs text-[var(--text-muted)]">{newColor}</span>
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
                 </div>
 
                 <div className="flex gap-2 pt-1">

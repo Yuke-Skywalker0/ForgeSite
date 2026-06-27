@@ -1,5 +1,9 @@
 import { useEffect, useRef } from "react";
+<<<<<<< HEAD
 import { useThemeStore } from "../../store/themeStore";
+=======
+import { useThemeStore } from "@/store/themeStore";
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
 
 /**
  * Griglia di punti interattiva: i punti si illuminano e si avvicinano al

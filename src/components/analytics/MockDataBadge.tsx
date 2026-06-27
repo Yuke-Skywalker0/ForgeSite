@@ -9,7 +9,11 @@ import { FlaskConical } from "lucide-react";
  */
 export function MockDataBadge() {
   return (
+<<<<<<< HEAD
     <span className="inline-flex items-center gap-1.5 rounded-full bg-forge-warning/10 px-2.5 py-1 text-[11px] font-medium text-forge-warning">
+=======
+    <span className="inline-flex items-center gap-1.5 rounded-full bg-[#F59E0B]/10 px-2.5 py-1 text-[11px] font-medium text-[#F59E0B]">
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
       <FlaskConical size={11} strokeWidth={2} />
       Dati di esempio
     </span>

@@ -37,15 +37,26 @@ export default function CookiePage() {
 
       <section className="px-6 pb-10 pt-20">
         <div className="mx-auto max-w-2xl">
+<<<<<<< HEAD
           <h1 className="mb-2 font-display text-3xl font-semibold text-forge-text-primary">
             Cookie Policy
           </h1>
           <p className="mb-8 text-xs text-forge-text-muted">
+=======
+          <h1 className="mb-2 font-display text-3xl font-semibold ">
+            Cookie Policy
+          </h1>
+          <p className="mb-8 text-xs text-[var(--text-muted)]">
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
             Ultimo aggiornamento: documento di riferimento, da validare con un consulente legale
             prima della pubblicazione in produzione con utenti reali.
           </p>
 
+<<<<<<< HEAD
           <div className="mb-10 flex flex-col gap-5 text-sm leading-relaxed text-forge-text-secondary">
+=======
+          <div className="mb-10 flex flex-col gap-5 text-sm leading-relaxed text-[var(--text-secondary)]">
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
             <p>
               Un cookie è un piccolo file che il sito salva nel tuo browser. ForgeSite usa solo
               cookie tecnici necessari al funzionamento del servizio (mantenere la sessione di
@@ -54,10 +65,17 @@ export default function CookiePage() {
             </p>
           </div>
 
+<<<<<<< HEAD
           <div className="mb-10 overflow-x-auto rounded-md border border-forge-border">
             <table className="w-full text-left text-sm">
               <thead>
                 <tr className="border-b border-forge-border bg-forge-surface text-xs uppercase tracking-wide text-forge-text-muted">
+=======
+          <div className="mb-10 overflow-x-auto rounded-md border border-[var(--border)]">
+            <table className="w-full text-left text-sm">
+              <thead>
+                <tr className="border-b border-[var(--border)] bg-[var(--surface)] text-xs uppercase tracking-wide text-[var(--text-muted)]">
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
                   <th className="px-4 py-3 font-medium">Nome</th>
                   <th className="px-4 py-3 font-medium">Tipo</th>
                   <th className="px-4 py-3 font-medium">Durata</th>
@@ -66,17 +84,26 @@ export default function CookiePage() {
               </thead>
               <tbody>
                 {cookieTable.map((c) => (
+<<<<<<< HEAD
                   <tr key={c.name} className="border-b border-forge-border last:border-0">
                     <td className="px-4 py-3 font-mono text-xs text-forge-accent-soft">{c.name}</td>
                     <td className="px-4 py-3 text-forge-text-secondary">{c.type}</td>
                     <td className="px-4 py-3 text-forge-text-secondary">{c.duration}</td>
                     <td className="px-4 py-3 text-forge-text-secondary">{c.purpose}</td>
+=======
+                  <tr key={c.name} className="border-b border-[var(--border)] last:border-0">
+                    <td className="px-4 py-3 font-mono text-xs text-[var(--accent-soft)]">{c.name}</td>
+                    <td className="px-4 py-3 text-[var(--text-secondary)]">{c.type}</td>
+                    <td className="px-4 py-3 text-[var(--text-secondary)]">{c.duration}</td>
+                    <td className="px-4 py-3 text-[var(--text-secondary)]">{c.purpose}</td>
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
 
+<<<<<<< HEAD
           <div className="rounded-md border border-forge-border bg-forge-surface p-5">
             <h2 className="mb-1 font-display text-sm font-semibold text-forge-text-primary">
               Le tue preferenze
@@ -84,6 +111,15 @@ export default function CookiePage() {
             <p className="mb-4 text-sm text-forge-text-secondary">
               Scelta attuale:{" "}
               <span className="text-forge-text-primary">
+=======
+          <div className="rounded-md border border-[var(--border)] bg-[var(--surface)] p-5">
+            <h2 className="mb-1 font-display text-sm font-semibold ">
+              Le tue preferenze
+            </h2>
+            <p className="mb-4 text-sm text-[var(--text-secondary)]">
+              Scelta attuale:{" "}
+              <span className="">
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
                 {choice === "accepted" ? "Hai accettato i cookie" : choice === "rejected" ? "Hai rifiutato i cookie" : "Non ancora indicata"}
               </span>
             </p>

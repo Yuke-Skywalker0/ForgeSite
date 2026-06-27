@@ -94,6 +94,7 @@ export interface Deployment {
   deployedAt: string | null;
 }
 
+<<<<<<< HEAD
 export type BackendProvider = "render" | "cloudflare" | "supabase";
 export type BackendStatus = "not_configured" | "provisioning" | "active" | "error";
 
@@ -111,3 +112,41 @@ export interface ProjectBackend {
   };
   createdAt: string;
 }
+=======
+export interface AiLog {
+  id: string;
+  type: string;
+  cost: number;
+  createdAt: string;
+}
+
+export type CustomEndpointMethod = "GET" | "POST" | "PATCH" | "DELETE";
+
+export interface CustomEndpoint {
+  id: string;
+  projectBackendId: string;
+  path: string;
+  method: CustomEndpointMethod;
+  description: string;
+  requiresAuth: boolean;
+  createdAt: string;
+}
+
+export type BackendProvider = "render" | "cloudflare" | "supabase";
+export type BackendStatus = "not_configured" | "provisioning" | "active" | "error";
+
+export interface ProjectBackend {
+  id: string;
+  projectId: string;
+  provider: BackendProvider;
+  status: BackendStatus;
+  isExistingAccount: boolean;
+  apiBaseUrl: string | null;
+  features: {
+    authEnabled: boolean;
+    databaseEnabled: boolean;
+    customEndpoints: boolean;
+  };
+  createdAt: string;
+}
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)

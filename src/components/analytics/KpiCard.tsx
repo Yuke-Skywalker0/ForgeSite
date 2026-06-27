@@ -12,12 +12,21 @@ export function KpiCard({ label, value, change }: KpiCardProps) {
   const isPositive = change >= 0;
   return (
     <Card className="flex flex-col gap-1.5">
+<<<<<<< HEAD
       <span className="text-xs text-forge-text-secondary">{label}</span>
       <span className="font-display text-2xl font-semibold text-forge-text-primary">{value}</span>
       <span
         className={cn(
           "flex items-center gap-1 text-xs font-medium",
           isPositive ? "text-forge-accent-soft" : "text-forge-danger"
+=======
+      <span className="text-xs text-[var(--text-secondary)]">{label}</span>
+      <span className="font-display text-2xl font-semibold text-[var(--text-primary)]">{value}</span>
+      <span
+        className={cn(
+          "flex items-center gap-1 text-xs font-medium",
+          isPositive ? "text-[var(--accent-soft)]" : "text-[#EF4444]"
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
         )}
       >
         {isPositive ? <ArrowUp size={12} strokeWidth={2.5} /> : <ArrowDown size={12} strokeWidth={2.5} />}

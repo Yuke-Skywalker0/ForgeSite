@@ -39,26 +39,36 @@ export function PublishBar({ projectId, pageId }: { projectId: string; pageId: s
   }
 
   return (
-    <div className="flex items-center justify-between border-t border-forge-border bg-forge-surface px-5 py-3">
-      <div className="flex items-center gap-2 text-xs text-forge-text-secondary">
+    <div className="flex items-center justify-between border-t border-[var(--border)] bg-[var(--surface)] px-5 py-3">
+      <div className="flex items-center gap-2 text-xs text-[var(--text-secondary)]">
         {isDirty && stage === "idle" && (
           <>
-            <span className="h-1.5 w-1.5 rounded-full bg-forge-warning" />
+            <span className="h-1.5 w-1.5 rounded-full bg-[#F59E0B]" />
             Modifiche non pubblicate
           </>
         )}
         {stage === "pr_open" && prInfo && (
           <>
+<<<<<<< HEAD
             <GitPullRequest size={14} className="text-forge-accent-soft" />
             Pull request aperta —{" "}
             <a href={prInfo.url} target="_blank" rel="noreferrer" className="text-forge-accent-soft hover:underline">
+=======
+            <GitPullRequest size={14} className="text-[var(--accent-soft)]" />
+            Pull request aperta —{" "}
+            <a href={prInfo.url} target="_blank" rel="noreferrer" className="text-[var(--accent-soft)] hover:underline">
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
               revisiona su GitHub
             </a>
           </>
         )}
         {stage === "merged" && (
           <>
+<<<<<<< HEAD
             <CheckCircle2 size={14} className="text-forge-accent" />
+=======
+            <CheckCircle2 size={14} className="text-[var(--accent)]" />
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
             Pubblicato — deploy in corso su GitHub Pages
           </>
         )}

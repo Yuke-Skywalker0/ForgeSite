@@ -20,8 +20,13 @@ export function InspectorPanel() {
 
   if (!selectedBlock) {
     return (
+<<<<<<< HEAD
       <div className="flex w-72 flex-none flex-col border-l border-forge-border bg-forge-surface p-4">
         <p className="text-sm text-forge-text-muted">Seleziona un blocco per modificarne contenuto e stile.</p>
+=======
+      <div className="flex w-72 flex-none flex-col border-l border-[var(--border)] bg-[var(--surface)] p-4">
+        <p className="text-sm text-[var(--text-muted)]">Seleziona un blocco per modificarne contenuto e stile.</p>
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
       </div>
     );
   }
@@ -29,14 +34,20 @@ export function InspectorPanel() {
   const currentStyles = selectedBlock.styles[activeBreakpoint];
 
   return (
+<<<<<<< HEAD
     <div className="flex w-72 flex-none flex-col border-l border-forge-border bg-forge-surface">
       <div className="border-b border-forge-border px-4 py-3">
         <h2 className="font-display text-xs font-medium uppercase tracking-wide text-forge-text-muted">{selectedBlock.type}</h2>
+=======
+    <div className="flex w-72 flex-none flex-col border-l border-[var(--border)] bg-[var(--surface)]">
+      <div className="border-b border-[var(--border)] px-4 py-3">
+        <h2 className="font-display text-xs font-medium uppercase tracking-wide text-[var(--text-muted)]">{selectedBlock.type}</h2>
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
       </div>
 
       <div className="flex-1 overflow-y-auto p-4 scrollbar-thin">
         <section className="mb-6">
-          <h3 className="mb-2 text-xs font-medium text-forge-text-secondary">Contenuto</h3>
+          <h3 className="mb-2 text-xs font-medium text-[var(--text-secondary)]">Contenuto</h3>
           <div className="flex flex-col gap-3">
             <Input
               label="Titolo"
@@ -53,15 +64,19 @@ export function InspectorPanel() {
 
         <section>
           <div className="mb-2 flex items-center justify-between">
-            <h3 className="text-xs font-medium text-forge-text-secondary">Stile</h3>
-            <div className="flex gap-1 rounded-sm bg-forge-surface-raised p-0.5">
+            <h3 className="text-xs font-medium text-[var(--text-secondary)]">Stile</h3>
+            <div className="flex gap-1 rounded-sm bg-[var(--surface-raised)] p-0.5">
               {breakpoints.map((bp) => (
                 <button
                   key={bp}
                   onClick={() => setBreakpoint(bp)}
                   className={cn(
                     "rounded-sm px-2 py-0.5 text-xs capitalize transition-colors",
+<<<<<<< HEAD
                     activeBreakpoint === bp ? "bg-forge-accent text-forge-bg" : "text-forge-text-muted hover:text-forge-text-primary"
+=======
+                    activeBreakpoint === bp ? "bg-[var(--accent)] text-white" : "text-[var(--text-muted)] hover:text-[var(--text-primary)]"
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
                   )}
                 >
                   {bp === "desktop" ? "Desktop" : bp === "tablet" ? "Tablet" : "Mobile"}

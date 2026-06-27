@@ -12,7 +12,11 @@ export default function DashboardPage() {
   const { data: projects, isLoading } = useProjects();
 
   if (isChecking) {
+<<<<<<< HEAD
     return <div className="flex min-h-screen items-center justify-center text-sm text-forge-text-muted">Verifica sessione…</div>;
+=======
+    return <div className="flex min-h-screen items-center justify-center text-sm text-[var(--text-muted)]">Verifica sessione…</div>;
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
   }
 
   return (
@@ -22,8 +26,13 @@ export default function DashboardPage() {
         <div className="mx-auto max-w-6xl">
           <div className="mb-6 flex items-center justify-between">
             <div>
+<<<<<<< HEAD
               <h1 className="font-display text-2xl font-semibold text-forge-text-primary">Dashboard</h1>
               <p className="text-sm text-forge-text-secondary">I tuoi siti e lo stato dei deploy.</p>
+=======
+              <h1 className="font-display text-2xl font-semibold text-[var(--text-primary)]">Dashboard</h1>
+              <p className="text-sm text-[var(--text-secondary)]">I tuoi siti e lo stato dei deploy.</p>
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
             </div>
             <Link to="/app/projects/new">
               <Button>
@@ -33,10 +42,17 @@ export default function DashboardPage() {
             </Link>
           </div>
 
+<<<<<<< HEAD
           {isLoading && <p className="text-sm text-forge-text-muted">Caricamento progetti…</p>}
           {!isLoading && projects?.length === 0 && (
             <div className="rounded-md border border-dashed border-forge-border p-8 text-center">
               <p className="text-sm text-forge-text-secondary">
+=======
+          {isLoading && <p className="text-sm text-[var(--text-muted)]">Caricamento progetti…</p>}
+          {!isLoading && projects?.length === 0 && (
+            <div className="rounded-md border border-dashed border-[var(--border)] p-8 text-center">
+              <p className="text-sm text-[var(--text-secondary)]">
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
                 Nessun progetto ancora. Crea il primo sito per iniziare.
               </p>
             </div>

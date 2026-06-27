@@ -3,7 +3,11 @@ import { Outlet } from "react-router-dom";
 import { Navbar } from "@/components/marketing/Navbar";
 import { Footer } from "@/components/marketing/Footer";
 import { CookieConsentBanner } from "@/components/marketing/CookieConsentBanner";
+<<<<<<< HEAD
 import { useThemeStore } from "../../store/themeStore";
+=======
+import { useThemeStore } from "@/store/themeStore";
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
 
 export function MarketingLayout() {
   const { theme } = useThemeStore();

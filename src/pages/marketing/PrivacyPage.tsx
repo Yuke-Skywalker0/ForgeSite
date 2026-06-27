@@ -47,10 +47,17 @@ export default function PrivacyPage() {
 
       <section className="px-6 pb-10 pt-20">
         <div className="mx-auto max-w-2xl">
+<<<<<<< HEAD
           <h1 className="mb-2 font-display text-3xl font-semibold text-forge-text-primary">
             Privacy Policy
           </h1>
           <p className="mb-8 text-xs text-forge-text-muted">
+=======
+          <h1 className="mb-2 font-display text-3xl font-semibold ">
+            Privacy Policy
+          </h1>
+          <p className="mb-8 text-xs text-[var(--text-muted)]">
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
             Ultimo aggiornamento: documento di riferimento, da validare con un consulente legale
             prima della pubblicazione in produzione con utenti reali.
           </p>
@@ -58,10 +65,17 @@ export default function PrivacyPage() {
           <div className="flex flex-col gap-8">
             {sections.map((s) => (
               <div key={s.title}>
+<<<<<<< HEAD
                 <h2 className="mb-2 font-display text-base font-semibold text-forge-text-primary">
                   {s.title}
                 </h2>
                 <p className="text-sm leading-relaxed text-forge-text-secondary">{s.body}</p>
+=======
+                <h2 className="mb-2 font-display text-base font-semibold ">
+                  {s.title}
+                </h2>
+                <p className="text-sm leading-relaxed text-[var(--text-secondary)]">{s.body}</p>
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
               </div>
             ))}
           </div>

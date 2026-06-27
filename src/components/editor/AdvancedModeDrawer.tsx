@@ -24,9 +24,15 @@ export function AdvancedModeDrawer({ onClose }: { onClose: () => void }) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+<<<<<<< HEAD
       <div className="flex h-[80vh] w-[90vw] max-w-3xl flex-col rounded-md border border-forge-border bg-forge-surface">
         <div className="flex items-center justify-between border-b border-forge-border px-4 py-3">
           <h2 className="font-display text-sm font-medium text-forge-text-primary">Modalità avanzata — JSON</h2>
+=======
+      <div className="flex h-[80vh] w-[90vw] max-w-3xl flex-col rounded-md border border-[var(--border)] bg-[var(--surface)]">
+        <div className="flex items-center justify-between border-b border-[var(--border)] px-4 py-3">
+          <h2 className="font-display text-sm font-medium text-[var(--text-primary)]">Modalità avanzata — JSON</h2>
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
           <Button variant="ghost" onClick={onClose} aria-label="Chiudi">
             <X size={16} strokeWidth={1.75} />
           </Button>
@@ -34,7 +40,7 @@ export function AdvancedModeDrawer({ onClose }: { onClose: () => void }) {
 
         {!canEdit ? (
           <div className="flex flex-1 items-center justify-center p-8 text-center">
-            <p className="text-sm text-forge-text-secondary">
+            <p className="text-sm text-[var(--text-secondary)]">
               Solo owner e admin possono modificare la struttura JSON dei blocchi.
             </p>
           </div>

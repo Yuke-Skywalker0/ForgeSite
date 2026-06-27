@@ -43,7 +43,11 @@ export default function OnboardingPage() {
 
   if (isChecking) {
     return (
+<<<<<<< HEAD
       <div className="flex min-h-screen items-center justify-center text-sm text-forge-text-muted">
+=======
+      <div className="flex min-h-screen items-center justify-center text-sm text-[var(--text-muted)]">
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
         Verifica sessione…
       </div>
     );
@@ -74,10 +78,17 @@ export default function OnboardingPage() {
   return (
     <>
       <Seo title="Benvenuto su ForgeSite" description="" path="/app/onboarding" indexable={false} />
+<<<<<<< HEAD
       <div className="flex min-h-screen flex-col items-center justify-center bg-forge-bg px-6 py-16">
         <div className="mb-10 flex items-center gap-2">
           <span className="h-2 w-2 rounded-full bg-forge-accent" aria-hidden="true" />
           <span className="font-display text-lg font-semibold text-forge-text-primary">ForgeSite</span>
+=======
+      <div className="flex min-h-screen flex-col items-center justify-center bg-[var(--bg)] px-6 py-16">
+        <div className="mb-10 flex items-center gap-2">
+          <span className="h-2 w-2 rounded-full bg-[var(--accent)]" aria-hidden="true" />
+          <span className="font-display text-lg font-semibold text-[var(--text-primary)]">ForgeSite</span>
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
         </div>
 
         <div className="mb-8 flex items-center gap-2">
@@ -85,12 +96,17 @@ export default function OnboardingPage() {
             <div
               key={i}
               className={`h-1.5 w-10 rounded-full transition-colors ${
+<<<<<<< HEAD
                 i <= currentStep ? "bg-forge-accent" : "bg-forge-border"
+=======
+                i <= currentStep ? "bg-[var(--accent)]" : "bg-[var(--border)]"
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
               }`}
             />
           ))}
         </div>
 
+<<<<<<< HEAD
         <div className="w-full max-w-md rounded-lg border border-forge-border bg-forge-surface p-8 text-center">
           <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-forge-accent-dim">
             <Icon size={24} className="text-forge-accent-soft" strokeWidth={1.75} />
@@ -104,6 +120,21 @@ export default function OnboardingPage() {
 
           {isGithubStep && githubConnected && (
             <div className="mb-5 flex items-center justify-center gap-2 rounded-sm bg-forge-accent-dim px-3 py-2 text-sm text-forge-accent-soft">
+=======
+        <div className="w-full max-w-md rounded-lg border border-[var(--border)] bg-[var(--surface)] p-8 text-center">
+          <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-[var(--accent-dim)]">
+            <Icon size={24} className="text-[var(--accent-soft)]" strokeWidth={1.75} />
+          </div>
+
+          <span className="mb-2 block font-mono text-xs text-[var(--text-muted)]">
+            Passo {currentStep + 1} di {steps.length}
+          </span>
+          <h1 className="mb-3 font-display text-xl font-semibold text-[var(--text-primary)]">{step.title}</h1>
+          <p className="mb-7 text-sm leading-relaxed text-[var(--text-secondary)]">{step.description}</p>
+
+          {isGithubStep && githubConnected && (
+            <div className="mb-5 flex items-center justify-center gap-2 rounded-sm bg-[var(--accent-dim)] px-3 py-2 text-sm text-[var(--accent-soft)]">
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
               <Check size={15} strokeWidth={2.5} />
               Account GitHub collegato
             </div>
@@ -115,7 +146,11 @@ export default function OnboardingPage() {
           </Button>
         </div>
 
+<<<<<<< HEAD
         <Link to="/app/dashboard" className="mt-6 text-xs text-forge-text-muted hover:text-forge-text-secondary">
+=======
+        <Link to="/app/dashboard" className="mt-6 text-xs text-[var(--text-muted)] hover:text-[var(--text-secondary)]">
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
           Salta il tutorial, vai direttamente alla dashboard
         </Link>
       </div>

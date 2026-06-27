@@ -28,7 +28,11 @@ export default function AdminAnalyticsPage() {
   const { layout, reorder } = useAdminLayoutStore();
 
   if (isChecking) {
+<<<<<<< HEAD
     return <div className="flex min-h-screen items-center justify-center text-sm text-forge-text-muted">Verifica sessione…</div>;
+=======
+    return <div className="flex min-h-screen items-center justify-center text-sm text-[var(--text-muted)]">Verifica sessione…</div>;
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
   }
 
   const hasAccess = role ? ADMIN_ROLES.has(role) : false;
@@ -37,9 +41,15 @@ export default function AdminAnalyticsPage() {
     return (
       <AppShell>
         <div className="mx-auto flex max-w-md flex-col items-center gap-3 py-20 text-center">
+<<<<<<< HEAD
           <ShieldAlert size={28} className="text-forge-text-muted" strokeWidth={1.5} />
           <h1 className="font-display text-lg font-semibold text-forge-text-primary">Accesso riservato</h1>
           <p className="text-sm text-forge-text-secondary">
+=======
+          <ShieldAlert size={28} className="text-[var(--text-muted)]" strokeWidth={1.5} />
+          <h1 className="font-display text-lg font-semibold text-[var(--text-primary)]">Accesso riservato</h1>
+          <p className="text-sm text-[var(--text-secondary)]">
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
             Questa sezione è visibile solo agli amministratori della piattaforma.
           </p>
         </div>
@@ -61,7 +71,11 @@ export default function AdminAnalyticsPage() {
       case "signups-trend":
         return (
           <Card className="flex flex-col gap-3">
+<<<<<<< HEAD
             <h3 className="font-display text-sm font-medium text-forge-text-primary">Registrazioni — ultimi 12 giorni</h3>
+=======
+            <h3 className="font-display text-sm font-medium text-[var(--text-primary)]">Registrazioni — ultimi 12 giorni</h3>
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
             <MiniLineChart data={mockSignupsTrend} color="#60A5FA" />
           </Card>
         );
@@ -80,10 +94,17 @@ export default function AdminAnalyticsPage() {
       <AppShell>
         <div className="mx-auto max-w-6xl">
           <div className="mb-6">
+<<<<<<< HEAD
             <h1 className="mb-1 font-display text-2xl font-semibold text-forge-text-primary">
               Analytics della piattaforma
             </h1>
             <p className="text-sm text-forge-text-secondary">
+=======
+            <h1 className="mb-1 font-display text-2xl font-semibold text-[var(--text-primary)]">
+              Analytics della piattaforma
+            </h1>
+            <p className="text-sm text-[var(--text-secondary)]">
+>>>>>>> 06d1697 (versione 4 frontend quasi finale)
               Metriche aggregate su tutti i tenant — visibile solo al team ForgeSite.
             </p>
           </div>
