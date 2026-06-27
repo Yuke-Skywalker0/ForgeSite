@@ -111,3 +111,21 @@ export interface ProjectBackend {
   };
   createdAt: string;
 }
+
+export type AiLogType = "prompt" | "completion" | "analysis" | "other";
+
+export interface AiLog {
+  id: string;
+  type: AiLogType;
+  cost: number;
+  createdAt: string;
+}
+
+export interface CustomEndpoint {
+  id: string;
+  path: string;
+  method: "GET" | "POST" | "PATCH" | "DELETE";
+  description: string;
+  requiresAuth: boolean;
+  createdAt: string;
+}

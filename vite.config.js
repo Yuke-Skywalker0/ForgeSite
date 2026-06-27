@@ -1,18 +1,6 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import path from "path";
-<<<<<<< HEAD
-export default defineConfig({
-    plugins: [react()],
-    resolve: {
-        alias: {
-            "@": path.resolve(__dirname, "./src"),
-        },
-    },
-    server: {
-        port: 5173,
-    },
-=======
 // UNICO punto dove vive il nome del repository GitHub Pages.
 // - Repo "username.github.io" (user/org page, root del dominio): REPO_NAME = ""
 // - Qualunque altro nome di repo (project page): REPO_NAME = "NomeRepo"
@@ -46,5 +34,4 @@ export default defineConfig(function (_a) {
             port: 5173,
         },
     };
->>>>>>> c7a8f2ca77b55bb445308e82e7a00969156fc2cb
 });

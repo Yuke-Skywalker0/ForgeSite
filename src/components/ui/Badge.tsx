@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { cn } from "@/lib/cn";
 
-type BadgeVariant = "neutral" | "success" | "warning" | "danger" | "accent" | "info";
+type BadgeVariant = "neutral" | "success" | "warning" | "danger" | "accent" | "info" | "ember";
 
 const variantStyles: Record<BadgeVariant, { bg: string; color: string }> = {
   neutral: { bg: "var(--surface-raised)", color: "var(--text-secondary)" },
@@ -10,6 +10,7 @@ const variantStyles: Record<BadgeVariant, { bg: string; color: string }> = {
   danger:  { bg: "rgba(239,68,68,0.12)",  color: "#EF4444" },
   accent:  { bg: "var(--accent-dim)",     color: "var(--accent)" },
   info:    { bg: "var(--info-dim)",        color: "var(--info-soft)" },
+  ember:   { bg: "rgba(236,72,153,0.12)", color: "var(--forge-ember)" },
 };
 
 export function Badge({ variant = "neutral", children, className }: { variant?: BadgeVariant; children: ReactNode; className?: string }) {
