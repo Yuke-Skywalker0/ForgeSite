@@ -111,3 +111,5 @@ export interface ProjectBackend {
   };
   createdAt: string;
 }
+
+export type { CustomEndpoint, AiLog } from "./backend";

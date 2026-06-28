@@ -95,7 +95,7 @@ export function CustomEndpointsPanel({ projectBackendId }: { projectBackendId: s
         {endpoints?.length === 0 && (
           <p className="text-sm text-forge-text-muted">Nessun endpoint custom ancora.</p>
         )}
-        {endpoints?.map((ep) => (
+        {endpoints?.map((ep: CustomEndpoint) => (
           <div
             key={ep.id}
             className="flex items-center gap-3 rounded-sm border border-forge-border px-3 py-2"
