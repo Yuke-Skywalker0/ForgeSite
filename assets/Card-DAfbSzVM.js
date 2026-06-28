@@ -1,1 +1,0 @@
-import{a as e,t}from"./cn-CdoRC9xZ.js";var n=e();function r({className:e,children:r,...i}){return(0,n.jsx)(`div`,{className:t(`rounded-xl p-5 transition-all`,e),style:{backgroundColor:`var(--surface)`,border:`1px solid var(--border)`},...i,children:r})}export{r as t};
