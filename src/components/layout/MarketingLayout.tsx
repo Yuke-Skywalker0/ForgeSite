@@ -3,12 +3,12 @@ import { Outlet } from "react-router-dom";
 import { Navbar } from "@/components/marketing/Navbar";
 import { Footer } from "@/components/marketing/Footer";
 import { CookieConsentBanner } from "@/components/marketing/CookieConsentBanner";
+import { ScrollToTop } from "@/components/layout/ScrollToTop";
 import { useThemeStore } from "@/store/themeStore";
 
 export function MarketingLayout() {
   const { theme } = useThemeStore();
 
-  // Sincronizza la classe sul <html> quando il tema cambia
   useEffect(() => {
     if (theme === "dark") {
       document.documentElement.classList.add("dark");
@@ -18,10 +18,8 @@ export function MarketingLayout() {
   }, [theme]);
 
   return (
-    <div
-      className="flex min-h-screen flex-col"
-      style={{ backgroundColor: "var(--bg)" }}
-    >
+    <div className="flex min-h-screen flex-col" style={{ backgroundColor: "var(--bg)" }}>
+      <ScrollToTop />
       <Navbar />
       <main className="flex-1">
         <Outlet />

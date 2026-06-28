@@ -1,4 +1,5 @@
 import { lazy, Suspense } from "react";
+import { ScrollToTop } from "@/components/layout/ScrollToTop";
 import { createBrowserRouter, Outlet } from "react-router-dom";
 import { MarketingLayout } from "@/components/layout/MarketingLayout";
 
@@ -37,7 +38,9 @@ const ProjectWidgetsPage = lazy(() => import("@/pages/app/ProjectWidgetsPage"));
 
 function LazyBoundary() {
   return (
-    <Suspense
+    <>
+      <ScrollToTop />
+      <Suspense
       fallback={
         <div className="flex min-h-screen items-center justify-center bg-[var(--bg)] text-sm text-[var(--text-muted)]">
           Caricamento…
@@ -46,6 +49,7 @@ function LazyBoundary() {
     >
       <Outlet />
     </Suspense>
+    </>
   );
 }
 

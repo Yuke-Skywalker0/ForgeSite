@@ -1,6 +1,6 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { api } from "@/lib/apiClient";
-import type { ProjectBackend, BackendProvider, CustomEndpoint } from "@/types";
+import type { ProjectBackend, BackendProvider } from "@/types";
 
 export function useProjectBackend(projectId: string | undefined) {
   return useQuery({
@@ -23,25 +23,6 @@ export function useProvisionBackend(projectId: string) {
     mutationFn: (input: ProvisionBackendInput) => api.post<ProjectBackend>(`/projects/${projectId}/backend`, input),
     onSuccess: () => {
       void queryClient.invalidateQueries({ queryKey: ["projects", projectId, "backend"] });
-    },
-  });
-}
-
-export function useCustomEndpoints(projectBackendId: string | undefined) {
-  return useQuery({
-    queryKey: ["backend", projectBackendId, "custom-endpoints"],
-    queryFn: () => api.get<CustomEndpoint[]>(`/projects/${projectBackendId}/backend/custom-endpoints`),
-    enabled: Boolean(projectBackendId),
-  });
-}
-
-export function useCreateCustomEndpoint(projectBackendId: string) {
-  const queryClient = useQueryClient();
-  return useMutation({
-    mutationFn: (input: Pick<CustomEndpoint, "path" | "method" | "description" | "requiresAuth">) =>
-      api.post<CustomEndpoint>(`/projects/${projectBackendId}/backend/custom-endpoints`, input),
-    onSuccess: () => {
-      void queryClient.invalidateQueries({ queryKey: ["backend", projectBackendId, "custom-endpoints"] });
     },
   });
 }

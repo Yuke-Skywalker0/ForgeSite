@@ -17,12 +17,11 @@ export function Input({ label, error, id, className, ...props }: InputProps) {
       )}
       <input
         id={inputId}
-        className={cn("rounded-lg px-3 py-2 text-sm outline-none transition-all focus:ring-2", className)}
+        className={cn("rounded-lg px-3 py-2 text-sm outline-none transition-all focus:ring-2 focus:ring-accent", className)}
         style={{
           backgroundColor: "var(--surface-raised)",
           border: `1px solid ${error ? "#EF4444" : "var(--border)"}`,
           color: "var(--text-primary)",
-          outlineColor: "var(--accent)",
         }}
         aria-invalid={Boolean(error)}
         {...props}

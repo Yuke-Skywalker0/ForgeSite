@@ -55,3 +55,78 @@ export const templates: Template[] = [
   { id: "tpl-nonprofit-cause", name: "Causa Sociale", category: "no-profit", description: "Racconta la missione, raccogli donazioni e volontari.", previewColors: ["#34D399", "#1C3329"], pages: ["Home", "Missione", "Dona", "Contatti"], popular: true },
   { id: "tpl-nonprofit-foundation", name: "Fondazione", category: "no-profit", description: "Tono istituzionale, trasparenza e rendicontazione.", previewColors: ["#60A5FA", "#1E2A3D"], pages: ["Home", "Progetti", "Trasparenza", "Contatti"] },
 ];
+
+// ── Template 3D / Immersivi Premium ─────────────────────────────────────────
+export interface Template3D {
+  id: string;
+  name: string;
+  category: string;
+  description: string;
+  features: string[];
+  previewColors: [string, string];
+  badge: string;
+  techStack: string[];
+}
+
+export const templates3D: Template3D[] = [
+  {
+    id: "tpl-3d-agency",
+    name: "Agency 3D Universe",
+    category: "Agenzia",
+    description: "Sfondo spaziale 3D con oggetti geometrici che ruotano. Effetto parallax su ogni sezione. Testo con effetto glitch.",
+    features: ["Sfondo Three.js con geometrie 3D","Parallax multi-layer","Cursor personalizzato","Animazioni GSAP","Testo glitch effect"],
+    previewColors: ["#34D399","#101512"],
+    badge: "3D Premium",
+    techStack: ["Three.js","GSAP","Canvas"],
+  },
+  {
+    id: "tpl-3d-portfolio",
+    name: "Portfolio Immersivo",
+    category: "Portfolio",
+    description: "Galleria progetti con effetto 3D card flip, sfondo particelle connesse, transizioni cinematografiche tra sezioni.",
+    features: ["Card flip 3D","Particle network interattivo","Scroll cinematografico","Cursore custom con trail","Ambient sound opzionale"],
+    previewColors: ["#8B5CF6","#0f0a1e"],
+    badge: "3D Premium",
+    techStack: ["Three.js","Framer Motion","WebGL"],
+  },
+  {
+    id: "tpl-3d-product",
+    name: "Product Showcase 3D",
+    category: "E-commerce",
+    description: "Visualizzatore prodotto 3D rotante, sfondo nebulare, sezioni con effetto glass morphism e luci dinamiche.",
+    features: ["Modello 3D del prodotto","Luci dinamiche real-time","Glass morphism","Hover con distorsione","Caricamento con animazione"],
+    previewColors: ["#60A5FA","#0a0f1e"],
+    badge: "3D Premium",
+    techStack: ["Three.js","WebGL","GLSL"],
+  },
+  {
+    id: "tpl-3d-startup",
+    name: "Startup Neon Future",
+    category: "Startup",
+    description: "Estetica cyberpunk/neon con griglia 3D animata, testi con glow, sfondo con onde digitali e HUD elements.",
+    features: ["Griglia 3D animata","Effetti neon e glow","HUD elements","Onde digitali","Contatore animato"],
+    previewColors: ["#F472B6","#0d0118"],
+    badge: "3D Premium",
+    techStack: ["Three.js","Canvas","CSS 3D"],
+  },
+  {
+    id: "tpl-3d-creative",
+    name: "Creative Studio Fluid",
+    category: "Agenzia Creativa",
+    description: "Sfondo liquido fluido con blob colorati che si fondono, transizioni morphing, tipografia animata con clip-path.",
+    features: ["Fluido WebGL shader","Blob morphing","Clip-path animations","Tipografia liquidata","Mouse fluid trail"],
+    previewColors: ["#F97316","#1a0a05"],
+    badge: "3D Premium",
+    techStack: ["WebGL","GLSL Shaders","Canvas"],
+  },
+  {
+    id: "tpl-3d-event",
+    name: "Event Holographic",
+    category: "Eventi",
+    description: "Tema olografico con effetti arcobaleno, countdown 3D, sfondo laser show e particelle che formano lettere.",
+    features: ["Effetto olografico","Countdown animato 3D","Particle text","Laser show sfondo","Audio reattivo (opz.)"],
+    previewColors: ["#22D3EE","#050d1a"],
+    badge: "3D Premium",
+    techStack: ["Three.js","Web Audio API","Canvas"],
+  },
+];
